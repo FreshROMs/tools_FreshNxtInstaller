@@ -1,3 +1,11 @@
+<b><#selectbg_g>MELATI - 3.00B1</#></b>
+<*>new engine fb & input driver</*>
+<*>support msmfb overlay</*>
+<*>more neon improve</*>
+<*>tweaks some ui</*>
+<*>graphics processing</*>
+
+
 <b><#selectbg_g>FLAMBOYAN BETA - 2.70B1-B4</#></b>
 <*><b>B4</b></*>
 <*>Fix Icon Themes Error</*>
