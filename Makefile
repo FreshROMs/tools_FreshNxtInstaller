@@ -1,21 +1,21 @@
 #!/usr/bin/make -f
 ARCH := arm64
 ARCH_ASFLAGS :=
-ARCH_CFLAGS :=
+ARCH_CFLAGS := -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -s -Os -s -Wl,--allow-multiple-definition -save-temps -Os -static -fdata-sections -ffunction-sections -Wl,--gc-sections -fPIC -DPIC -Wl,-s -D_AROMA_NODEBUG -ffast-math -fomit-frame-pointer
 USE_NEON := 0
 
 
 # Version info
 AROMA_NAME    := AROMA Installer
-AROMA_VERSION := 3.00b1
-AROMA_BUILD   := $(shell date +%y%m%d%H)
+AROMA_VERSION := 2.71-hades
+AROMA_BUILD   := $(shell date +%y%m%d%H%M)
 AROMA_CN      := Flamboyan
 
 
-CC := ../TOOLCHAINS/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-gcc-4.9.4
-CXX := ../TOOLCHAINS/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu--g++-4.9.4
-AS := ../TOOLCHAINS/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-as
-AR := ../TOOLCHAINS/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-ar
+CC := $(CROSS_COMPILE)gcc
+CXX := $(CROSS_COMPILE)g++
+AS := $(CROSS_COMPILE)as
+AR := $(CROSS_COMPILE)ar
 
 SOURCES_zlib := \
 	libs/zlib/adler32.c \
@@ -115,6 +115,6 @@ bin/aroma_installer-$(ARCH): $(OBJS)
 clean:
 	$(RM) $(OBJS)
 	$(RM) bin/aroma_installer-$(ARCH) bin/aroma_installer-$(ARCH).zip
-	$(RM) -r tmp-zip
+	$(RM) -r tmp-zip *.i *.s
 
 .PHONY: clean
