@@ -2,13 +2,6 @@ AROMA is an advanced update-binary for Android that contains many features
 like Wizard Installation, Touch User Interface (AROMA UI), Customizable Packages,
 System Inspecting, Themeable, and User Interactive.
 
-* How To Build With Android Build Environment
-  1. Copy whole directory into /external/aroma-installer
-  2. # . build/envsetup.sh
-  3. # lunch full_yourdevice-eng
-  4. # make -j4 aroma_installer
-  5. # make aroma_installer.zip
-
 * Programming Language
   It was application which runs on Android device but not on Android OS 
   Environment that the native applications usually use Java.
