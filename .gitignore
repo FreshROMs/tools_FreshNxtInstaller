@@ -1,0 +1,5 @@
+bin
+*.o
+*.s
+*.i
+tmp-zip
