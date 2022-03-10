@@ -161,9 +161,9 @@ ACONTROLP acbutton(
     ag_roundgrad(&d->control, 2, 2, w - 4, h - 4, acfg()->controlbg, acfg()->controlbg_g, (agdp()*acfg()->btnroundsz) - 2);
     ag_roundgrad_ex(&d->control, 2, 2, w - 4, (h - 4) / 2, LOWORD(hl1), HIWORD(hl1), (agdp()*acfg()->btnroundsz) - 2, 1, 1, 0, 0);
   }
-  
-  ag_textf(&d->control, txtw, txtx + 1, txty + 1, text, acfg()->controlbg, isbig);
+
   ag_text(&d->control, txtw, txtx, txty, text, acfg()->controlfg, isbig);
+
   //-- Draw Pushed Control
   //-- Highlight
   color pshad = ag_calpushad(acfg()->selectbg_g);
@@ -177,7 +177,6 @@ ACONTROLP acbutton(
     ag_roundgrad_ex(&d->control_pushed, 2, 2, w - 4, (h - 4) / 2, LOWORD(hl1), HIWORD(hl1), (agdp()*acfg()->btnroundsz) - 2, 1, 1, 0, 0);
   }
   
-  ag_textf(&d->control_pushed, txtw, txtx + 1, txty + 1, text, acfg()->selectbg_g, isbig);
   ag_text(&d->control_pushed, txtw, txtx, txty, text, acfg()->selectfg, isbig);
   //-- Draw Focused Control
   hl1 = ag_calchighlight(acfg()->selectbg, acfg()->selectbg_g);
@@ -190,7 +189,6 @@ ACONTROLP acbutton(
     ag_roundgrad_ex(&d->control_focused, 2, 2, w - 4, (h - 4) / 2, LOWORD(hl1), HIWORD(hl1), (agdp()*acfg()->btnroundsz) - 2, 1, 1, 0, 0);
   }
   
-  ag_textf(&d->control_focused, txtw, txtx + 1, txty + 1, text, acfg()->selectbg_g, isbig);
   ag_text(&d->control_focused, txtw, txtx, txty, text, acfg()->selectfg, isbig);
   //-- Initializing Control
   ACONTROLP ctl  = malloc(sizeof(ACONTROL));

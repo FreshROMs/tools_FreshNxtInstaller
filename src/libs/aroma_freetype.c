@@ -31,6 +31,7 @@
 static FT_Library             aft_lib;            // Freetype Library
 static byte                   aft_initialized = 0; // Is Library Initialized
 static byte                   aft_locked = 0;     // On Lock
+static AFTFAMILY              aft_header;            // Header Font Family
 static AFTFAMILY              aft_big;            // Big Font Family
 static AFTFAMILY              aft_small;          // Small Font Family
 
@@ -217,7 +218,19 @@ long aft_id(AFTFACEP * f, int c, byte isbig) {
     return 0;
   }
   
-  AFTFAMILYP m = (isbig != 0) ? &aft_big : &aft_small;
+  AFTFAMILYP m;
+
+  switch (isbig) {
+    case 2:
+      m = &aft_header;
+      break;
+    case 1:
+      m = &aft_big;
+      break;
+    case 0:
+      m = &aft_small;
+      break;
+  }
   
   if (!m->init) {
     return 0;
@@ -258,8 +271,20 @@ int aft_kern(int c, int p, byte isbig) {
     return 0;
   }
   
-  AFTFAMILYP m = (isbig != 0) ? &aft_big : &aft_small;
-  
+  AFTFAMILYP m;
+
+  switch (isbig) {
+    case 2:
+      m = &aft_header;
+      break;
+    case 1:
+      m = &aft_big;
+      break;
+    case 0:
+      m = &aft_small;
+      break;
+  }
+
   if (!m->init) {
     return 0;
   }
@@ -397,7 +422,20 @@ byte aft_load(const char * source_name, int size, byte isbig, char * relativeto)
   
   if (c > 0) {
     aft_waitlock();
-    AFTFAMILYP m = (isbig != 0) ? &aft_big : &aft_small;
+    AFTFAMILYP m;
+
+    switch (isbig) {
+      case 2:
+        m = &aft_header;
+        break;
+      case 1:
+        m = &aft_big;
+        break;
+      case 0:
+        m = &aft_small;
+        break;
+    }
+
     //-- Cleanup Font
     aft_free(m);
     m->s = m_s;
@@ -434,6 +472,7 @@ byte aft_open() {
   }
   
   aft_big.init = 0;
+  aft_header.init = 0;
   aft_small.init = 0;
   
   if (FT_Init_FreeType( &aft_lib ) == 0) {
@@ -453,8 +492,20 @@ byte aft_fontready(byte isbig) {
     return 0;
   }
   
-  AFTFAMILYP m = (isbig) ? &aft_big : &aft_small;
-  
+  AFTFAMILYP m;
+
+  switch (isbig) {
+    case 2:
+      m = &aft_header;
+      break;
+    case 1:
+      m = &aft_big;
+      break;
+    case 0:
+      m = &aft_small;
+      break;
+  }
+
   if (!m->init) {
     return 0;
   }
@@ -472,6 +523,7 @@ byte aft_close() {
   
   //-- Release All Font Family
   aft_free(&aft_big);
+  aft_free(&aft_header);
   aft_free(&aft_small);
   
   if (FT_Done_FreeType( aft_lib ) == 0) {
@@ -572,8 +624,20 @@ byte aft_fontheight(byte isbig) {
     return 0;
   }
   
-  AFTFAMILYP m      = (isbig) ? &aft_big : &aft_small;
-  
+  AFTFAMILYP m;
+
+  switch (isbig) {
+    case 2:
+      m = &aft_header;
+      break;
+    case 1:
+      m = &aft_big;
+      break;
+    case 0:
+      m = &aft_small;
+      break;
+  }
+
   if (!m->init) {
     return 0;
   }
@@ -614,7 +678,19 @@ byte aft_drawfont(CANVAS * _b, byte isbig, int fpos, int xpos, int ypos, color c
   }
   
   //-- Get Font Glyph
-  AFTFAMILYP m      = (isbig) ? &aft_big : &aft_small;
+  AFTFAMILYP m;
+
+  switch (isbig) {
+    case 2:
+      m = &aft_header;
+      break;
+    case 1:
+      m = &aft_big;
+      break;
+    case 0:
+      m = &aft_small;
+      break;
+  }
   
   if (!m->init) {
     return 0;

@@ -6,10 +6,10 @@ USE_NEON := 0
 
 
 # Version info
-AROMA_NAME    := AROMA Installer
-AROMA_VERSION := 2.71-hades
+AROMA_NAME    := Fresh Installer
+AROMA_VERSION := 12.0.0.0
 AROMA_BUILD   := $(shell date +%y%m%d%H%M)
-AROMA_CN      := Flamboyan
+AROMA_CN      := Viola Alpha
 
 
 CC := $(CROSS_COMPILE)gcc
@@ -105,7 +105,7 @@ all: bin/aroma_installer-$(ARCH).zip
 bin/aroma_installer-$(ARCH).zip: bin/aroma_installer-$(ARCH)
 	cp -RT assets tmp-zip
 	cp $(@:.zip=) tmp-zip/META-INF/com/google/android/update-binary
-	cp assets/META-INF/com/google/android/update-binary-installer tmp-zip/META-INF/com/google/android/update-binary-installer
+	cp assets/META-INF/com/google/android/installer-update-binary tmp-zip/META-INF/com/google/android/installer-update-binary
 	7z a $@ ./tmp-zip/*
 
 bin/aroma_installer-$(ARCH): $(OBJS)

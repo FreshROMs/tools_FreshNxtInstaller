@@ -1119,23 +1119,24 @@ void aw_alert(AWINDOWP parent, char * titlev, char * textv, char * img, char * o
   snprintf(title, 32, "%s", titlev);
   snprintf(text, 512, "%s", textv);
   int pad   = agdp() * 4;
+  int cPad   = agdp() * 12;
   int winW  = agw() - (pad * 2);
-  int txtW  = winW - (pad * 2);
-  int txtX  = pad * 2;
+  int txtW  = winW - (cPad * 3);
+  int txtX  = cPad * 2;
   int btnH  = agdp() * 20;
   int titW  = ag_txtwidth(title, 1);
-  int titH  = ag_fontheight(1) + (pad * 2);
+  int titH  = ag_fontheight(1) + (cPad * 2);
   PNGCANVASP winp = atheme("img.dialog");
   PNGCANVASP titp = atheme("img.dialog.titlebar");
   APNG9      winv;
   APNG9      titv;
   int vtitY = -1;
   int vpadB = -1;
-  int vimgX = pad * 2;
+  int vimgX = cPad * 2;
   
   if (titp != NULL) {
     if (apng9_calc(titp, &titv, 1)) {
-      int tmptitH = titH - (pad * 2);
+      int tmptitH = titH - (cPad * 2);
       titH        = tmptitH + (titv.t + titv.b);
       vtitY       = titv.t;
     }
@@ -1144,8 +1145,8 @@ void aw_alert(AWINDOWP parent, char * titlev, char * textv, char * img, char * o
   if (winp != NULL) {
     if (apng9_calc(winp, &winv, 1)) {
       txtW = winW - (winv.l + winv.r);
-      txtX = pad  + (winv.l);
-      vimgX = pad  + (winv.l);
+      txtX = cPad  + (winv.l);
+      vimgX = cPad  + (winv.l);
       vpadB = winv.b;
     }
   }
@@ -1185,12 +1186,12 @@ void aw_alert(AWINDOWP parent, char * titlev, char * textv, char * img, char * o
   }
   
   //-- Calculate Text Size & Position
-  int infY    = winY + titH + pad;
-  int txtY    = infY + ((infH - txtH) / 2);
+  int infY    = winY + titH - (cPad - (pad * 3));
+  int txtY    = infY + ((infH - txtH) / 3);
   int imgY    = infY;
   //-- Calculate Button Size & Position
   int btnW    = winW / 2;
-  int btnY    = infY + infH + pad;
+  int btnY    = infY + infH - (cPad - (pad * 3));
   int btnX    = (agw() / 2) - (btnW / 2);
   //-- Initializing Canvas
   CANVAS alertbg;
@@ -1208,7 +1209,6 @@ void aw_alert(AWINDOWP parent, char * titlev, char * textv, char * img, char * o
     ag_roundgrad_ex(&alertbg, winX, winY, winW, titH, acfg_var.dlgtitlebg, acfg_var.dlgtitlebg_g, acfg_var.roundsz * agdp(), 1, 1, 0, 0);
   }
   
-  ag_textf(&alertbg, titW, titX + 1, titY + 1, title, acfg_var.dlgtitlebg_g, 1);
   ag_text(&alertbg, titW, titX, titY, title, acfg_var.dlgtitlefg, 1);
   
   //-- Draw Image
@@ -1218,7 +1218,6 @@ void aw_alert(AWINDOWP parent, char * titlev, char * textv, char * img, char * o
   }
   
   //-- Draw Text
-  ag_textf(&alertbg, txtW, txtX + 1, txtY + 1, text, acfg_var.dialogbg, 0);
   ag_text(&alertbg, txtW, txtX, txtY, text, acfg_var.dialogfg, 0);
   AWINDOWP hWin   = aw(&alertbg);
   acbutton(hWin, btnX, btnY, btnW, btnH, (ok_text == NULL ? acfg_var.text_ok : ok_text), 0, 5);
@@ -1256,23 +1255,24 @@ byte aw_confirm(AWINDOWP parent, char * titlev, char * textv, char * img, char *
   snprintf(title, 64, "%s", titlev);
   snprintf(text, 512, "%s", textv);
   int pad   = agdp() * 4;
+  int cPad   = agdp() * 12;
   int winW  = agw() - (pad * 2);
-  int txtW  = winW - (pad * 2);
-  int txtX  = pad * 2;
+  int txtW  = winW - (cPad * 3);
+  int txtX  = cPad * 2;
   int btnH  = agdp() * 20;
   int titW  = ag_txtwidth(title, 1);
-  int titH  = ag_fontheight(1) + (pad * 2);
+  int titH  = ag_fontheight(1) + (cPad * 2);
   PNGCANVASP winp = atheme("img.dialog");
   PNGCANVASP titp = atheme("img.dialog.titlebar");
   APNG9      winv;
   APNG9      titv;
   int vtitY = -1;
   int vpadB = -1;
-  int vimgX = pad * 2;
+  int vimgX = cPad * 2;
   
   if (titp != NULL) {
     if (apng9_calc(titp, &titv, 1)) {
-      int tmptitH = titH - (pad * 2);
+      int tmptitH = titH - (cPad * 2);
       titH        = tmptitH + (titv.t + titv.b);
       vtitY       = titv.t;
     }
@@ -1281,8 +1281,8 @@ byte aw_confirm(AWINDOWP parent, char * titlev, char * textv, char * img, char *
   if (winp != NULL) {
     if (apng9_calc(winp, &winv, 1)) {
       txtW = winW - (winv.l + winv.r);
-      txtX = pad  + (winv.l);
-      vimgX = pad  + (winv.l);
+      txtX = cPad + (agdp() * 2)  + (winv.l);
+      vimgX = cPad + (agdp() * 2) + (winv.l);
       vpadB = winv.b;
     }
   }
@@ -1322,14 +1322,14 @@ byte aw_confirm(AWINDOWP parent, char * titlev, char * textv, char * img, char *
   }
   
   //-- Calculate Text Size & Position
-  int infY    = winY + titH + pad;
-  int txtY    = infY + ((infH - txtH) / 2);
+  int infY    = winY + titH + (cPad - (pad * 4));
+  int txtY    = infY + ((infH - txtH) / 3);
   int imgY    = infY;
   //-- Calculate Button Size & Position
-  int btnW    = (txtW / 2) - (pad / 2);
-  int btnY    = infY + infH + pad;
+  int btnW    = (txtW / 2) - cPad;
+  int btnY    = infY + infH - (cPad - (pad * 4));
   int btnX    = txtX;
-  int btnX2   = txtX + (txtW / 2) + (pad / 2);
+  int btnX2   = btnX + (txtW / 3) + cPad;
   //-- Initializing Canvas
   CANVAS alertbg;
   ag_canvas(&alertbg, agw(), agh());
@@ -1346,7 +1346,6 @@ byte aw_confirm(AWINDOWP parent, char * titlev, char * textv, char * img, char *
     ag_roundgrad_ex(&alertbg, winX, winY, winW, titH, acfg_var.dlgtitlebg, acfg_var.dlgtitlebg_g, acfg_var.roundsz * agdp(), 1, 1, 0, 0);
   }
   
-  ag_textf(&alertbg, titW, titX + 1, titY + 1, title, acfg_var.dlgtitlebg_g, 1);
   ag_text(&alertbg, titW, titX, titY, title, acfg_var.dlgtitlefg, 1);
   
   //-- Draw Image
@@ -1356,7 +1355,6 @@ byte aw_confirm(AWINDOWP parent, char * titlev, char * textv, char * img, char *
   }
   
   //-- Draw Text
-  ag_textf(&alertbg, txtW, txtX + 1, txtY + 1, text, acfg_var.dialogbg, 0);
   ag_text(&alertbg, txtW, txtX, txtY, text, acfg_var.dialogfg, 0);
   AWINDOWP hWin   = aw(&alertbg);
   acbutton(hWin, btnX, btnY, btnW, btnH, (yes_text == NULL ? acfg_var.text_yes : yes_text), 0, 6);
@@ -1867,29 +1865,17 @@ void aw_about_dialog(AWINDOWP parent) {
   snprintf(unchkmsg, 512,
            "<b>%s %s</b>\n"
            "%s\n\n"
-           "  <#selectbg_g>Build <u>%s</u></#> (<b>%s</b>)\n"
-           "  %s\n"
-           "  %s\n"
-           "  <u>%s</u>\n\n"
-           "ROM Name:\n  <b><#selectbg_g>%s</#></b>\n"
-           "ROM Version:\n  <b><#selectbg_g>%s</#></b>\n"
-           "ROM Author:\n  <b><#selectbg_g>%s</#></b>\n"
-           "Device:\n  <b><#selectbg_g>%s</#></b>\n"
-           "Update:\n  <b><#selectbg_g>%s</#></b>"
+           "<#selectbg_g>Build %s</#> (<b>%s</b>)\n"
+           "%s\n"
+           "<u>%s</u>\n\n"
            ,
            AROMA_NAME,
            AROMA_VERSION,
            AROMA_COPY,
            AROMA_BUILD,
            AROMA_BUILD_CN,
-           AROMA_BUILD_L,
            AROMA_BUILD_A,
-           AROMA_BUILD_URL,
-           acfg()->rom_name,
-           acfg()->rom_version,
-           acfg()->rom_author,
-           acfg()->rom_device,
-           acfg()->rom_date
+           AROMA_BUILD_URL
           );
   aw_alert(parent,
            AROMA_NAME " " AROMA_VERSION,

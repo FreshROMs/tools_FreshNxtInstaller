@@ -48,8 +48,10 @@ static byte                            ag_16strd;
 static int                             ag_16w;
 static PNGFONTS                        AG_SMALL_FONT;  //-- Fonts Variables
 static PNGFONTS                        AG_BIG_FONT;
+static PNGFONTS                        AG_HEADER_FONT;
 static byte                            AG_SMALL_FONT_FT = 0; //-- Small Font is Freetype
 static byte                            AG_BIG_FONT_FT = 0;  //-- Big Font is Freetype
+static byte                            AG_HEADER_FONT_FT = 0;  //-- Header Font is Freetype
 static int                             ag_dp;          //-- Device Pixel
 static byte                            agclp;
 static byte                            ag_font_onload = 0;
@@ -1971,14 +1973,15 @@ byte ag_fontready(byte isbig) {
   if (ag_font_onload) {
     return 0;
   }
-  
-  byte isfreetype = isbig ? AG_BIG_FONT_FT : AG_SMALL_FONT_FT;
-  
+
+  byte isfreetype = ag_isfreetype(isbig);
+
   if (isfreetype) {
     return aft_fontready(isbig);
   }
   
-  PNGFONTS * fnt = isbig ? &AG_BIG_FONT : &AG_SMALL_FONT;
+  PNGFONTS * fnt = ag_getfont(isbig);
+
   return fnt->loaded;
 }
 int ag_bulletwidth(byte isbig) {
@@ -2068,6 +2071,35 @@ byte ag_loadbigfont(char * fontname, byte is_freetype, char * relativeto) {
   ag_font_onload = 0;
   return r;
 }
+//-- Load Header Font
+byte ag_loadheaderfont(char * fontname, byte is_freetype, char * relativeto) {
+  while (ag_oncopybusy) {
+    usleep(50);
+  }
+  
+  ag_font_onload = 1;
+  byte r = 0;
+  
+  if ((is_freetype != 0) && (relativeto != NULL)) {
+    AG_HEADER_FONT_FT = 0;
+    r = aft_load(fontname, is_freetype + 1, 2, relativeto);
+    
+    if (r) {
+      AG_HEADER_FONT_FT = 1;
+    }
+  }
+  else {
+    apng_closefont(&AG_HEADER_FONT);
+    r = apng_loadfont(&AG_HEADER_FONT, fontname);
+    
+    if (r) {
+      AG_HEADER_FONT_FT = 0;
+    }
+  }
+  
+  ag_font_onload = 0;
+  return r;
+}
 //-- Load Big Font
 byte ag_loadfixedfont(char * fontname, byte is_freetype, char * relativeto) {
   while (ag_oncopybusy) {
@@ -2086,6 +2118,7 @@ byte ag_loadfixedfont(char * fontname, byte is_freetype, char * relativeto) {
 }
 void ag_closefonts() {
   apng_closefont(&AG_BIG_FONT);
+  apng_closefont(&AG_HEADER_FONT);
   apng_closefont(&AG_SMALL_FONT);
 }
 
@@ -2099,7 +2132,7 @@ byte ag_drawchar_ex(CANVAS * _b, int x, int y, int c, color cl, byte isbig, byte
     _b = &ag_c;
   }
   
-  byte isfreetype = isbig ? AG_BIG_FONT_FT : AG_SMALL_FONT_FT;
+  byte isfreetype = ag_isfreetype(isbig);
   
   if (isfreetype) {
     return aft_drawfont(_b, isbig, c, x, y, cl, underline, bold, italic, 1);
@@ -2121,7 +2154,8 @@ byte ag_drawchar_ex(CANVAS * _b, int x, int y, int c, color cl, byte isbig, byte
     return 0;
   }
   
-  PNGFONTS * fnt = isbig ? &AG_BIG_FONT : &AG_SMALL_FONT;
+  PNGFONTS * fnt = ag_getfont(isbig);
+
   return apng_drawfont(_b, fnt, cd, x, y, cl, underline, bold);
 }
 byte ag_drawchar(CANVAS * _b, int x, int y, int c, color cl, byte isbig) {
@@ -2132,14 +2166,15 @@ byte ag_fontwidth(int c, byte isbig) {
   if (!ag_fontready(isbig)) {
     return 0;
   }
-  
-  byte isfreetype = isbig ? AG_BIG_FONT_FT : AG_SMALL_FONT_FT;
+
+  byte isfreetype = ag_isfreetype(isbig);
   
   if (isfreetype) {
     return aft_fontwidth(c, isbig);
   }
   
-  PNGFONTS * fnt = isbig ? &AG_BIG_FONT : &AG_SMALL_FONT;
+  PNGFONTS * fnt = ag_getfont(isbig);
+
   int cd = ((int) c) - 32;
   
   if (cd < 0) {
@@ -2160,9 +2195,9 @@ int ag_fontwidth_kerning(int c, int p, byte isbig) {
   if (!ag_fontready(isbig)) {
     return 0;
   }
-  
-  byte isfreetype = isbig ? AG_BIG_FONT_FT : AG_SMALL_FONT_FT;
-  
+
+  byte isfreetype = ag_isfreetype(isbig);
+
   if (isfreetype) {
     return aft_fontwidth(c, isbig) + aft_kern(c, p, isbig);
   }
@@ -2170,21 +2205,44 @@ int ag_fontwidth_kerning(int c, int p, byte isbig) {
   return ag_fontwidth(c, isbig);
 }
 byte ag_isfreetype(byte isbig) {
-  return (isbig ? AG_BIG_FONT_FT : AG_SMALL_FONT_FT);
+  switch (isbig) {
+    case 2:
+      return AG_HEADER_FONT_FT;
+      break;
+    case 1:
+      return AG_BIG_FONT_FT;
+      break;
+    case 0:
+      return AG_SMALL_FONT_FT;
+      break;
+  }
+}
+PNGFONTS * ag_getfont(byte isbig) {
+  switch (isbig) {
+    case 2:
+      return &AG_HEADER_FONT;
+      break;
+    case 1:
+      return &AG_BIG_FONT;
+      break;
+    case 0:
+      return &AG_SMALL_FONT;
+      break;
+  }
 }
 int ag_tabwidth(int x, byte isbig) {
   if (!ag_fontready(isbig)) {
     return 0;
   }
   
-  byte isfreetype = isbig ? AG_BIG_FONT_FT : AG_SMALL_FONT_FT;
+  byte isfreetype = ag_isfreetype(isbig);
   
   if (isfreetype) {
     int spacesz = aft_spacewidth(isbig) * 8;
     return (spacesz - (x % spacesz));
   }
   
-  PNGFONTS * fnt = isbig ? &AG_BIG_FONT : &AG_SMALL_FONT;
+  PNGFONTS * fnt = ag_getfont(isbig);
   
   if (!fnt->loaded) {
     return 0;
@@ -2447,7 +2505,7 @@ int ag_txtwidth(const char * ss, byte isbig) {
   int off;
   int move = 0;
   int p = 0;
-  byte isfreetype = isbig ? AG_BIG_FONT_FT : AG_SMALL_FONT_FT;
+  byte isfreetype = ag_isfreetype(isbig);
   char * sams   = alang_ams(ss);
   const char * s = sams;
   
@@ -2478,13 +2536,14 @@ int ag_fontheight(byte isbig) {
     return 0;
   }
   
-  byte isfreetype = isbig ? AG_BIG_FONT_FT : AG_SMALL_FONT_FT;
+  byte isfreetype = ag_isfreetype(isbig);
   
   if (isfreetype) {
     return aft_fontheight(isbig);
   }
   
-  PNGFONTS * fnt = isbig ? &AG_BIG_FONT : &AG_SMALL_FONT;
+  PNGFONTS * fnt = ag_getfont(isbig);
+
   return fnt->fh;
 }
 //-- Draw Text
@@ -2525,7 +2584,7 @@ int ag_txt_getline(const char * s, int maxwidth_ori, byte isbig, byte * ischange
   int  w = 0; //-- Current Width
   int  p = -1; //-- Previous Space Pos
   int  maxwidth = maxwidth_ori - indent[0];
-  byte isfreetype = isbig ? AG_BIG_FONT_FT : AG_SMALL_FONT_FT;
+  byte isfreetype = ag_isfreetype(isbig);
   int  indentsz = (ag_fontwidth(' ', isbig) * 2) + ag_bulletwidth(isbig); // +ag_fontwidth(isfreetype?0x2022:0xa9,isbig);
   byte fns = 0; //-- No Space Exists
   int  move = 0;
@@ -2847,7 +2906,7 @@ byte ag_text_exl(CANVAS * _b, int maxwidth, int x, int y, const char * ss, color
     maxwidth = fheight * 2;
   }
   
-  byte isfreetype = isbig ? AG_BIG_FONT_FT : AG_SMALL_FONT_FT;
+  byte isfreetype = ag_isfreetype(isbig);
   char * sams   = alang_ams(ss);
   const char * s = sams;
   char tb[8];         //-- Escape Data
@@ -3172,7 +3231,7 @@ void ag_takescreenshoot() {
   char filename[256];
   
   do {
-    snprintf(filename, 256, "%s.screenshoot-%i.bmp", getArgv(1), ag_takescreenshoot_n++);
+    snprintf(filename, 256, "%s.screenshot-%i.bmp", getArgv(1), ag_takescreenshoot_n++);
   }
   while (file_exists(filename));
   
