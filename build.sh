@@ -8,9 +8,8 @@
 #                              
 # =========================================
 #  
-#  Minty - The kernel build script for Mint
 #  The Fresh Project
-#  Copyright (C) 2019-2021 TenSeventy7
+#  Copyright (C) 2019-2022 TenSeventy7
 #  
 #  This program is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -31,12 +30,13 @@
 # Utility directories
 ORIGIN_DIR=$(pwd)
 CURRENT_BUILD_USER=$(whoami)
-FRSH_DIR=/home/tenseventy7/Git/AROMA-Installer
+FRSH_DIR=/home/Vince/Android/Fresh/Sources/AROMA-Installer
+#FRSH_DIR=/mnt/c/Users/Vince/Android/Fresh/Repositories/AROMA-Installer
 
-MAJOR=12
+MAJOR=13
 MINOR=0
-PATCH=1
-CODENAME="Viola Alpha"
+PATCH=0
+CODENAME="Korrina Beta"
 
 # Set build user if building locally
 if [[ ${CURRENT_BUILD_USER} == "tenseventy7" ]]; then
@@ -49,7 +49,7 @@ BUILD_PREF_COMPILER='gcc'
 BUILD_PREF_COMPILER_VERSION='linaro'
 
 # Local toolchain directory
-TOOLCHAIN=$HOME/toolchains/linaro_last
+TOOLCHAIN=$HOME/Android/toolchains/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu
 
 # External toolchain directory
 TOOLCHAIN_EXT=$(pwd)/toolchain
@@ -62,11 +62,6 @@ exit_script() {
 	kill -INT $$
 }
 
-download_toolchain() {
-	git clone https://github.com/TenSeventy7/exynos9610_toolchains_fresh.git ${TOOLCHAIN_EXT} --single-branch -b ${BUILD_PREF_COMPILER_VERSION} --depth 1 2>&1 | sed 's/^/     /'
-	verify_toolchain
-}
-
 verify_toolchain() {
 	sleep 2
 	script_echo " "
@@ -75,20 +70,10 @@ verify_toolchain() {
 		script_echo "I: Toolchain found at default location"
 		export PATH="${TOOLCHAIN}/bin:$PATH"
 		export LD_LIBRARY_PATH="${TOOLCHAIN}/lib:$LD_LIBRARY_PATH"
-	elif [[ -d "${TOOLCHAIN_EXT}" ]]; then
-
-		script_echo "I: Toolchain found at repository root"
-
-		cd ${TOOLCHAIN_EXT}
-		git pull
-		cd ${ORIGIN_DIR}
-
-		export PATH="${TOOLCHAIN_EXT}/bin:$PATH"
-		export LD_LIBRARY_PATH="${TOOLCHAIN_EXT}/lib:$LD_LIBRARY_PATH"
 	else
-		script_echo "I: Toolchain not found at default location or repository root"
-		script_echo "   Downloading recommended toolchain at ${TOOLCHAIN_EXT}..."
-		download_toolchain
+		script_echo "I: Toolchain not found"
+		script_echo "   Exiting..."
+		kill -INT $$
 	fi
 
 	export CROSS_COMPILE=aarch64-linux-gnu-
