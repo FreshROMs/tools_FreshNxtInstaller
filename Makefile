@@ -105,7 +105,7 @@ all: bin/aroma_installer-$(ARCH).zip
 bin/aroma_installer-$(ARCH).zip: bin/aroma_installer-$(ARCH)
 	cp -RT assets tmp-zip
 	cp $(@:.zip=) tmp-zip/META-INF/com/google/android/update-binary
-	cp assets/META-INF/com/google/android/installer-update-binary tmp-zip/META-INF/com/google/android/installer-update-binary
+	cp assets/META-INF/com/google/android/install-wizard-binary tmp-zip/META-INF/com/google/android/install-wizard-binary
 	7z a $@ ./tmp-zip/*
 
 bin/aroma_installer-$(ARCH): $(OBJS)
@@ -115,6 +115,6 @@ bin/aroma_installer-$(ARCH): $(OBJS)
 clean:
 	$(RM) $(OBJS)
 	$(RM) bin/aroma_installer-$(ARCH) bin/aroma_installer-$(ARCH).zip
-	$(RM) -r tmp-zip *.i *.s
+	$(RM) -r tmp-zip *.i *.s *.bc
 
 .PHONY: clean
