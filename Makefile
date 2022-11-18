@@ -6,10 +6,10 @@ USE_NEON := 0
 
 
 # Version info
-AROMA_NAME    := Fresh Installer
-AROMA_VERSION := 12.0.0.0
+AROMA_NAME    := Fresh Install Wizard
+AROMA_VERSION := 13.0.1.0
 AROMA_BUILD   := $(shell date +%y%m%d%H%M)
-AROMA_CN      := Viola Alpha
+AROMA_CN      := Korrina Beta
 
 
 CC := $(CROSS_COMPILE)gcc

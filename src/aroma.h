@@ -77,20 +77,20 @@
 //
 #define AROMA_BUILD_A     "<kamusta@tenseventyseven.cf>"
 #define AROMA_BUILD_URL   "https://fresh.tenseventyseven.cf/"
-#define AROMA_COPY        "(C) 2021 TenSeventy7 for the Fresh Project\n(C) 2013-2017 amarullz xda-developers"
-#define AROMA_COPY_NS1    "(C) 2021 TenSeventy7 for the Fresh Project and"
+#define AROMA_COPY        "(C) 2022 TenSeventy7 for the Fresh Project\n(C) 2013-2017 amarullz xda-developers"
+#define AROMA_COPY_NS1    "(C) 2022 TenSeventy7 for the Fresh Project and"
 #define AROMA_COPY_NS2    "(C) 2013-2017 amarullz xda-developers"
 
 //-- Temporary Dir - Move from /tmp/aroma-data to /tmp/aroma symlink to /tmp/aroma-data for backward compatibility
 #define AROMA_SYSTMP      "/tmp"
 //#define AROMA_SYSTMP      "/data"
-#define AROMA_TMP         AROMA_SYSTMP "/aroma"
-#define AROMA_TMP_S       AROMA_SYSTMP "/installer/data"
+#define AROMA_TMP         AROMA_SYSTMP "/install-wizard"
+#define AROMA_TMP_S       AROMA_SYSTMP "/install-wizard-data"
 
-#define AROMA_DIR         "META-INF/com/google/android/installer"
+#define AROMA_DIR         "META-INF/com/google/android/install-wizard"
 #define AROMA_UPDATESCRPT "META-INF/com/google/android/updater-script"
-#define AROMA_CFG         "META-INF/com/google/android/installer-config"
-#define AROMA_ORIB        "META-INF/com/google/android/installer-update-binary"
+#define AROMA_CFG         "META-INF/com/google/android/install-wizard-config"
+#define AROMA_ORIB        "META-INF/com/google/android/install-wizard-binary"
 #define AROMA_FRAMEBUFFER "/dev/graphics/fb0"
 #define AROMA_INSTALL_LOG (AROMA_TMP "/.install.log")
 #define AROMA_INSTALL_TXT (AROMA_TMP "/.install.txt")
