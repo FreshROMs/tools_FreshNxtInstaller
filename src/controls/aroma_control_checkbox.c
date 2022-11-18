@@ -160,7 +160,6 @@ void accheck_redrawitem(ACONTROLP ctl, int index) {
   
   if (p->isTitle) {
     ag_roundgrad(c, 0, p->y, d->clientWidth, p->h, acfg()->titlebg, acfg()->titlebg_g, 0);
-    ag_textf(c, d->clientTextW + (agdp() * 14), (d->clientTextX - (agdp() * 14)) + 1, p->y + p->ty, p->title, acfg()->titlebg_g, 0);
     ag_text(c, d->clientTextW + (agdp() * 14), d->clientTextX - (agdp() * 14), p->y + p->ty - 1, p->title, acfg()->titlefg, 0);
   }
   else {
@@ -190,17 +189,7 @@ void accheck_redrawitem(ACONTROLP ctl, int index) {
       isselectcolor = 1;
     }
     
-    if (index < d->itemn - 1) {
-      //-- Not Last... Add Separator
-      color sepcl = ag_calculatealpha(acfg()->textbg, acfg()->textfg_gray, 80);
-      ag_rect(c, 0, p->y + p->h - 1, d->clientWidth, 1, sepcl);
-    }
-    
     //-- Now Draw The Text
-    if (isselectcolor) {
-      ag_textf(c, d->clientTextW, d->clientTextX, p->y + p->ty, p->title, acfg()->selectbg_g, 0);
-      ag_textf(c, d->clientTextW, d->clientTextX, p->y + p->dy, p->desc, acfg()->selectbg_g, 0);
-    }
     
     ag_text(c, d->clientTextW, d->clientTextX - 1, p->y + p->ty - 1, p->title, txtcolor, 0);
     ag_text(c, d->clientTextW, d->clientTextX - 1, p->y + p->dy - 1, p->desc, graycolor, 0);
@@ -311,8 +300,8 @@ byte accheck_add(ACONTROLP ctl, char * title, char * desc, byte checked) {
   snprintf(newip->desc, 128, "%s", desc);
   newip->th       = ag_txtheight(d->clientTextW, newip->title, 0);
   newip->dh       = ag_txtheight(d->clientTextW, newip->desc, 0);
-  newip->ty       = agdp() * 5;
-  newip->dy       = (agdp() * 5) + newip->th;
+  newip->ty       = agdp() * 6;
+  newip->dy       = (agdp() * 6) + newip->th;
   newip->h        = (agdp() * 10) + newip->dh + newip->th;
   
   if (newip->h < (agdp() * 22)) {
@@ -763,7 +752,7 @@ ACONTROLP accheck(
   int minpadding = 4; // max(acfg()->roundsz,4);
   //-- Initializing Client Size
   d->clientWidth  = w - (agdp() * minpadding * 2);
-  d->clientTextW  = d->clientWidth - (agdp() * 18) - (agdp() * acfg()->btnroundsz * 2);
+  d->clientTextW  = d->clientWidth - (agdp() * 18) - (agdp() * acfg()->btnroundsz * 3);
   d->clientTextX  = (agdp() * 18) + (agdp() * acfg()->btnroundsz * 2);
   d->client.data = NULL;
   //-- Draw Control

@@ -1255,28 +1255,18 @@ byte aw_confirm(AWINDOWP parent, char * titlev, char * textv, char * img, char *
   snprintf(title, 64, "%s", titlev);
   snprintf(text, 512, "%s", textv);
   int pad   = agdp() * 4;
-  int cPad   = agdp() * 12;
   int winW  = agw() - (pad * 2);
-  int txtW  = winW - (cPad * 3);
-  int txtX  = cPad * 2;
+  int txtW  = winW - (pad * 2);
+  int txtX  = pad * 2;
   int btnH  = agdp() * 20;
   int titW  = ag_txtwidth(title, 1);
-  int titH  = ag_fontheight(1) + (cPad * 2);
+  int titH  = ag_fontheight(1) + (pad * 2);
   PNGCANVASP winp = atheme("img.dialog");
-  PNGCANVASP titp = atheme("img.dialog.titlebar");
   APNG9      winv;
   APNG9      titv;
   int vtitY = -1;
   int vpadB = -1;
-  int vimgX = cPad * 2;
-  
-  if (titp != NULL) {
-    if (apng9_calc(titp, &titv, 1)) {
-      int tmptitH = titH - (cPad * 2);
-      titH        = tmptitH + (titv.t + titv.b);
-      vtitY       = titv.t;
-    }
-  }
+  int vimgX = pad * 2;
   
   if (winp != NULL) {
     if (apng9_calc(winp, &winv, 1)) {
@@ -1322,14 +1312,14 @@ byte aw_confirm(AWINDOWP parent, char * titlev, char * textv, char * img, char *
   }
   
   //-- Calculate Text Size & Position
-  int infY    = winY + titH + (cPad - (pad * 4));
-  int txtY    = infY + ((infH - txtH) / 3);
+  int infY    = winY + titH + pad;
+  int txtY    = infY + ((infH - txtH) / 2);
   int imgY    = infY;
   //-- Calculate Button Size & Position
-  int btnW    = (txtW / 2) - cPad;
-  int btnY    = infY + infH - (cPad - (pad * 4));
+  int btnW    = (txtW / 2) - (pad / 2);
+  int btnY    = infY + infH + pad;
   int btnX    = txtX;
-  int btnX2   = btnX + (txtW / 3) + cPad;
+  int btnX2   = txtX + (txtW / 2) + (pad / 2);
   //-- Initializing Canvas
   CANVAS alertbg;
   ag_canvas(&alertbg, agw(), agh());
@@ -1339,11 +1329,6 @@ byte aw_confirm(AWINDOWP parent, char * titlev, char * textv, char * img, char *
   if (!atheme_draw("img.dialog", &alertbg, winX - 1, winY - 1, winW + 2, winH + 2)) {
     ag_roundgrad(&alertbg, winX - 1, winY - 1, winW + 2, winH + 2, acfg_var.border, acfg_var.border_g, (acfg_var.roundsz * agdp()) + 1);
     ag_roundgrad(&alertbg, winX, winY, winW, winH, acfg_var.dialogbg, acfg_var.dialogbg_g, acfg_var.roundsz * agdp());
-  }
-  
-  //-- Draw Title
-  if (!atheme_draw("img.dialog.titlebar", &alertbg, winX, winY, winW, titH)) {
-    ag_roundgrad_ex(&alertbg, winX, winY, winW, titH, acfg_var.dlgtitlebg, acfg_var.dlgtitlebg_g, acfg_var.roundsz * agdp(), 1, 1, 0, 0);
   }
   
   ag_text(&alertbg, titW, titX, titY, title, acfg_var.dlgtitlefg, 1);

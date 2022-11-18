@@ -151,7 +151,7 @@ void actext_ondraw(void * x) {
   ACTEXTDP  d  = (ACTEXTDP) ctl->d;
   CANVAS  * pc = &ctl->win->c;
   //-- Init Device Pixel Size
-  int minpadding = 4; //max(acfg()->roundsz,4);
+  int minpadding = 8; //max(acfg()->roundsz,4);
   int agdp3 = (agdp() * minpadding);
   int agdp6 = (agdp() * (minpadding * 2));
   int agdpX = agdp6;
@@ -323,7 +323,7 @@ void actext_rebuild(
   byte toBottom
 ) {
   ACTEXTDP  d  = (ACTEXTDP) ctl->d;
-  int minpadding = 4; // max(acfg()->roundsz,4);
+  int minpadding = 8; // max(acfg()->roundsz,4);
   //-- Cleanup
   ag_ccanvas(&d->control);
   ag_ccanvas(&d->control_focused);
@@ -433,7 +433,7 @@ ACONTROLP actext(
   }
   
   //-- Initializing Client Area
-  int minpadding = 4; //max(acfg()->roundsz,4);
+  int minpadding = 8; //max(acfg()->roundsz,4);
   int cw            = w - (agdp() * (minpadding * 2));
   int ch            = 0;
   

@@ -915,7 +915,7 @@ ACONTROLP acchkopt(
   int minpadding = 4; // max(acfg()->roundsz,4);
   //-- Initializing Client Size
   d->clientWidth  = w - (agdp() * minpadding * 2);
-  d->clientTextW  = d->clientWidth - (agdp() * 18) - (agdp() * acfg()->btnroundsz * 2);
+  d->clientTextW  = d->clientWidth - (agdp() * 18) - (agdp() * acfg()->btnroundsz * 3);
   d->clientTextX  = (agdp() * 18) + (agdp() * acfg()->btnroundsz * 2);
   d->client.data = NULL;
   //-- Draw Control

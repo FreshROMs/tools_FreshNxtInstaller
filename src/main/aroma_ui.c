@@ -383,11 +383,6 @@ void aui_redraw() {
     ag_roundgrad(&aui_bg, 0, 0, agw(), agh(), acfg()->winbg, acfg()->winbg_g, acfg()->winroundsz * agdp() + 2);
   }
   
-  //-- Titlebar
-  if (!atheme_id_draw(1, &aui_bg, 0, 0, agw(), capH)) {
-    ag_roundgrad_ex(&aui_bg, 0, 0, agw(), capH, acfg()->titlebg, acfg()->titlebg_g, (acfg()->winroundsz * agdp()) - 2, 1, 1, 0, 0);
-  }
-  
   aui_isbgredraw = 0;
 }
 
@@ -396,12 +391,12 @@ void aui_redraw() {
 //*
 void aui_setbg(char * titlev) {
   char title[64];
-  snprintf(title, 64, "%s", titlev);
+  snprintf(title, 64, "<@center>%s</@>", titlev);
   aui_redraw();
-  int elmP  = agdp() * 56;
+  int elmP  = agdp() * 58;
   int titW  = ag_txtwidth(title, 2);
   ag_draw(&aui_win_bg, &aui_bg, 0, 0);
-  ag_text(&aui_win_bg, titW, 64, elmP, title, acfg()->titlefg, 2);
+  ag_text(&aui_win_bg, titW, (agw() / 2) - (titW / 2), elmP, title, acfg()->titlefg, 1);
 }
 
 //*
@@ -1785,12 +1780,11 @@ Value * AROMA_VIEWBOX(const char * name, State * state, int argc, Expr * argv[])
   //-- Init Drawing Data
   int pad         = agdp() * 4;
   int chkW        = agw() - (pad * 2);
-  int bntH        = agdp() * 20;
+  int bntH        = agdp() * 28;
   int chkH        = agh() - ( aui_minY + bntH + (pad * 4));
   int chkY        = aui_minY + pad;
   int btnY        = chkY + chkH + (pad * 2);
-  //-- Draw Navigation Bar
-  aui_drawnav(&aui_win_bg, 0, btnY - pad, agw(), bntH + (pad * 2));
+
   //-- Load Icon
   PNGCANVAS ap;
   byte imgE       = 0;
@@ -1799,7 +1793,7 @@ Value * AROMA_VIEWBOX(const char * name, State * state, int argc, Expr * argv[])
   int  imgH       = 0;
   int  tifX       = pad + 38;
   int  imgX       = pad + 38;
-  int  tifY       = chkY - 24;
+  int  tifY       = agdp() * 72;
   int  imgY       = agdp() * 34;
   
   if (apng_load(&ap, args[2])) {
@@ -1809,20 +1803,20 @@ Value * AROMA_VIEWBOX(const char * name, State * state, int argc, Expr * argv[])
     imgA  = imgW;
   }
   
-  int txtH        = ag_txtheight(chkW - (pad + imgA), text, 0);
+  int txtW        = chkW - (pad * 4);
+  int txtH        = ag_txtheight(txtW, text, 1);
   
   if (imgE) {
     if (txtH < imgH) {
       int imgN = imgH - (agdp() * 8);
-      tifY += (imgN - txtH) / 2;
     }
     
-    apng_draw_ex(&aui_win_bg, &ap, imgX, imgY, 0, 0, imgW, imgH);
+    apng_draw_ex(&aui_win_bg, &ap, (agw() / 2) - (imgW / 2), imgY, 0, 0, imgW, imgH);
     apng_close(&ap);
   }
   
   //-- Draw Text
-  ag_text(&aui_win_bg, chkW - ((pad * 2) + imgA), tifX, tifY, text, acfg()->winfg, 0);
+  ag_text(&aui_win_bg, txtW, (agw() / 2) - (txtW / 2), tifY, text, acfg()->titlefg, 0);
   
   //-- Draw Separator
   if (!isplain) {
@@ -1832,9 +1826,6 @@ Value * AROMA_VIEWBOX(const char * name, State * state, int argc, Expr * argv[])
     ag_rect(&aui_win_bg, tifX, tifY + pad + txtH + 1, chkW - ((pad * 2) + imgA), 1, sepcb);
   }
   
-  //-- Resize Checkbox Size & Pos
-  chkY += txtH;
-  chkH -= txtH;
   //-- Create Window
   AWINDOWP hWin   = aw(&aui_win_bg);
   ACONTROLP txtcb = NULL;
@@ -1988,7 +1979,7 @@ Value * AROMA_TEXTBOX(const char * name, State * state, int argc, Expr * argv[])
   //-- Init Background
   aui_setbg(args[0]);
   char text[256];
-  snprintf(text, 256, "%s", args[1]);
+  snprintf(text, 256, "<@center>%s</@>", args[1]);
   //-- Unchecked Alert Message
   char unchkmsg[256];
   
@@ -2002,12 +1993,11 @@ Value * AROMA_TEXTBOX(const char * name, State * state, int argc, Expr * argv[])
   //-- Drawing Data
   int pad         = agdp() * 4;
   int chkW        = agw() - (pad * 2);
-  int bntH        = agdp() * 20;
+  int bntH        = agdp() * 32;
   int chkH        = agh() - ( aui_minY + bntH + (pad * 4));
-  int chkY        = aui_minY + pad;
-  int btnY        = chkY + chkH + (pad * 2);
-  //-- Draw Navigation Bar
-  aui_drawnav(&aui_win_bg, 0, btnY - pad, agw(), bntH + (pad * 2));
+  int chkY        = aui_minY + (pad * 4);
+  int btnY        = chkY + chkH;
+
   //-- Load Icon
   PNGCANVAS ap;
   byte imgE       = 0;
@@ -2016,7 +2006,7 @@ Value * AROMA_TEXTBOX(const char * name, State * state, int argc, Expr * argv[])
   int  imgH       = 0;
   int  tifX       = pad + 38;
   int  imgX       = pad + 38;
-  int  tifY       = chkY - 24;
+  int  tifY       = agdp() * 72;
   int  imgY       = agdp() * 34;
   
   if (apng_load(&ap, args[2])) {
@@ -2026,24 +2016,20 @@ Value * AROMA_TEXTBOX(const char * name, State * state, int argc, Expr * argv[])
     imgA  = imgW;
   }
   
-  int txtH        = ag_txtheight(chkW - (pad + imgA), text, 0);
+  int txtW        = chkW - (pad * 4);
+  int txtH        = ag_txtheight(txtW, text, 1);
   
   if (imgE) {
     if (txtH < imgH) {
       int imgN = imgH - (agdp() * 8);
-      tifY += (imgN - txtH) / 2;
     }
     
-    apng_draw_ex(&aui_win_bg, &ap, imgX, imgY, 0, 0, imgW, imgH);
+    apng_draw_ex(&aui_win_bg, &ap, (agw() / 2) - (imgW / 2), imgY, 0, 0, imgW, imgH);
     apng_close(&ap);
   }
   
   //-- Draw Text
-  ag_text(&aui_win_bg, chkW - ((pad * 2) + imgA), tifX, tifY, text, acfg()->winfg, 0);
-  //-- Resize Checkbox Size & Pos
-  chkY += txtH;
-  chkH -= txtH;
-  //-- Create Window
+  ag_text(&aui_win_bg, txtW, (agw() / 2) - (txtW / 2), tifY, text, acfg()->titlefg, 0);
   AWINDOWP hWin   = aw(&aui_win_bg);
   //-- Create Controls
   ACONTROLP txtbox;
@@ -2174,16 +2160,15 @@ Value * AROMA_CHECKOPT(const char * name, State * state, int argc, Expr * argv[]
   char path[256];
   char text[256];
   snprintf(path, 256, "%s/%s", AROMA_TMP, args[3]);
-  snprintf(text, 256, "%s", args[1]);
+  snprintf(text, 256, "<@center>%s</@>", args[1]);
   //-- Drawing Data
   int pad         = agdp() * 4;
   int chkW        = agw() - (pad * 2);
-  int bntH        = agdp() * 20;
+  int bntH        = agdp() * 32;
   int chkH        = agh() - ( aui_minY + bntH + (pad * 4));
-  int chkY        = aui_minY + pad;
-  int btnY        = chkY + chkH + (pad * 2);
-  //-- Draw Navigation Bar
-  aui_drawnav(&aui_win_bg, 0, btnY - pad, agw(), bntH + (pad * 2));
+  int chkY        = aui_minY + (pad * 4);
+  int btnY        = chkY + chkH;
+
   //-- Load Icon
   PNGCANVAS ap;
   byte imgE       = 0;
@@ -2192,7 +2177,7 @@ Value * AROMA_CHECKOPT(const char * name, State * state, int argc, Expr * argv[]
   int  imgH       = 0;
   int  tifX       = pad + 38;
   int  imgX       = pad + 38;
-  int  tifY       = chkY - 24;
+  int  tifY       = agdp() * 72;
   int  imgY       = agdp() * 34;
   
   if (apng_load(&ap, args[2])) {
@@ -2202,23 +2187,20 @@ Value * AROMA_CHECKOPT(const char * name, State * state, int argc, Expr * argv[]
     imgA  = imgW;
   }
   
-  int txtH        = ag_txtheight(chkW - (pad + imgA), text, 0);
+  int txtW        = chkW - (pad * 4);
+  int txtH        = ag_txtheight(txtW, text, 1);
   
   if (imgE) {
     if (txtH < imgH) {
       int imgN = imgH - (agdp() * 8);
-      tifY += (imgN - txtH) / 2;
     }
     
-    apng_draw_ex(&aui_win_bg, &ap, imgX, imgY, 0, 0, imgW, imgH);
+    apng_draw_ex(&aui_win_bg, &ap, (agw() / 2) - (imgW / 2), imgY, 0, 0, imgW, imgH);
     apng_close(&ap);
   }
   
   //-- Draw Text
-  ag_text(&aui_win_bg, chkW - ((pad * 2) + imgA), tifX, tifY, text, acfg()->winfg, 0);
-  //-- Resize Checkbox Size & Pos
-  chkY += txtH;
-  chkH -= txtH;
+  ag_text(&aui_win_bg, txtW, (agw() / 2) - (txtW / 2), tifY, text, acfg()->titlefg, 0);
   //-- Create Window
   AWINDOWP hWin   = aw(&aui_win_bg);
   //-- Check Box
@@ -2399,16 +2381,15 @@ Value * AROMA_CHECKBOX(const char * name, State * state, int argc, Expr * argv[]
   char path[256];
   char text[256];
   snprintf(path, 256, "%s/%s", AROMA_TMP, args[3]);
-  snprintf(text, 256, "%s", args[1]);
+  snprintf(text, 256, "<@center>%s</@>", args[1]);
   //-- Drawing Data
   int pad         = agdp() * 4;
   int chkW        = agw() - (pad * 2);
-  int bntH        = agdp() * 20;
+  int bntH        = agdp() * 32;
   int chkH        = agh() - ( aui_minY + bntH + (pad * 4));
-  int chkY        = aui_minY + pad;
-  int btnY        = chkY + chkH + (pad * 2);
-  //-- Draw Navigation Bar
-  aui_drawnav(&aui_win_bg, 0, btnY - pad, agw(), bntH + (pad * 2));
+  int chkY        = aui_minY + (pad * 4);
+  int btnY        = chkY + chkH;
+
   //-- Load Icon
   PNGCANVAS ap;
   byte imgE       = 0;
@@ -2417,7 +2398,7 @@ Value * AROMA_CHECKBOX(const char * name, State * state, int argc, Expr * argv[]
   int  imgH       = 0;
   int  tifX       = pad + 38;
   int  imgX       = pad + 38;
-  int  tifY       = chkY - 24;
+  int  tifY       = agdp() * 72;
   int  imgY       = agdp() * 34;
   
   if (apng_load(&ap, args[2])) {
@@ -2427,23 +2408,20 @@ Value * AROMA_CHECKBOX(const char * name, State * state, int argc, Expr * argv[]
     imgA  = imgW;
   }
   
-  int txtH        = ag_txtheight(chkW - (pad + imgA), text, 0);
+  int txtW        = chkW - (pad * 4);
+  int txtH        = ag_txtheight(txtW, text, 1);
   
   if (imgE) {
     if (txtH < imgH) {
       int imgN = imgH - (agdp() * 8);
-      tifY += (imgN - txtH) / 2;
     }
     
-    apng_draw_ex(&aui_win_bg, &ap, imgX, imgY, 0, 0, imgW, imgH);
+    apng_draw_ex(&aui_win_bg, &ap, (agw() / 2) - (imgW / 2), imgY, 0, 0, imgW, imgH);
     apng_close(&ap);
   }
   
   //-- Draw Text
-  ag_text(&aui_win_bg, chkW - ((pad * 2) + imgA), tifX, tifY, text, acfg()->winfg, 0);
-  //-- Resize Checkbox Size & Pos
-  chkY += txtH;
-  chkH -= txtH;
+  ag_text(&aui_win_bg, txtW, (agw() / 2) - (txtW / 2), tifY, text, acfg()->titlefg, 0);
   //-- Create Window
   AWINDOWP hWin   = aw(&aui_win_bg);
   //-- Check Box
@@ -2465,7 +2443,7 @@ Value * AROMA_CHECKBOX(const char * name, State * state, int argc, Expr * argv[]
     6
   );
   */
-  int nPad    = agdp() * 2;
+  int nPad    = agdp() * 4;
   int nHeight = bntH + agdp() * 4;
   int nWidth  = floor((agw() - (nPad * 2) - nHeight) / 2);
   int nY      = btnY - agdp() * 2;
@@ -2596,16 +2574,15 @@ Value * AROMA_SELECTBOX(const char * name, State * state, int argc, Expr * argv[
   char path[256];
   char text[256];
   snprintf(path, 256, "%s/%s", AROMA_TMP, args[3]);
-  snprintf(text, 256, "%s", args[1]);
+  snprintf(text, 256, "<@center>%s</@>", args[1]);
   //-- Drawing Data
   int pad         = agdp() * 4;
   int chkW        = agw() - (pad * 2);
-  int bntH        = agdp() * 20;
+  int bntH        = agdp() * 32;
   int chkH        = agh() - ( aui_minY + bntH + (pad * 4));
-  int chkY        = aui_minY + pad;
-  int btnY        = chkY + chkH + (pad * 2);
-  //-- Draw Navigation Bar
-  aui_drawnav(&aui_win_bg, 0, btnY - pad, agw(), bntH + (pad * 2));
+  int chkY        = aui_minY + (pad * 4);
+  int btnY        = chkY + chkH;
+
   //-- Load Icon
   PNGCANVAS ap;
   byte imgE       = 0;
@@ -2614,7 +2591,7 @@ Value * AROMA_SELECTBOX(const char * name, State * state, int argc, Expr * argv[
   int  imgH       = 0;
   int  tifX       = pad + 38;
   int  imgX       = pad + 38;
-  int  tifY       = chkY - 24;
+  int  tifY       = agdp() * 72;
   int  imgY       = agdp() * 34;
   
   if (apng_load(&ap, args[2])) {
@@ -2624,23 +2601,20 @@ Value * AROMA_SELECTBOX(const char * name, State * state, int argc, Expr * argv[
     imgA  = imgW;
   }
   
-  int txtH        = ag_txtheight(chkW - (pad + imgA), text, 0);
+  int txtW        = chkW - (pad * 4);
+  int txtH        = ag_txtheight(txtW, text, 1);
   
   if (imgE) {
     if (txtH < imgH) {
       int imgN = imgH - (agdp() * 8);
-      tifY += (imgN - txtH) / 2;
     }
     
-    apng_draw_ex(&aui_win_bg, &ap, imgX, imgY, 0, 0, imgW, imgH);
+    apng_draw_ex(&aui_win_bg, &ap, (agw() / 2) - (imgW / 2), imgY, 0, 0, imgW, imgH);
     apng_close(&ap);
   }
   
   //-- Draw Text
-  ag_text(&aui_win_bg, chkW - (pad + imgA), tifX, tifY, text, acfg()->winfg, 0);
-  //-- Resize Checkbox Size & Pos
-  chkY += txtH;
-  chkH -= txtH;
+  ag_text(&aui_win_bg, txtW, (agw() / 2) - (txtW / 2), tifY, text, acfg()->titlefg, 0);
   //-- Create Window
   AWINDOWP hWin   = aw(&aui_win_bg);
   //-- Check Box
@@ -2795,16 +2769,15 @@ Value * AROMA_MENUBOX(const char * name, State * state, int argc, Expr * argv[])
   char path[256];
   char text[256];
   snprintf(path, 256, "%s/%s", AROMA_TMP, args[3]);
-  snprintf(text, 256, "%s", args[1]);
+  snprintf(text, 256, "<@center>%s</@>", args[1]);
   //-- Drawing Data
   int pad         = agdp() * 4;
   int chkW        = agw() - (pad * 2);
-  int bntH        = agdp() * 20;
+  int bntH        = agdp() * 32;
   int chkH        = agh() - ( aui_minY + bntH + (pad * 4));
-  int chkY        = aui_minY + pad;
-  int btnY        = chkY + chkH + (pad * 2);
-  //-- Draw Navigation Bar
-  aui_drawnav(&aui_win_bg, 0, btnY - pad, agw(), bntH + (pad * 2));
+  int chkY        = aui_minY + (pad * 4);
+  int btnY        = chkY + chkH;
+
   //-- Load Icon
   PNGCANVAS ap;
   byte imgE       = 0;
@@ -2813,7 +2786,7 @@ Value * AROMA_MENUBOX(const char * name, State * state, int argc, Expr * argv[])
   int  imgH       = 0;
   int  tifX       = pad + 38;
   int  imgX       = pad + 38;
-  int  tifY       = chkY - 24;
+  int  tifY       = agdp() * 72;
   int  imgY       = agdp() * 34;
   
   if (apng_load(&ap, args[2])) {
@@ -2823,23 +2796,20 @@ Value * AROMA_MENUBOX(const char * name, State * state, int argc, Expr * argv[])
     imgA  = imgW;
   }
   
-  int txtH        = ag_txtheight(chkW - (pad + imgA), text, 0);
+  int txtW        = chkW - (pad * 4);
+  int txtH        = ag_txtheight(txtW, text, 1);
   
   if (imgE) {
     if (txtH < imgH) {
       int imgN = imgH - (agdp() * 8);
-      tifY += (imgN - txtH) / 2;
     }
     
-    apng_draw_ex(&aui_win_bg, &ap, imgX, imgY, 0, 0, imgW, imgH);
+    apng_draw_ex(&aui_win_bg, &ap, (agw() / 2) - (imgW / 2), imgY, 0, 0, imgW, imgH);
     apng_close(&ap);
   }
   
   //-- Draw Text
-  ag_text(&aui_win_bg, chkW - ((pad * 2) + imgA), tifX, tifY, text, acfg()->winfg, 0);
-  //-- Resize Checkbox Size & Pos
-  chkY += txtH;
-  chkH -= txtH;
+  ag_text(&aui_win_bg, txtW, (agw() / 2) - (txtW / 2), tifY, text, acfg()->titlefg, 0);
   //-- Create Window
   AWINDOWP hWin   = aw(&aui_win_bg);
   //-- Check Box
@@ -2959,7 +2929,7 @@ Value * AROMA_INSTALL(const char * name, State * state, int argc, Expr * argv[])
   //-- Drawing Data
   int pad         = agdp() * 4;
   int chkW        = agw() - (pad * 2);
-  int bntH        = agdp() * 20;
+  int bntH        = agdp() * 32;
   int chkH        = agh() - ( aui_minY + bntH + (pad * 4));
   int chkY        = aui_minY + pad;
   int btnY        = chkY + chkH + (pad * 2);

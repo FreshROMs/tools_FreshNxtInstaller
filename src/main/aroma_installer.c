@@ -621,7 +621,6 @@ int aroma_start_install(
           // LOGS("pthread_join threadInstaller\n");
           // Draw Navigation
           int pad         = agdp() * 4;
-          aui_drawnav(bg, 0, py - pad, agw(), ph + (pad * 2));
           ag_draw_ex(bg, cvf, 0, imgY, 0, 0, cvf->w, cvf->h);
           ag_draw(&hWin->c, bg, 0, 0);
           // Update Textbox

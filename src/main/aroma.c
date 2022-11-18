@@ -93,7 +93,7 @@ void a_splash(char * spipe) {
   fprintf(apipe(), "ui_print\n"
           "ui_print " AROMA_NAME " " AROMA_VERSION "\n"
           "ui_print\n"
-          "ui_print " AROMA_COPY_NS1 "\n"
+          "ui_print " AROMA_COPY_NS1 " \n"
           "ui_print " AROMA_COPY_NS2 "\n"
           "ui_print\n"
           "ui_print\n"
