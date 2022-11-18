@@ -1,7 +1,5 @@
 img.dialog=dialog.9
 img.dialog.titlebar=dialog_titlebar
-img.progress=button.9
-img.prograss.fill=button_press.9
 img.selection=button_press.9
 img.selection.push=button_press.9
 img.button=button
@@ -19,6 +17,10 @@ img.radio.push=radio_press
 img.radio.on=radio_on
 img.radio.on.focus=radio_on_focus
 img.radio.on.push=radio_on_press
+img.radio.on.focus=radio_on_focus
+
+img.progress=button
+img.prograss.fill=progress_full.9
 
 color.winbg           = #171717
 color.winbg_g         = #171717
@@ -43,7 +45,7 @@ color.titlebg_g       = #171717
 color.titlefg         = #fafafa
 color.dlgtitlebg      = #171717
 color.dlgtitlebg_g    = #171717
-color.dlgtitlefg      = #444444
+color.dlgtitlefg      = #f2f2f2
 color.scrollbar       = #f2960c
 color.navbg           = #171717
 color.navbg_g         = #171717
