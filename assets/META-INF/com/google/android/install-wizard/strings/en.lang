@@ -1,0 +1,221 @@
+# =========================================
+#         _____              _      
+#        |  ___| __ ___  ___| |__   
+#        | |_ | '__/ _ \/ __| '_ \  
+#        |  _|| | |  __/\__ \ | | | 
+#        |_|  |_|  \___||___/_| |_| 
+#                              
+# =========================================
+#  
+#  Installer Language Resource File
+#  Based on AROMA Installer
+#  The Fresh Project
+#  Copyright (C) 2022 TenSeventy7
+#  
+#  This program is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#  
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#  
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#  
+#  =========================
+
+#   Language Information
+#
+#   Language         : English
+#   Translation By   : TenSeventy7
+#
+
+# Initial language strings
+lang.title=Welcome!
+lang.summary=Please select your language.
+
+welcome.title=Welcome to Fresh!
+welcome.text1=Welcome to the setup!
+welcome.text2=This setup wizard will guide you in installing Fresh to your device and add additional features to your installation as you like.
+welcome.text3=Tap <b>'next'</b> to continue.
+
+terms.title=Terms of Service
+terms.summary=Use of Fresh is governed by tenseventyseven terms of service.
+terms.check=I Agree
+terms.confirm=You must agree to the terms to continue.
+
+menu.title=Welcome to the setup!
+menu.current.summary=Hewwo, old user! Fresh is currently installed on your device.
+menu.new.summary=Hewwo, new user!
+menu.reinstall.title=Re-install Fresh 4
+menu.reinstall.summary=Re-install Fresh with your selected options from an earlier install.
+menu.express.title=Express Installation
+menu.express.summary=Install Fresh using default options for apps and services.
+menu.custom.title=Custom Installation
+menu.custom.summary=Install Fresh with your custom options for apps and services.
+
+confirm.title=That's all we need
+confirm.summary=Check if all your customizations are right for you, and tap <b>'next'</b> to continue with the installation.
+confirm.next=Install now
+
+install.title=Installing Fresh 4
+install.summary=Sit back and relax as Fresh is being installed to your device. This may take a few minutes.
+install.finish=Fresh has been successfully installed. Tap <b>'next'</b> to finish installation.
+
+wait.generic=Please wait...
+wait.install.scan=Scanning device for an existing Fresh installation.
+
+# // Fresh Addons {
+
+# Google
+addon.google=Google apps
+addon.google.title=Choose your level of Google smarts
+addon.google.summary=Helpful services built with you in mind.
+addon.google.full.title=Full
+addon.google.full.summary=Includes everything on Micro, plus Maps and Android Auto support.
+addon.google.micro.title=Micro
+addon.google.micro.summary=Includes everything on Lite, plus Gmail and Google Drive.
+addon.google.lite.title=Lite
+addon.google.lite.summary=Includes the Google app and necessary services for Google Play.
+
+# Bixby
+addon.bixby=Bixby
+addon.bixby.title=Unlock your phone's full potential
+addon.bixby.summary=Experience a smarter life with Bixby.
+addon.bixby.voice.title=Bixby Voice
+addon.bixby.voice.summary=Bixby frees you to focus on what matters most.
+addon.bixby.vision.title=Bixby Vision
+addon.bixby.vision.summary=Bixby Vision makes it easier to learn more about the world around you.
+addon.bixby.reminders.title=Reminders
+addon.bixby.reminders.summary=Bixby takes reminders to another level by letting you set reminders with your voice.
+addon.bixby.routines.title=Routines
+addon.bixby.routines.summary=Bolstered by machine learning to adapt to your life, and make your phone time more streamlined.
+
+# Seamless
+addon.seamless=Galaxy Ecosystem
+addon.seamless.title=Seamlessly connect with your devices
+addon.seamless.summary=Experience the Galaxy ecosystem with these apps and services.
+addon.seamless.sharelive.title=Quick Share and Link Sharing
+addon.seamless.sharelive.summary=A new sharing service for sending photos, videos, and files with your friends and family.
+addon.seamless.ltw.title=Link to Windows
+addon.seamless.ltw.summary=Link to Windows takes everything that you can do on your smartphone and brings it to your PC.
+addon.seamless.cta.title=Call and text on other devices
+addon.seamless.cta.summary=Make and receive calls on your Samsung tablet.
+addon.seamless.wear.title=Galaxy Wearable
+addon.seamless.wear.summary=Push yourself to the next level with Galaxy wearables.
+addon.seamless.friends.title=Galaxy Friends
+addon.seamless.friends.summary=An accessory platform service that allows you to enjoy a variety of content.
+addon.seamless.onedrive.title=Microsoft OneDrive
+addon.seamless.onedrive.summary=Save your files and photos and access them from any device, anywhere.
+
+# AR Zone
+addon.ar_zone=Augmented Reality
+addon.ar_zone.title=Have more fun with your camera
+addon.ar_zone.summary=Capture fun photos and video with augmented reality.
+addon.ar_zone.zone.title=AR Zone
+addon.ar_zone.zone.summary=A one-stop hub for AR related features, such as AR Emoji and AR Doodle.
+addon.ar_zone.emoji.title=AR Emoji
+addon.ar_zone.emoji.summary=Create fun photos and videos with emojis using various photo modes.
+addon.ar_zone.doodle.title=AR Doodle
+addon.ar_zone.doodle.summary=AR Doodle mode enhances videos by giving you the power to add line drawings or handwriting to your environment.
+addon.ar_zone.decopic.title=DECO Pic
+addon.ar_zone.decopic.summary=A set of creative tools to create their own fun and silly pictures.
+
+# Game Services
+addon.game_services=Game Services
+addon.game_services.title=Game on!
+addon.game_services.summary=Level up mobile gaming with your Samsung Galaxy.
+addon.game_services.home.title=Game Launcher and Tools
+addon.game_services.home.summary=The ultimate control center for your favorite games.
+
+# Security
+addon.security=Security
+addon.security.title=Beef up your security
+addon.security.summary=Keep your Samsung Galaxy device secure anytime.
+addon.security.antimalware.title=Device protection
+addon.security.antimalware.summary=Protect your Galaxy phone from malware.
+addon.security.folder.title=Secure Folder
+addon.security.folder.summary=Leverage the defence-grade Samsung Knox security platform to create a private space.
+addon.security.share.title=Private Share
+addon.security.share.summary=A privacy-preserving file sharing function that allows you to share your data without worries.
+addon.security.checkout.title=Samsung Checkout
+addon.security.checkout.summary=Fast, secure, easy checkout with Galaxy Store and Galaxy Themes.
+
+# Samsung DeX
+addon.dex=Samsung DeX
+addon.dex.title=Multitask between devices like a boss
+addon.dex.summary=Connect your Galaxy to your TV or PC to open a new desktop world.
+addon.dex.install.title=Samsung DeX
+addon.dex.install.summary=It is recommended to use Samsung DeX on a device with 6GB of RAM or more.
+
+# More apps
+addon.sec=More Apps
+addon.sec.title=Get the most out of your device
+addon.sec.summary=Maximize your Galaxy experience.
+addon.sec.dict.title=Samsung Dictionary
+addon.sec.dict.summary=Increase your vocabulary whenever and wherever you encounter an unfamiliar word!
+addon.sec.kids.title=Samsung Kids
+addon.sec.kids.summary=Shape a safe environment for your child to happily explore and connect with the world.
+addon.sec.stc.title=Smart Touch Call
+addon.sec.stc.summary=Smart Touch Call brings you the future of Samsung support, today.
+
+addon.installed=Installed
+addon.notinstalled=Not installed
+
+# } // Fresh Addons
+
+# // Installation script strings {
+
+script.partitions.fail1=Failed finding partitions!
+script.partitions.fail2=Contact developer for support!
+
+script.system.fail1=Your device does not have Fresh installed.
+script.system.fail2=This over-the-air update is only eligible for devices running Fresh.
+
+# } // Installation script strings
+
+# // Basic installer strings {
+
+text_ok=OK
+text_next=Next
+install.next=Next
+text_back=Back
+text_yes=Yes
+text_no=No
+text_about=About
+text_calibrating=Calibrating Tools
+text_quit=Exit Fresh Setup
+text_quit_msg=Are you sure to quit the setup? Your changes will not be applied.
+
+# } // Basic installer strings
+
+#
+#-- CUSTOM STRING RESOURCE
+#
+common.for=for
+
+langtest.title=Language Test
+langtest.multiline=This text is located in langs/en.lang\
+Use backslash before enter to add new line\
+\
+You can also do <b>Formatting</b> inside the language string resource.\
+\
+Thanks for using AROMA Installer
+
+#-- End of string without any backslash for multiline text
+
+
+themes.title=Select Theme
+themes.desc=Please select installer theme that you want to use in this installation test:
+
+welcome.version=VERSION
+welcome.codename=CODENAME
+welcome.updated=UPDATED
+welcome.next=Press Next to Continue the Installation...
+
+
+changelog.title=Changelog
+changelog.desc=AROMA Installer Changelog

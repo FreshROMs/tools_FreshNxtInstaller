@@ -1,0 +1,12 @@
+﻿# Seamless
+checkbox(
+  "<~addon.seamless.title>",
+  "<~addon.seamless.summary>",
+  "@seamless",
+  "seamless.prop",
+
+  "<~addon.seamless.sharelive.title>",      "<~addon.seamless.sharelive.summary>",          1,
+  "<~addon.seamless.ltw.title>",            "<~addon.seamless.ltw.summary>",                1,
+  "<~addon.seamless.cta.title>",            "<~addon.seamless.cta.summary>",                0,
+  "<~addon.seamless.friends.title>",        "<~addon.seamless.friends.summary>",            0
+);

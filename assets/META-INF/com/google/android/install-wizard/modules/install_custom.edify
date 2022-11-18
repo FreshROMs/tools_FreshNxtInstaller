@@ -1,0 +1,8 @@
+﻿# Custom installation
+include("modules/addon_google.edify");
+include("modules/addon_bixby.edify");
+include("modules/addon_seamless.edify");
+include("modules/addon_ar.edify");
+include("modules/addon_game_services.edify");
+include("modules/addon_security.edify");
+include("modules/addon_sec.edify");

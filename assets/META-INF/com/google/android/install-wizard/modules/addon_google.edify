@@ -1,0 +1,11 @@
+﻿# Google support
+selectbox(
+  "<~addon.google.title>",
+  "<~addon.google.summary>",
+  "@google",
+  "google.prop",
+
+  "<~addon.google.full.title>",           "<~addon.google.full.summary>",      1,
+  "<~addon.google.micro.title>",          "<~addon.google.micro.summary>",     0,
+  "<~addon.google.lite.title>",           "<~addon.google.lite.summary>",      0
+);

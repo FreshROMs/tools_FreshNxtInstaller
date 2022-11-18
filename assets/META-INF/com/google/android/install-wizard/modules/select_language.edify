@@ -1,0 +1,15 @@
+﻿exec("mkdir", "/tmp/install-wizard/setup");
+selectbox(
+  "<~lang.title>",
+  "<~lang.summary>",
+  "@language",
+  "language.prop",
+
+  "English",      "Welcome to Installer",     1
+);
+
+# Load proper languages
+if prop("language.prop","selected.0") == "1" then
+  loadlang("strings/en.lang");
+  restotmp("strings/en.lang", "lang.prop");
+endif;

@@ -1,0 +1,92 @@
+#!/sbin/sh
+# =========================================
+#         _____              _      
+#        |  ___| __ ___  ___| |__   
+#        | |_ | '__/ _ \/ __| '_ \  
+#        |  _|| | |  __/\__ \ | | | 
+#        |_|  |_|  \___||___/_| |_| 
+#                              
+# =========================================
+# (C) 2022 John Vincent - TenSeventy7@XDA
+
+INSTALLER="/tmp/install-wizard"
+SUMMARY="/tmp/summary.txt"
+LANGPROP="${INSTALLER}/lang.prop"
+
+file_getprop() { grep "^$2=" "$1" | cut -d= -f2-; }
+
+title() {
+	LOCAL_NAME=$(file_getprop "${LANGPROP}" "addon.${1}")
+	echo " " >> ${SUMMARY}
+	echo " " >> ${SUMMARY}
+	echo "<b>${LOCAL_NAME}</b>" >> ${SUMMARY}
+}
+
+app() {
+	PROP="${INSTALLER}/${1}.prop"
+	APP="${2}.${3}"
+	ITEM="item.0.${4}"
+	LOCAL_NAME=$(file_getprop "${LANGPROP}" "addon.${APP}.title")
+
+	echo -n "   " >> ${SUMMARY}
+	echo -n "<#selectbg_g>${LOCAL_NAME}:</#>" >> ${SUMMARY}
+	echo -n " " >> ${SUMMARY}
+
+	if [ $(file_getprop "${PROP}" "${ITEM}") == '1' ]; then
+		echo $(file_getprop "${LANGPROP}" "addon.installed") >> ${SUMMARY}
+	else
+		echo $(file_getprop "${LANGPROP}" "addon.notinstalled") >> ${SUMMARY}
+	fi
+}
+
+echo " " > ${SUMMARY}
+
+# Google
+echo -n "   <#selectbg_g><b>$(file_getprop "${LANGPROP}" "addon.google"):</b></#> " >> ${SUMMARY}
+
+if [ $(file_getprop "${INSTALLER}/google.prop" "selected.0") == '1' ]; then
+		echo $(file_getprop "${LANGPROP}" "addon.google.full.title") >> ${SUMMARY}
+elif [ $(file_getprop "${INSTALLER}/google.prop" "selected.0") == '2' ]; then
+		echo $(file_getprop "${LANGPROP}" "addon.google.micro.title") >> ${SUMMARY}
+elif [ $(file_getprop "${INSTALLER}/google.prop" "selected.0") == '3' ]; then
+		echo $(file_getprop "${LANGPROP}" "addon.google.lite.title") >> ${SUMMARY}
+else 
+		echo $(file_getprop "${LANGPROP}" "addon.google.none.title") >> ${SUMMARY}
+fi
+
+# Bixby
+title bixby
+app bixby bixby voice 1
+app bixby bixby vision 2
+app bixby bixby reminders 3
+app bixby bixby routines 4
+
+# Galaxy Ecosystem
+title seamless
+app seamless seamless sharelive 1
+app seamless seamless ltw 2
+app seamless seamless cta 3
+app seamless seamless friends 4
+
+# Augmented Reality
+title ar_zone
+app ar-zone ar_zone zone 1
+app ar-zone ar_zone emoji 2
+app ar-zone ar_zone doodle 3
+app ar-zone ar_zone decopic 4
+
+# Game Services
+title game_services
+app game-home game_services home 1
+
+# Security
+title security
+app security security antimalware 1
+app security security folder 2
+app security security share 3
+app security security checkout 4
+
+# More Apps
+title sec
+app extras sec dict 1
+app extras sec stc 2

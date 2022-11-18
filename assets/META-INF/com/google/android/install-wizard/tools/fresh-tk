@@ -1,0 +1,331 @@
+#!/sbin/sh
+# =========================================
+#         _____              _      
+#        |  ___| __ ___  ___| |__   
+#        | |_ | '__/ _ \/ __| '_ \  
+#        |  _|| | |  __/\__ \ | | | 
+#        |_|  |_|  \___||___/_| |_| 
+#                              
+# =========================================
+# Fresh install toolkit - build 22
+# A toolkit used for addon and ROM installation
+# (C) 2019-2022 John Vincent - TenSeventy7@XDA
+# This is licensed under GPLv3
+#
+
+EXEC="$@" # function to execute for updater-script. DO NOT EDIT.
+TOOLS='/cache/tools' # the location of the tools used by the installer.
+BUSYBOX="${TOOLS}/busybox" # the location of the busybox binary.
+SVZIP="${TOOLS}/7za" # the location of the 7zip arm binary.
+XMLSTARLET="${TOOLS}/xmlstarlet" # the location of the xmlstarlet arm binary.
+PROP="/tmp/toolkit.prop" # prop file used to counter-check values for the script
+FLASH='/tmp/fresh.prop' # ROM prop file used for version checking
+INSTALL_WIZARD_PATH="/tmp/install-wizard" # Path of the install wizard
+
+export PATH="${TOOLS}:${PATH}"
+file_getprop() { grep "^$2=" "$1" | cut -d= -f2-; }
+
+# Variables used throughout the script
+DEVICE=$(file_getprop /tmp/vendor.prop 'ro.fresh.device.product') # device-checking prop
+SYSMOUNT=$(file_getprop "${PROP}" 'block.system.mount') # check if the system is mounted as SaR
+
+ROM="${SYSMOUNT}/system_ext/etc/fresh.prop"
+ROM_THREE="${SYSMOUNT}/system_ext/fresh.prop"
+ROM_THREE_ALT="${SYSMOUNT}/fresh.prop"
+FRESH="${SYSMOUNT}/system_ext/etc/fresh"
+DEVICE_PROP="${SYSMOUNT}/build.prop"
+
+FLOATING_FEATURE_SYSTEM="${SYSMOUNT}/etc/floating_feature.xml"
+FLOATING_FEATURE_VENDOR="/vendor/etc/floating_feature.xml"
+
+# Variables used by the addon and OMC backup services
+INSTALLED_OMC='/product/omc/sales_code.dat'
+INSTALLED_OMC_LIST='/product/omc/sales_code_list.dat'
+INSTALLED_OMC_CONFIG='/product/omc/SW_Configuration.xml'
+BACKUP_OMC_FOLDER='/data/fresh/'
+HUB_PACKAGE='io.tenseventyseven.fresh'
+
+file_setprop() {
+	# Pass props used during installation
+	if [ -e "${BUSYBOX}" ]; then
+		if [ ! -e "${PROP}" ]; then
+			${BUSYBOX} touch "${PROP}" # make the prop file if toolkit could not find it
+			${BUSYBOX} echo "${1}=${2}" > "${PROP}"
+		else
+			${BUSYBOX} echo "${1}=${2}" >> "${PROP}"
+		fi
+	else
+		if [ ! -e "${PROP}" ]; then
+			touch "${PROP}" # make the prop file if toolkit could not find it
+			echo "${1}=${2}" > "${PROP}"
+		else
+			echo "${1}=${2}" >> "${PROP}"
+		fi
+	fi
+}
+
+floating() {
+	if [ "$(echo "${1}" | tr '[A-Z]' '[a-z]')" == "rem" ]; then
+		${XMLSTARLET} edit -L -S -d "//SecFloatingFeatureSet/$2" ${FLOATING_FEATURE_SYSTEM}
+		${XMLSTARLET} edit -L -S -d "//SecFloatingFeatureSet/$2" ${FLOATING_FEATURE_VENDOR}
+	elif [ "$(echo "${1}" | tr '[A-Z]' '[a-z]')" == "set" ]; then
+		${XMLSTARLET} edit -L -S -d "//SecFloatingFeatureSet/$2" ${FLOATING_FEATURE_SYSTEM}
+		${XMLSTARLET} edit -L -S -d "//SecFloatingFeatureSet/$2" ${FLOATING_FEATURE_VENDOR}
+		${XMLSTARLET} edit -L -S -s "//SecFloatingFeatureSet" -t elem -n "$2" -v "$3" ${FLOATING_FEATURE_SYSTEM}
+		${XMLSTARLET} edit -L -S -s "//SecFloatingFeatureSet" -t elem -n "$2" -v "$3" ${FLOATING_FEATURE_VENDOR}
+	elif [ "$(echo "${1}" | tr '[A-Z]' '[a-z]')" == "get" ]; then
+		${XMLSTARLET} select -t -m "//SecFloatingFeatureSet" -v "$2" ${FLOATING_FEATURE_SYSTEM}
+		${XMLSTARLET} select -t -m "//SecFloatingFeatureSet" -v "$2" ${FLOATING_FEATURE_VENDOR}
+	fi
+}
+
+optics() {
+	if [ "$(echo "${1}" | tr '[A-Z]' '[a-z]')" == "backup" ]; then
+		mkdir -p ${BACKUP_OMC_FOLDER}
+		cp -f ${INSTALLED_OMC} "/tmp/sales_code.dat"
+		cp -f ${INSTALLED_OMC_LIST} "/tmp/sales_code_list.dat"
+		cp -f ${INSTALLED_OMC_CONFIG} "/tmp/SW_Configuration.xml"
+		${BUSYBOX} cp -rfp --parents "/product/omc" "${BACKUP_OMC_FOLDER}/"
+	elif [ "$(echo "${1}" | tr '[A-Z]' '[a-z]')" == "restore" ]; then
+		cp -rn --preserve=mode,ownership,timestamps,context "${BACKUP_OMC_FOLDER}/product/omc" "/product/"
+		cp -f /tmp/SW_Configuration.xml ${INSTALLED_OMC_CONFIG}
+		cp -f /tmp/sales_code_list.dat ${INSTALLED_OMC_LIST}
+		cp -f /tmp/sales_code.dat ${INSTALLED_OMC}
+	elif [ "$(echo "${1}" | tr '[A-Z]' '[a-z]')" == "check" ]; then
+		INSTALLED_OMC_CODE=$(cat /tmp/sales_code.dat | tr -d '\n')
+
+		if [ -z "${INSTALLED_OMC_CODE}" ]; then
+			file_setprop "product.omc.support" "missing"
+		elif [ -d "/product/omc/${INSTALLED_OMC_CODE}" -o -d "/product/omc/single/${INSTALLED_OMC_CODE}" ]; then
+			file_setprop "product.omc.support" "true"
+		else
+			file_setprop "product.omc.support" "false"
+		fi
+	fi
+}
+
+propscan() {
+	MAGISK_PROPS="false"
+
+	for MODULE in CTS_Module Module_CTS fixprops MagiskHidePropsConf MAGNETAR fdeai 'FDE.AI' 'RTKS' 'GoogleSpoofForWear' 'googlephotos' 'BulletAimGyro' 'Godspeed' 'Godspeedai' '2022GSM' 'GAMESpeed' 'smext' 'Sailfish_Prop'; do
+		if [ -d "/data/adb/modules/${MODULE}" ]; then
+			if [ ! -f "/data/adb/modules/${MODULE}/disable" ]; then
+			    touch /data/adb/modules/${MODULE}/disable
+			    MAGISK_PROPS="true"
+			fi
+		fi
+	done
+
+	file_setprop "magisk.installed.props" "${MAGISK_PROPS}"
+}
+
+addon_remove() {
+	ADDON_REPO="/cache/fresh/repository"
+	ADDON_FILE_LIST="${ADDON_REPO}/${1}.repo"
+
+	if [ "${SYSMOUNT}" == "/system_root" ]; then
+		ADDON_FILES=$(awk '{print}' "${ADDON_FILE_LIST}" | sed -e 's@'/system'@'/system_root/system'@g' | tr '\n' ' ')
+	else
+		ADDON_FILES=$(awk '{print}' "${ADDON_FILE_LIST}" | tr '\n' ' ')
+	fi
+
+	rm -rf ${ADDON_FILES}
+}
+
+install_selections() {
+	mkdir -p "${FRESH}/overrides/install-wizard"
+	cp -rf "${INSTALL_WIZARD_PATH}/google.prop" "${FRESH}/overrides/install-wizard/google.prop"
+	cp -rf "${INSTALL_WIZARD_PATH}/bixby.prop" "${FRESH}/overrides/install-wizard/bixby.prop"
+	cp -rf "${INSTALL_WIZARD_PATH}/seamless.prop" "${FRESH}/overrides/install-wizard/seamless.prop"
+	cp -rf "${INSTALL_WIZARD_PATH}/ar-zone.prop" "${FRESH}/overrides/install-wizard/ar-zone.prop"
+	cp -rf "${INSTALL_WIZARD_PATH}/game-home.prop" "${FRESH}/overrides/install-wizard/game-home.prop"
+	cp -rf "${INSTALL_WIZARD_PATH}/security.prop" "${FRESH}/overrides/install-wizard/security.prop"
+	cp -rf "${INSTALL_WIZARD_PATH}/extras.prop" "${FRESH}/overrides/install-wizard/extras.prop"
+}
+
+migrate_fresh_three_addons() {
+	# Variables that depend on system-as-root (SaR)
+	if [ "${SYSMOUNT}" == "/system_root" ]; then
+		FRESH_ADDONS_OLD="/system_root/system/system_ext/etc/fresh/addons" # addon metadata folder used in the ROM
+	else
+		FRESH_ADDONS_OLD="/system/system_ext/etc/fresh/addons" # addon metadata folder used in the ROM
+	fi
+
+	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.bixby.voice.prop" ]; then
+		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.1' '1'
+	fi
+
+	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.bixby.vision.prop" ]; then
+		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.2' '1'
+	fi
+
+	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.bixby.smart.prop" ]; then
+		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.3' '1'
+		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.4' '1'
+	fi
+
+	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.gplus.prop" ]; then
+		file_setprop "${INSTALL_WIZARD_PATH}/google.prop" 'selected.0' '1'
+	else
+		file_setprop "${INSTALL_WIZARD_PATH}/google.prop" 'selected.0' '2'
+	fi
+
+	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.sm.mygalaxy.prop" ]; then
+		file_setprop "${INSTALL_WIZARD_PATH}/extras.prop" 'item.0.1' '1'
+		file_setprop "${INSTALL_WIZARD_PATH}/extras.prop" 'item.0.2' '1'
+
+		file_setprop "${INSTALL_WIZARD_PATH}/security.prop" 'item.0.4' '1'
+	fi
+
+	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.gamehome.prop" ]; then
+		file_setprop "${INSTALL_WIZARD_PATH}/game-home.prop" 'item.0.1' '1'
+	fi
+
+	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.samsung.live.prop" ]; then
+		file_setprop "${INSTALL_WIZARD_PATH}/seamless.prop" 'item.0.1' '1'
+	fi
+
+	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.mdec.prop" ]; then
+		file_setprop "${INSTALL_WIZARD_PATH}/seamless.prop" 'item.0.2' '1'
+		file_setprop "${INSTALL_WIZARD_PATH}/seamless.prop" 'item.0.3' '1'
+	fi
+}
+
+install_rom_check() {
+	ROM_EXIST_INSTALL="false"
+	ROM_EXIST_INSTALL_THREE="false"
+
+	# Check for an existing ROM installation
+	if [ -e "${ROM}" -a -d "${FRESH}/overrides/install-wizard" ]; then
+		ROM_EXIST_INSTALL="true"
+
+		# Copy current install overrides
+		cp -rf ${FRESH}/overrides/install-wizard /tmp/
+	fi
+
+	# Migrate Fresh 3 addons to new selections
+	if [ -e "${ROM_THREE}" -o -e "${ROM_THREE_ALT}" ]; then
+		ROM_EXIST_INSTALL="true"
+
+		# Migrate addons to new selections
+		ROM_EXIST_INSTALL_THREE="true"
+	fi
+
+	file_setprop "system.exist.rom" "${ROM_EXIST_INSTALL}"
+	file_setprop "system.exist.rom.three" "${ROM_EXIST_INSTALL_THREE}"
+}
+
+install_ota_check() {
+	ROM_OTA_PROP="/tmp/fresh_upgrade.prop"
+	ROM_EXIST_INSTALL="false"
+
+	if [ -e "${ROM}" ]; then
+		# Check for the version installed in the system
+		ROM_EXIST_VERSION=$(file_getprop "${ROM}" 'ro.fresh.build.date.utc')
+		ROM_OTA_VERSION=$(file_getprop "${ROM_OTA_PROP}" 'ro.fresh.build.date.utc')
+
+		file_setprop "system.exist.version" "${ROM_EXIST_VERSION}"
+
+		if [ "${ROM_EXIST_VERSION}" -ge "${ROM_OTA_VERSION}" ]; then
+			ROM_EXIST_INSTALL="upgrade"
+			cp -f "${DEVICE_PROP}" "/tmp/vendor.prop"
+		else
+			ROM_EXIST_INSTALL="downgrade"
+		fi
+	fi
+
+	file_setprop "system.exist.rom" "${ROM_EXIST_INSTALL}"
+}
+
+install_cleanup() {
+	if [ -d "${BACKUP_OMC_FOLDER}" ]; then
+		rm -rf "${BACKUP_OMC_FOLDER}"
+	fi
+
+	rm -f '/tmp/fresh-tk_install'
+	rm -rf '/tmp/scripts'
+}
+
+mounts_checker() {
+	# Check for device mounting points.
+	# Based on SuperR@XDA's configure.sh
+	# Extended by TenSeventy7
+
+	# Since mount checker always runs first on script, delete older install props
+	# so we don't skew the script
+	rm -f "${PROP}"
+
+	# Get boot slot if it exists
+	BOOT_SLOT=$(getprop ro.boot.slot_suffix)
+	if [ -z ${BOOT_SLOT} ]; then
+		BOOT_SLOT=_$(getprop ro.boot.slot)
+		if [ "${BOOT_SLOT}" = "_" ]; then
+			BOOT_SLOT=
+		fi
+	fi
+	if [ -z ${BOOT_SLOT} ]; then
+		BOOT_SLOT=$(cat /proc/cmdline 2>/dev/null | tr ' ' '\n' | grep slot | grep -v simslot | cut -d'=' -f2)
+	fi
+	if [ -n ${BOOT_SLOT} ]; then
+		if [ "${BOOT_SLOT}" = "_a" ] || [ "${BOOT_SLOT}" = "_b" ]; then
+			file_setprop "boot.slot" "${BOOT_SLOT}"
+		else
+			BOOT_SLOT=
+		fi
+	fi
+
+	# Get system partition and by-name paths
+	SYSTEMBLOCK=$(find /dev/block | grep -i "system${BOOT_SLOT}" | head -n 1)
+	if [ -z ${SYSTEMBLOCK} ]; then
+		for PARTITION in /etc/*fstab*; do
+			SYSTEMBLOCK=$(grep -v '#' ${PARTITION} | grep -E '/system[^a-zA-Z]' | grep -v system_image | grep -v mmcblk | grep -oE '/dev/[a-zA-Z0-9_./-]*')
+			if [ -n ${SYSTEMBLOCK} ]; then
+				break
+			fi
+		done
+	fi
+
+	if [ -n ${SYSTEMBLOCK} ] && [ $(readlink -f "${SYSTEMBLOCK}") ]; then
+		PART_PATH=$(dirname "${SYSTEMBLOCK}")
+		file_setprop "boot.part.by-name" "${PART_PATH}"
+	else
+		file_setprop "boot.part.by-name" "fail"
+		exit 1
+	fi
+
+	# Check for System-as-Root (SaR) mount point
+	if [ -d /system_root ]; then
+		file_setprop "block.system.mount" "/system_root/system"
+	else
+		file_setprop "block.system.mount" "/system"
+	fi
+
+	# Add verified partitions to installer prop
+	for PARTITION in super; do
+		if [ $(readlink "${PART_PATH}/${PARTITION}${BOOT_SLOT}") ]; then
+			file_setprop "block.super" "${PART_PATH}/${PARTITION}${BOOT_SLOT}"
+			file_setprop "block.dynamic.mount" "true"
+			break
+		else
+			file_setprop "block.dynamic.mount" "false"
+			break
+		fi
+	done
+
+	# Scan for the following partitions and add them to the prop
+	for PARTITION in system vendor product up_param boot dtb recovery; do
+		if [ $(readlink "${PART_PATH}/${PARTITION}${BOOT_SLOT}") ]; then
+			file_setprop "block.$(echo "${PARTITION}" | tr '[A-Z]' '[a-z]')" "${PART_PATH}/${PARTITION}${BOOT_SLOT}"
+		else
+			file_setprop "block.$(echo "${PARTITION}" | tr '[A-Z]' '[a-z]')" "fail"
+		fi
+	done
+}
+
+# Execute the function given by updater-script
+if [ ! -z "${EXEC}" ]; then
+	${EXEC}
+else
+	sleep 1	# Sleep then fail
+	exit 1
+fi

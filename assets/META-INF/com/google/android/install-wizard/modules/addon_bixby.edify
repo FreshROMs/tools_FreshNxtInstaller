@@ -1,0 +1,12 @@
+﻿# Bixby
+checkbox(
+  "<~addon.bixby.title>",
+  "<~addon.bixby.summary>",
+  "@bixby",
+  "bixby.prop",
+
+  "<~addon.bixby.voice.title>",        "<~addon.bixby.voice.summary>",             1,
+  "<~addon.bixby.vision.title>",       "<~addon.bixby.vision.summary>",            1,
+  "<~addon.bixby.reminders.title>",    "<~addon.bixby.reminders.summary>",         0,
+  "<~addon.bixby.routines.title>",     "<~addon.bixby.routines.summary>",          1
+);

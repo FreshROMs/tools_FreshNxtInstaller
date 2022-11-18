@@ -1,0 +1,64 @@
+img.background=background
+img.titlebar=titlebar
+img.navbar=navbar
+img.dialog=dialog.9
+img.dialog.titlebar=dialog_titlebar
+img.progress=button.9
+img.prograss.fill=button_press.9
+img.selection=button_press.9
+img.selection.push=button_press.9
+img.button=button
+img.button.focus=button_press.9
+img.button.push=button_press.9
+img.checkbox=cb.9
+img.checkbox.focus=cb_focus.9
+img.checkbox.push=cb_press.9
+img.checkbox.on=cb_on
+img.checkbox.on.focus=cb_on_focus
+img.checkbox.on.push=cb_on_press
+img.radio=cb.9
+img.radio.focus=radio_focus
+img.radio.push=cb_press.9
+img.radio.on=radio_on
+img.radio.on.focus=radio_on_focus
+img.radio.on.push=radio_on_press
+
+color.winbg           = #fafafa
+color.winbg_g         = #fafafa
+color.winfg           = #000000
+color.winfg_gray      = #666666
+color.dialogbg        = #ffffff
+color.dialogbg_g      = #eeeeee
+color.dialogfg        = #000000
+
+color.textbg          = #fafafa
+
+color.textfg          = #000000
+color.textfg_gray     = #666666
+color.controlbg       = #dddddd
+color.controlbg_g     = #cccccc
+color.controlfg       = #0072de
+color.selectbg        = #0072de
+color.selectbg_g      = #0072de
+color.selectfg        = #0072de
+color.titlebg         = #fafafa
+color.titlebg_g       = #fafafa
+color.titlefg         = #171717
+color.dlgtitlebg      = #ffffff
+color.dlgtitlebg_g    = #ffffff
+color.dlgtitlefg      = #444444
+color.scrollbar       = #0072de
+color.navbg           = #fafafa
+color.navbg_g         = #eeeeee
+color.border          = #fafafa
+color.border_g        = #fafafa
+color.progressglow    = #0072de
+
+config.roundsize             = 8
+config.button_roundsize      = 8
+config.window_roundsize      = 0
+config.transition_frame      = 4
+
+info.themename        = Default Light
+info.description      = Default Fresh Installer theme based on One UI.
+info.author           = TenSeventy7

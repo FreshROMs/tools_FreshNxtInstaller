@@ -1,0 +1,12 @@
+﻿# Samsung AR services
+checkbox(
+  "<~addon.ar_zone.title>",
+  "<~addon.ar_zone.summary>",
+  "@ar_zone",
+  "ar-zone.prop",
+
+  "<~addon.ar_zone.zone.title>",      "<~addon.ar_zone.zone.summary>",             1,
+  "<~addon.ar_zone.emoji.title>",     "<~addon.ar_zone.emoji.summary>",            1,
+  "<~addon.ar_zone.doodle.title>",    "<~addon.ar_zone.doodle.summary>",           1,
+  "<~addon.ar_zone.decopic.title>",   "<~addon.ar_zone.decopic.summary>",          1
+);

@@ -1,0 +1,41 @@
+<#selectbg_g><b>1. Terms</b></#>
+
+By using this ROM, you are agreeing to be bound by these Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, please refrain from using this ROM. TenSeventy7 is not responsible for any harm this custom software may cause on your device.
+
+<#selectbg_g><b>2. Use License</b></#>
+
+Permission is granted for personal, non-commercial use only. This is the grant of a license, not a transfer of title, and under this license you may not:
+
+   - copy the materials;
+   - use the materials for any commercial purpose or for any public display; or
+   - remove any copyright or other proprietary notations from the materials
+
+Portions of this ROM are licensed to various open-source licenses. Please consult these projects before modifying this software.
+
+<#selectbg_g><b>3. Disclaimer</b></#>
+
+<b>FreshROMs is provided "as is".</b> TenSeventy7 makes no warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore, TenSeventy7 does not make any representations concerning the accuracy or reliability of the use of the materials or otherwise relating to such materials or any sites linked to this.
+
+<#selectbg_g><b>4. Limitations</b></#>
+
+TenSeventy7 will not be hold accountable for any damages that will arise with the use or inability to use this ROM, even if TenSeventy7 or an authorized representative of has been notified, orally or written, of the possibility of such damage. Some jurisdiction does not allow limitations on implied warranties or limitations of liability for incidental damages, these limitations may not apply to you.
+
+<#selectbg_g><b>5. Revisions and Errata</b></#>
+
+The materials appearing on TenSeventy7’s Website may include technical, typographical, or photographic errors. TenSeventy7 will not promise that any of the materials in this Website are accurate, complete, or current. TenSeventy7 may change the materials contained on its Website at any time without notice. TenSeventy7 does not make any commitment to update the materials.
+
+<#selectbg_g><b>6. Links</b></#>
+
+TenSeventy7 has not reviewed all of the sites linked to its Website and is not responsible for the contents of any such linked site. The presence of any link does not imply endorsement by TenSeventy7 of the site. The use of any linked website is at the user’s own risk.
+
+<#selectbg_g><b>7. Site Terms of Use Modifications</b></#>
+
+TenSeventy7 may revise these Terms of Use for its Website at any time without prior notice. By using this Website, you are agreeing to be bound by the current version of these Terms and Conditions of Use.
+
+<#selectbg_g><b>8. Your Privacy</b></#>
+
+Please read our Privacy Policy.
+
+<#selectbg_g><b>9. Governing Law</b></#>
+
+Any claim related to TenSeventy7's Website shall be governed by the laws of us without regards to its conflict of law provisions.

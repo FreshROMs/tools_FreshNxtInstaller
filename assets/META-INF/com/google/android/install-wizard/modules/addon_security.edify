@@ -1,0 +1,12 @@
+﻿# Security
+checkbox(
+  "<~addon.security.title>",
+  "<~addon.security.summary>",
+  "@security",
+  "security.prop",
+
+  "<~addon.security.antimalware.title>",    "<~addon.security.antimalware.summary>",        1,
+  "<~addon.security.folder.title>",         "<~addon.security.folder.summary>",             1,
+  "<~addon.security.share.title>",          "<~addon.security.share.summary>",              1,
+  "<~addon.security.checkout.title>",       "<~addon.security.checkout.summary>",           0
+);

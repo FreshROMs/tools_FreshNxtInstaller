@@ -1,0 +1,9 @@
+﻿# Game Services
+checkbox(
+  "<~addon.game_services.title>",
+  "<~addon.game_services.summary>",
+  "@game_services",
+  "game-home.prop",
+
+  "<~addon.game_services.home.title>",    "<~addon.game_services.home.summary>",       1
+);

@@ -1,0 +1,61 @@
+img.dialog=dialog.9
+img.dialog.titlebar=dialog_titlebar
+img.progress=button.9
+img.prograss.fill=button_press.9
+img.selection=button_press.9
+img.selection.push=button_press.9
+img.button=button
+img.button.focus=button_press.9
+img.button.push=button_press.9
+img.checkbox=cb
+img.checkbox.focus=cb_focus
+img.checkbox.push=cb_press
+img.checkbox.on=cb_on
+img.checkbox.on.focus=cb_on_focus
+img.checkbox.on.push=cb_on_press
+img.radio=radio
+img.radio.focus=radio_focus
+img.radio.push=radio_press
+img.radio.on=radio_on
+img.radio.on.focus=radio_on_focus
+img.radio.on.push=radio_on_press
+
+color.winbg           = #171717
+color.winbg_g         = #171717
+color.winfg           = #fafafa
+color.winfg_gray      = #858585
+color.dialogbg        = #171717
+color.dialogbg_g      = #171717
+color.dialogfg        = #fafafa
+
+color.textbg          = #171717
+
+color.textfg          = #fafafa
+color.textfg_gray     = #858585
+color.controlbg       = #dddddd
+color.controlbg_g     = #cccccc
+color.controlfg       = #f2960c
+color.selectbg        = #f2960c
+color.selectbg_g      = #f2960c
+color.selectfg        = #f2960c
+color.titlebg         = #171717
+color.titlebg_g       = #171717
+color.titlefg         = #fafafa
+color.dlgtitlebg      = #171717
+color.dlgtitlebg_g    = #171717
+color.dlgtitlefg      = #444444
+color.scrollbar       = #f2960c
+color.navbg           = #171717
+color.navbg_g         = #171717
+color.border          = #171717
+color.border_g        = #171717
+color.progressglow    = #f2960c
+
+config.roundsize             = 8
+config.button_roundsize      = 8
+config.window_roundsize      = 0
+config.transition_frame      = 4
+
+info.themename        = Fresh Dark
+info.description      = The official theme for Fresh Installer.
+info.author           = TenSeventy7

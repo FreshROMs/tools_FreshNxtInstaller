@@ -1,0 +1,10 @@
+﻿# Other Samsung apps
+checkbox(
+  "<~addon.sec.title>",
+  "<~addon.sec.summary>",
+  "@sec",
+  "extras.prop",
+
+  "<~addon.sec.dict.title>",   "<~addon.sec.dict.summary>",        0,
+  "<~addon.sec.stc.title>",    "<~addon.sec.stc.summary>",         0
+);

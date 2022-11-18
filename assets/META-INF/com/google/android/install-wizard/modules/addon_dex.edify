@@ -1,0 +1,8 @@
+﻿# Samsung DeX
+checkbox(
+  "<~addon.dex.title>",
+  "<~addon.dex.summary>",
+  "@dex",
+  "dex.prop",
+
+  "<~addon.dex.install.title>",      "<~addon.adex.install.summary>",             0
