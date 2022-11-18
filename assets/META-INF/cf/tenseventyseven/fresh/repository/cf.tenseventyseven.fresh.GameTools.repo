@@ -1,0 +1,6 @@
+/system/etc/permissions/privapp-permissions-com.samsung.android.game.gos.xml
+/system/etc/permissions/privapp-permissions-com.samsung.android.game.gamehome.xml
+/system/etc/permissions/privapp-permissions-com.samsung.android.game.gametools.xml
+/system/priv-app/GameOptimizingService
+/system/priv-app/GameHome
+/system/priv-app/GameTools_Dream

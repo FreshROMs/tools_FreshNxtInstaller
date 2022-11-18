@@ -1,0 +1,7 @@
+/system/app/BixbyWakeup
+/system/etc/permissions/privapp-permissions-com.samsung.android.bixby.agent.xml
+/system/etc/permissions/privapp-permissions-com.samsung.android.bixby.service.xml
+/system/etc/permissions/privapp-permissions-com.samsung.android.bixby.wakeup.xml
+/system/priv-app/Bixby
+/system/priv-app/BixbyAgentStub
+/system/priv-app/BixbyService
