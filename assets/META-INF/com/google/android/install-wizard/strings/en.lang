@@ -75,9 +75,9 @@ addon.google=Google apps
 addon.google.title=Choose your level of Google smarts
 addon.google.summary=Helpful services built with you in mind.
 addon.google.full.title=Full
-addon.google.full.summary=Includes everything on Micro, plus Maps and Android Auto support.
+addon.google.full.summary=Includes everything on Micro, plus Google Meet.
 addon.google.micro.title=Micro
-addon.google.micro.summary=Includes everything on Lite, plus Gmail and Google Drive.
+addon.google.micro.summary=Includes everything on Lite, plus Maps and Android Auto support.
 addon.google.lite.title=Lite
 addon.google.lite.summary=Includes the Google app and necessary services for Google Play.
 
