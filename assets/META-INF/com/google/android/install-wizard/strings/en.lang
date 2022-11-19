@@ -29,29 +29,34 @@
 
 #   Language Information
 #
-#   Language         : English
-#   Translation By   : TenSeventy7
+#   Language             : English
+#   Lang code (ISO-639)  : EN
+#   Localization By      : TenSeventy7
 #
+
+lang.translator=Localization by TenSeventy7
 
 # Initial language strings
 lang.title=Welcome!
 lang.summary=Please select your language.
 
 welcome.title=Welcome to Fresh!
-welcome.text1=Welcome to the setup!
-welcome.text2=This setup wizard will guide you in installing Fresh to your device and add additional features to your installation as you like.
+welcome.text1=Welcome to the installation wizard!
+welcome.text2=This install wizard will guide you in installing Fresh to your device and add additional features to your installation as you like.
 welcome.text3=Tap <b>'next'</b> to continue.
 
 terms.title=Terms of Service
-terms.summary=Use of Fresh is governed by tenseventyseven terms of service.
+terms.summary=Use of Fresh is governed by <b>tenseventyseven</b> Terms of Service.
 terms.check=I Agree
 terms.confirm=You must agree to the terms to continue.
 
-menu.title=Welcome to the setup!
+menu.title=Welcome to the wizard!
 menu.current.summary=Hewwo, old user! Fresh is currently installed on your device.
 menu.new.summary=Hewwo, new user!
 menu.reinstall.title=Re-install Fresh 4
-menu.reinstall.summary=Re-install Fresh with your selected options from an earlier install.
+menu.reinstall.summary=Re-install Fresh with your selected options from an earlier installation.
+menu.upgrade.title=Upgrade Fresh
+menu.upgrade.summary=Upgrade your device to this version of Fresh.
 menu.express.title=Express Installation
 menu.express.summary=Install Fresh using default options for apps and services.
 menu.custom.title=Custom Installation
@@ -64,6 +69,12 @@ confirm.next=Install now
 install.title=Installing Fresh 4
 install.summary=Sit back and relax as Fresh is being installed to your device. This may take a few minutes.
 install.finish=Fresh has been successfully installed. Tap <b>'next'</b> to finish installation.
+
+finish.title=Installation complete!
+finish.text1=Fresh has been successfully installed on your device.
+finish.text2=You can now choose to automatically restart your device after this setup by ticking the box below. <b>Welcome to Fresh!</b>
+finish.text3=Tap <b>'Exit'</b> to finish the setup.
+finish.button.restart=Restart after setup
 
 wait.generic=Please wait...
 wait.install.scan=Scanning device for an existing Fresh installation.
@@ -207,6 +218,7 @@ script.housekeeping.addons=Installing selected addons from setup.
 text_ok=OK
 text_next=Next
 install.next=Next
+install.exit=Exit
 text_back=Back
 text_yes=Yes
 text_no=No
@@ -216,31 +228,3 @@ text_quit=Exit Fresh Setup
 text_quit_msg=Are you sure to quit the setup? Your changes will not be applied.
 
 # } // Basic installer strings
-
-#
-#-- CUSTOM STRING RESOURCE
-#
-common.for=for
-
-langtest.title=Language Test
-langtest.multiline=This text is located in langs/en.lang\
-Use backslash before enter to add new line\
-\
-You can also do <b>Formatting</b> inside the language string resource.\
-\
-Thanks for using AROMA Installer
-
-#-- End of string without any backslash for multiline text
-
-
-themes.title=Select Theme
-themes.desc=Please select installer theme that you want to use in this installation test:
-
-welcome.version=VERSION
-welcome.codename=CODENAME
-welcome.updated=UPDATED
-welcome.next=Press Next to Continue the Installation...
-
-
-changelog.title=Changelog
-changelog.desc=AROMA Installer Changelog
