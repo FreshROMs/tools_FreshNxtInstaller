@@ -50,6 +50,5 @@ writetmpfile(
 writetmpfile(
   "extras.prop",
   "item.0.1=0\n"+
-  "item.0.2=0\n"+
-  "item.0.3=0\n"
+  "item.0.2=0\n"
 );
