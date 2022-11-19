@@ -7,9 +7,9 @@ USE_NEON := 0
 
 # Version info
 AROMA_NAME    := Fresh Install Wizard
-AROMA_VERSION := 13.0.1.0
-AROMA_BUILD   := $(shell date +%y%m%d%H%M)
-AROMA_CN      := Korrina Beta
+AROMA_VERSION := 13.1.0.0
+AROMA_BUILD   := $(shell date +%s)
+AROMA_CN      := Fuecoco
 
 
 CC := $(CROSS_COMPILE)gcc
