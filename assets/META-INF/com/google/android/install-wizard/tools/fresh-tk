@@ -123,34 +123,24 @@ propscan() {
 addon_remove() {
 	ADDON_REPO="/cache/fresh/repository"
 	ADDON_FILE_LIST="${ADDON_REPO}/${1}.repo"
-
-	if [ "${SYSMOUNT}" == "/system_root" ]; then
-		ADDON_FILES=$(awk '{print}' "${ADDON_FILE_LIST}" | sed -e 's@'/system'@'/system_root/system'@g' | tr '\n' ' ')
-	else
-		ADDON_FILES=$(awk '{print}' "${ADDON_FILE_LIST}" | tr '\n' ' ')
-	fi
+	ADDON_FILES=$(awk '{print}' "${ADDON_FILE_LIST}" | sed -e 's@'/system'@'${SYSMOUNT_PATH}'@g' | tr '\n' ' ')
 
 	rm -rf ${ADDON_FILES}
 }
 
 install_selections() {
 	mkdir -p "${FRESH}/overrides/install-wizard"
-	cp -rf "${INSTALL_WIZARD_PATH}/google.prop" "${FRESH}/overrides/install-wizard/google.prop"
-	cp -rf "${INSTALL_WIZARD_PATH}/bixby.prop" "${FRESH}/overrides/install-wizard/bixby.prop"
-	cp -rf "${INSTALL_WIZARD_PATH}/seamless.prop" "${FRESH}/overrides/install-wizard/seamless.prop"
-	cp -rf "${INSTALL_WIZARD_PATH}/ar-zone.prop" "${FRESH}/overrides/install-wizard/ar-zone.prop"
-	cp -rf "${INSTALL_WIZARD_PATH}/game-home.prop" "${FRESH}/overrides/install-wizard/game-home.prop"
-	cp -rf "${INSTALL_WIZARD_PATH}/security.prop" "${FRESH}/overrides/install-wizard/security.prop"
-	cp -rf "${INSTALL_WIZARD_PATH}/extras.prop" "${FRESH}/overrides/install-wizard/extras.prop"
+	cp -f "${INSTALL_WIZARD_PATH}/google.prop" "${FRESH}/overrides/install-wizard/google.prop"
+	cp -f "${INSTALL_WIZARD_PATH}/bixby.prop" "${FRESH}/overrides/install-wizard/bixby.prop"
+	cp -f "${INSTALL_WIZARD_PATH}/seamless.prop" "${FRESH}/overrides/install-wizard/seamless.prop"
+	cp -f "${INSTALL_WIZARD_PATH}/ar-zone.prop" "${FRESH}/overrides/install-wizard/ar-zone.prop"
+	cp -f "${INSTALL_WIZARD_PATH}/game-home.prop" "${FRESH}/overrides/install-wizard/game-home.prop"
+	cp -f "${INSTALL_WIZARD_PATH}/security.prop" "${FRESH}/overrides/install-wizard/security.prop"
+	cp -f "${INSTALL_WIZARD_PATH}/extras.prop" "${FRESH}/overrides/install-wizard/extras.prop"
 }
 
 migrate_fresh_three_addons() {
-	# Variables that depend on system-as-root (SaR)
-	if [ "${SYSMOUNT}" == "/system_root" ]; then
-		FRESH_ADDONS_OLD="/system_root/system/system_ext/etc/fresh/addons" # addon metadata folder used in the ROM
-	else
-		FRESH_ADDONS_OLD="/system/system_ext/etc/fresh/addons" # addon metadata folder used in the ROM
-	fi
+	FRESH_ADDONS_OLD="${SYSMOUNT_PATH}/system_ext/etc/fresh/addons" # addon metadata folder used in the ROM
 
 	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.bixby.voice.prop" ]; then
 		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.1' '1'
