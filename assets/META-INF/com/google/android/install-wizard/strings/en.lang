@@ -169,11 +169,36 @@ addon.notinstalled=Not installed
 
 # // Installation script strings {
 
-script.partitions.fail1=Failed finding partitions!
-script.partitions.fail2=Contact developer for support!
+script.partitions.scanning=Scanning for device partitions
+script.partitions.fail1=Failed to scan for partitions.
+script.partitions.fail2=Please update your recovery.
 
-script.system.fail1=Your device does not have Fresh installed.
-script.system.fail2=This over-the-air update is only eligible for devices running Fresh.
+script.partitions.mount=Mounting partitions.
+script.partitions.remount=Re-mounting partitions.
+script.partitions.umount=Un-mounting partitions.
+script.partitions.found.system=Found operating system partition
+script.partitions.found.vendor=Found device vendor partition
+script.partitions.found.product=Found OEM product partition
+script.partitions.found.splash=Found OEM splash screen partition
+script.partitions.found.boot=Found Linux kernel partition
+script.partitions.found.dtb=Found device tree overlay partition
+script.partitions.found.recovery=Found recovery environment partition
+
+script.install.main=Installing Fresh 4
+script.install.super=Installing Fresh super image.
+script.install.system=Installing Fresh system partition.
+script.install.vendor=Installing Fresh vendor partition.
+script.install.product=Installing Fresh product partition.
+script.install.splash=Installing custom OEM splash screen.
+script.install.boot.mint=Installing Mint Kernel.
+script.install.boot.generic=Installing custom kernel.
+script.install.dtb=Installing custom device tree overlay.
+script.install.recovery.twrp=Installing TWRP recovery environment.
+script.install.recovery.shrp=Installing SHRP recovery environment.
+script.install.recovery.generic=Installing custom recovery environment.
+script.install.complete=Fresh has been installed successfully!
+
+script.housekeeping.addons=Installing selected addons from setup.
 
 # } // Installation script strings
 

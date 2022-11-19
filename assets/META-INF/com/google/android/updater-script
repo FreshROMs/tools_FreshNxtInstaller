@@ -22,12 +22,12 @@ package_extract_dir("META-INF/com/google/android/install-wizard/tools", "/cache/
 package_extract_dir("META-INF/cf/tenseventyseven/fresh", "/cache/fresh");
 set_metadata_recursive("/cache/tools", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
 
-ui_print("- Scanning for device partitions");
+ui_print("- " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.scanning"));
 run_program("/cache/tools/fresh-tk", "mounts_checker");
 ifelse(
   file_getprop("/tmp/toolkit.prop", "boot.part.by-name") == "fail", (
-    ui_print("   - Error 02: Failed to scan for partitions.");
-    ui_print("     Please update your recovery.");
+    ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.fail1"));
+    ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.fail2"));
     sleep(5);
     abort(" ");
    )
@@ -38,81 +38,77 @@ package_extract_file("fresh.prop", "/tmp/fresh.prop");
 package_extract_file("build.prop", "/tmp/build.prop");
 
 # HACK: Actually check if we found the following partitions soon.
-ui_print("  - Found operating system partition");
+ui_print("  - " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.found.system"));
+show_progress(0.010000, 0);
 sleep(1);
-ui_print("  - Found device vendor partition");
+ui_print("  - " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.found.vendor"));
+show_progress(0.020000, 0);
 sleep(1);
-ui_print("  - Found OEM product partition");
+ui_print("  - " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.found.product"));
+show_progress(0.030000, 0);
 sleep(1);
-ui_print("  - Found OEM splash screen partition");
+ui_print("  - " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.found.splash"));
+show_progress(0.040000, 0);
 sleep(1);
-ui_print("  - Found Linux kernel partition");
+ui_print("  - " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.found.boot"));
+show_progress(0.050000, 0);
 sleep(1);
-ui_print("  - Found device tree overlay partition");
+ui_print("  - " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.found.dtb"));
+show_progress(0.060000, 0);
 sleep(1);
-ui_print("  - Found recovery environment partition");
+ui_print("  - " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.found.recovery"));
+show_progress(0.070000, 0);
 sleep(3);
 
 # Prepare partitions for pre-install services
 ifelse(is_mounted(file_getprop("/tmp/toolkit.prop", "block.system.mount")), sleep(1), mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.system"), file_getprop("/tmp/toolkit.prop", "block.system.mount")));
+show_progress(0.080000, 0);
 ifelse(is_mounted("/product"), sleep(1), mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.product"), "/product"));
 ifelse(is_mounted("/vendor"), sleep(1), mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.vendor"), "/vendor"));
+show_progress(0.090000, 0);
 ifelse(is_mounted("/data"), sleep(1), run_program("/cache/tools/busybox", "mount", "/data"));
-
 show_progress(0.100000, 0);
 
 ifelse(
   file_getprop("/tmp/toolkit.prop", "system.exist.data") == "true", (
-    ui_print("   - Existing data detected.");
-    ui_print("     Backing up your current OMC to prevent bootloops.");
     run_program("/cache/tools/fresh-tk", "optics", "backup");
+    show_progress(0.125000, 0);
     run_program("/cache/tools/fresh-tk", "disable_modules");
-    ui_print(" ");
    )
 );
 
-ifelse(
-  file_getprop("/tmp/toolkit.prop", "magisk.installed.props") == "true", (
-    ui_print("   - A Magisk module has been detected that replaces");
-    ui_print("     your system's build fingerprint. This module has");
-    ui_print("     been disabled to allow the system to update.");
-    ui_print(" ");
-    ui_print("     Enable the module again, then reboot, after");
-    ui_print("     booting.");
-    sleep(5);
-    ui_print(" ");
-   )
-);
-
+ui_print(" ");
 show_progress(0.150000, 0);
 
 # Unmount system, vendor, and product/odm partitions for flashing
-ui_print("   - Unmounting partitions.");
+ui_print("- " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.umount"));
 ifelse(is_mounted(file_getprop("/tmp/toolkit.prop", "block.system.mount")), unmount(file_getprop("/tmp/toolkit.prop", "block.system.mount")));
 ifelse(is_mounted("/product"), unmount("/product"));
 ifelse(is_mounted("/vendor"), unmount("/vendor"));
 
+ui_print(" ");
 sleep(3);
 show_progress(0.200000, 0);
 
-# Flash system partition
-ui_print("- Installing Fresh " +  file_getprop("/tmp/fresh.prop", "ro.fresh.version") + file_getprop("/tmp/fresh.prop", "ro.fresh.build.state") + " for the " + file_getprop("/tmp/build.prop", "ro.product.system.device") + ".");
-ui_print("  This might take a while.");
+# Flash OS partition
+ui_print("- " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.main"));
+ui_print("- Installing Fresh 4");
 
 ifelse(
   file_getprop("/tmp/toolkit.prop", "block.dynamic.mount") == "true", (
-    ui_print("   - Flashing super image.");
+    ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.super"));
     package_extract_file("FRSH/super.img", file_getprop("/tmp/toolkit.prop", "block.super"));
+    show_progress(0.700000, 0);
   ), (
-    ui_print("   - Flashing system image.");
+    ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.system"));
     block_image_update("/dev/block/platform/13520000.ufs/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat.br", "system.patch.dat") || abort("      - Failed to update system image!");
     show_progress(0.300000, 0);
 
-    ui_print("   - Flashing vendor image.");
+    ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.vendor"));
     block_image_update("/dev/block/platform/13520000.ufs/by-name/vendor", package_extract_file("vendor.transfer.list"), "vendor.new.dat.br", "vendor.patch.dat") || abort("      - Failed to update vendor image!");
     show_progress(0.600000, 0);
-    
-    ui_print("   - Flashing product image.");
+
+    ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.product"));
     block_image_update("/dev/block/platform/13520000.ufs/by-name/product", package_extract_file("product.transfer.list"), "product.new.dat.br", "product.patch.dat") || abort("      - Failed to update product image!");
     show_progress(0.700000, 0);
     
@@ -120,41 +116,46 @@ ifelse(
 );
 
 # Flash up_param partition
-ui_print("   - Flashing custom splash screen.");
+ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.splash"));
 package_extract_file("up_param.bin", file_getprop("/tmp/toolkit.prop", "block.splash"));
+show_progress(0.720000, 0);
 
 # Flash boot/recovery/DTB
-ui_print("   - Flashing Mint Kernel.");
+ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.boot.mint"));
 package_extract_file("boot.img", file_getprop("/tmp/toolkit.prop", "block.boot"));
-ui_print("   - Flashing device tree blob image.");
+show_progress(0.760000, 0);
+ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.dtb"));
 package_extract_file("dtb.img", "/dev/block/platform/13520000.ufs/by-name/dtb");
-ui_print("   - Installing TWRP recovery.");
+show_progress(0.780000, 0);
+ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.recovery.shrp"));
 package_extract_file("recovery.img", file_getprop("/tmp/toolkit.prop", "block.recovery"));
 
 show_progress(0.800000, 0);
 
-ui_print("   - Fresh installed successfully!");
+ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.complete"));
 sleep(3);
 ui_print(" ");
 
 # Post-install services
-ui_print("- Installing selected addons from setup");
-ui_print("   - Re-mounting partitions.");
-mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.system"), file_getprop("/tmp/toolkit.prop", "block.system.mount"));
-mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.vendor"), "/vendor");
-mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.product"), "/product");
+ui_print("- " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.remount"));
+ifelse(is_mounted(file_getprop("/tmp/toolkit.prop", "block.system.mount")), sleep(1), mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.system"), file_getprop("/tmp/toolkit.prop", "block.system.mount")));
+ifelse(is_mounted("/product"), sleep(1), mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.product"), "/product"));
+ifelse(is_mounted("/vendor"), sleep(1), mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.vendor"), "/vendor"));
+
+# Install addons
+ui_print(" ");
 
 # Google
 ifelse(
   file_getprop("/tmp/install-wizard/google.prop", "selected.0") == "1", (
-      ui_print("   - Installing Full Google apps");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.google") + " - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.google.full.title"));
       sleep(10);
   )
 );
 
 ifelse(
   file_getprop("/tmp/install-wizard/google.prop", "selected.0") == "2", (
-      ui_print("   - Installing Micro Google apps");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.google") + " - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.google.micro.title"));
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.google.Full");
       sleep(5);
   )
@@ -162,18 +163,21 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/google.prop", "selected.0") == "3", (
-      ui_print("   - Installing Lite Google apps");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.google") + " - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.google.lite.title"));
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.google.Full");
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.google.Micro");
       sleep(3);
   )
 );
 
+show_progress(0.810000, 0);
+
 # Bixby
 ifelse(
   file_getprop("/tmp/install-wizard/bixby.prop", "item.0.1") == "1", (
-      ui_print("   - Installing Bixby Voice");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.bixby.voice.title"));
       sleep(5);
+      show_progress(0.812000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.bixby.Voice");
   )
@@ -181,8 +185,9 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/bixby.prop", "item.0.2") == "1", (
-      ui_print("   - Installing Bixby Vision");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.bixby.vision.title"));
       sleep(3);
+      show_progress(0.814000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.bixby.Vision");
   )
@@ -190,8 +195,9 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/bixby.prop", "item.0.3") == "1", (
-      ui_print("   - Installing Bixby Reminders");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.bixby.reminders.title"));
       sleep(2);
+      show_progress(0.816000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.bixby.Reminders");
   )
@@ -199,18 +205,22 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/bixby.prop", "item.0.4") == "1", (
-      ui_print("   - Installing Bixby Routines");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.bixby.routines.title"));
       sleep(2);
+      show_progress(0.818000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.bixby.Routines");
   )
 );
 
+show_progress(0.820000, 0);
+
 # Seamless
 ifelse(
   file_getprop("/tmp/install-wizard/seamless.prop", "item.0.1") == "1", (
-      ui_print("   - Installing Quick Share");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.seamless.sharelive.title"));
       sleep(2);
+      show_progress(0.822000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.seamless.ShareLive");
   )
@@ -218,8 +228,9 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/seamless.prop", "item.0.2") == "1", (
-      ui_print("   - Installing Link to Windows");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.seamless.ltw.title"));
       sleep(2);
+      show_progress(0.824000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.seamless.PhoneLink");
   )
@@ -227,8 +238,9 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/seamless.prop", "item.0.3") == "1", (
-      ui_print("   - Installing Call and Text Sync");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.seamless.cta.title"));
       sleep(2);
+      show_progress(0.826000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.seamless.MdecService");
   )
@@ -236,18 +248,22 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/seamless.prop", "item.0.4") == "1", (
-      ui_print("   - Installing Samsung Friends");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.seamless.friends.title"));
       sleep(2);
+      show_progress(0.828000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.seamless.Friends");
   )
 );
 
+show_progress(0.830000, 0);
+
 # AR Zone
 ifelse(
   file_getprop("/tmp/install-wizard/ar-zone.prop", "item.0.1") == "1", (
-      ui_print("   - Installing AR Zone");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.ar_zone.zone.title"));
       sleep(2);
+      show_progress(0.832000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.ar.Zone");
   )
@@ -255,8 +271,9 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/ar-zone.prop", "item.0.2") == "1", (
-      ui_print("   - Installing AR Emoji");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.ar_zone.emoji.title"));
       sleep(5);
+      show_progress(0.834000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.ar.Emoji");
   )
@@ -264,8 +281,9 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/ar-zone.prop", "item.0.3") == "1", (
-      ui_print("   - Installing AR Doodle");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.ar_zone.doodle.title"));
       sleep(3);
+      show_progress(0.836000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.ar.Doodle");
   )
@@ -273,27 +291,32 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/ar-zone.prop", "item.0.4") == "1", (
-      ui_print("   - Installing DECO PIC");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.ar_zone.decopic.title"));
       sleep(3);
+      show_progress(0.838000, 0);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.ar.DecoPic");
   )
 );
 
+show_progress(0.840000, 0);
+
 # Game Launcher
 ifelse(
   file_getprop("/tmp/install-wizard/game-home.prop", "item.0.1") == "1", (
-      ui_print("   - Installing Game Launcher and Tools");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.game_services.home.title"));
       sleep(5);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.GameTools");
   )
 );
 
+show_progress(0.850000, 0);
+
 # Security
 ifelse(
   file_getprop("/tmp/install-wizard/security.prop", "item.0.1") == "1", (
-      ui_print("   - Installing Malware Protection");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.security.antimalware.title"));
       sleep(2);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.security.Antivirus");
@@ -302,7 +325,7 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/security.prop", "item.0.2") == "1", (
-      ui_print("   - Installing Secure Folder");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.security.folder.title"));
       sleep(2);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.security.SecureFolder");
@@ -311,7 +334,7 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/security.prop", "item.0.3") == "1", (
-      ui_print("   - Installing Private Share");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.security.share.title"));
       sleep(2);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.security.PrivateShare");
@@ -320,17 +343,19 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/security.prop", "item.0.4") == "1", (
-      ui_print("   - Installing Samsung Checkout");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.security.checkout.title"));
       sleep(2);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.security.Checkout");
   )
 );
 
+show_progress(0.860000, 0);
+
 # SEC
 ifelse(
   file_getprop("/tmp/install-wizard/extras.prop", "item.0.1") == "1", (
-      ui_print("   - Installing Dictionary");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.sec.dict.title"));
       sleep(2);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.extras.Dictionary");
@@ -339,45 +364,35 @@ ifelse(
 
 ifelse(
   file_getprop("/tmp/install-wizard/extras.prop", "item.0.2") == "1", (
-      ui_print("   - Installing Smart Touch Call");
+      ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "addon.sec.stc.title"));
       sleep(2);
   ), (
       run_program("/cache/tools/fresh-tk", "addon_remove", "cf.tenseventyseven.fresh.extras.STC");
   )
 );
 
+show_progress(0.870000, 0);
+
 # Copy installer selections to the system
 run_program("/cache/tools/fresh-tk", "install_selections");
 show_progress(0.900000, 0);
 
-ui_print("   - Unmounting partitions.");
-ifelse(is_mounted(file_getprop("/cache/fresh-tk_install", "block.system.mount")), unmount(file_getprop("/cache/fresh-tk_install", "block.system.mount")));
+ui_print(" ");
+ui_print("- " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.umount"));
+ifelse(is_mounted(file_getprop("/tmp/toolkit.prop", "block.system.mount")), unmount(file_getprop("/tmp/toolkit.prop", "block.system.mount")));
+show_progress(0.920000, 0);
 ifelse(is_mounted("/vendor"), unmount("/vendor"));
+show_progress(0.940000, 0);
 ifelse(is_mounted("/product"), unmount("/product"));
+show_progress(0.960000, 0);
 run_program("/cache/tools/fresh-tk", "install_cleanup");
 delete_recursive("/cache/tools");
+show_progress(0.980000, 0);
 delete("/tmp/build.prop");
 delete("/tmp/fresh.prop");
 delete("/tmp/fresh_core.prop");
+delete("/tmp/toolkit.prop");
 ui_print(" ");
 show_progress(1.000000, 0);
-ui_print("- Installation complete!");
+ui_print("- " + file_getprop("/tmp/install-wizard/lang.prop", "finish.title"));
 sleep(3);
-ui_print(" ");
-
-# Finish installation
-ui_print("=========================================");
-ui_print("         _____              _            ");
-ui_print("        |  ___| __ ___  ___| |__         ");
-ui_print("        | |_ | '__/ _ \/ __| '_ \        ");
-ui_print("        |  _|| | |  __/\__ \ | | |       ");
-ui_print("        |_|  |_|  \___||___/_| |_|       ");
-ui_print("                                         ");
-ui_print("=========================================");
-ui_print("       Fresh installed successfully.     ");
-ui_print("                                         ");
-ui_print("         Welcome to a no-frills          ");
-ui_print("           Samsung Experience!           ");
-ui_print("=========================================");
-sleep(5);
-ui_print(" ");
