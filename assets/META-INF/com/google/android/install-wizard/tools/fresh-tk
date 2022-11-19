@@ -28,14 +28,15 @@ file_getprop() { grep "^$2=" "$1" | cut -d= -f2-; }
 # Variables used throughout the script
 DEVICE=$(file_getprop /tmp/vendor.prop 'ro.fresh.device.product') # device-checking prop
 SYSMOUNT=$(file_getprop "${PROP}" 'block.system.mount') # check if the system is mounted as SaR
+SYSMOUNT_PATH=$(file_getprop "${PROP}" 'block.system.mount.path') # check if the system is mounted as SaR
 
-ROM="${SYSMOUNT}/system_ext/etc/fresh.prop"
-ROM_THREE="${SYSMOUNT}/system_ext/fresh.prop"
-ROM_THREE_ALT="${SYSMOUNT}/fresh.prop"
-FRESH="${SYSMOUNT}/system_ext/etc/fresh"
-DEVICE_PROP="${SYSMOUNT}/build.prop"
+ROM="${SYSMOUNT_PATH}/system_ext/etc/fresh.prop"
+ROM_THREE="${SYSMOUNT_PATH}/system_ext/fresh.prop"
+ROM_THREE_ALT="${SYSMOUNT_PATH}/fresh.prop"
+FRESH="${SYSMOUNT_PATH}/system_ext/etc/fresh"
+DEVICE_PROP="${SYSMOUNT_PATH}/build.prop"
 
-FLOATING_FEATURE_SYSTEM="${SYSMOUNT}/etc/floating_feature.xml"
+FLOATING_FEATURE_SYSTEM="${SYSMOUNT_PATH}/etc/floating_feature.xml"
 FLOATING_FEATURE_VENDOR="/vendor/etc/floating_feature.xml"
 
 # Variables used by the addon and OMC backup services
@@ -295,9 +296,11 @@ mounts_checker() {
 
 	# Check for System-as-Root (SaR) mount point
 	if [ -d /system_root ]; then
-		file_setprop "block.system.mount" "/system_root/system"
+		file_setprop "block.system.mount" "/system_root"
+		file_setprop "block.system.mount.path" "/system_root/system"
 	else
 		file_setprop "block.system.mount" "/system"
+		file_setprop "block.system.mount.path" "/system"
 	fi
 
 	# Add verified partitions to installer prop
