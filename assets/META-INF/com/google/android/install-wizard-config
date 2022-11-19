@@ -68,6 +68,8 @@ agreebox(
 
 # Scan for a current Fresh installation and check if we can do a re-install
 pleasewait("<~wait.install.scan>");
+resexec("tools/fresh-tk", "mounts_checker");
+exec("/sbin/mount", file_getprop("/tmp/toolkit.prop", "block.system"), file_getprop("/tmp/toolkit.prop", "block.system.mount"));
 resexec("tools/fresh-tk", "install_rom_check");
 
 if file_getprop("/tmp/toolkit.prop", "system.exist.rom") == "false" then
