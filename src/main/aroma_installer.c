@@ -559,7 +559,7 @@ void aroma_init_install(
   }
   
   ai_prog_oy += py;
-  ai_prog_or = ai_prog_oh / 2;
+  ai_prog_or = ai_prog_oh / 8;
   //-- Draw Progress Holder Into BG
   dword hl1 = ag_calchighlight(acfg()->controlbg, acfg()->controlbg_g);
   
@@ -597,7 +597,7 @@ int aroma_start_install(
   ai_progress_pos   = 0.0;
   ai_progress_w     = 0;
   ai_run            = 1;
-  ai_buftxt         = actext(hWin, cx, cy + (agdp() * 5), cw, ch - (agdp() * 15), NULL, 0);
+  ai_buftxt         = actext(hWin, cx, cy + (agdp() * 1), cw, ch - (agdp() * 11), NULL, 0);
   aw_set_on_dialog(1);
   aw_show_ex(hWin, 2, 0, NULL);
   //aw_show(hWin);
@@ -621,14 +621,13 @@ int aroma_start_install(
           // LOGS("pthread_join threadInstaller\n");
           // Draw Navigation
           int pad         = agdp() * 4;
-          ag_draw_ex(bg, cvf, 0, imgY, 0, 0, cvf->w, cvf->h);
           ag_draw(&hWin->c, bg, 0, 0);
           // Update Textbox
           ai_rebuildtxt(cx, chkFY, cw, chkFH);
           int nPad    = agdp() * 2;
           int nHeight = ph + agdp() * 4;
           int nWidth  = floor((agw() - (nPad * 2) - nHeight) / 2);
-          int nY      = py - agdp() * 2;
+          int nY      = py - (agdp() * 1);
           imgbtn(hWin, nPad, nY, nWidth, nHeight, NULL, "Save Logs", 4, 8);
           ACONTROLP nxtbtn = imgbtn(hWin, nPad + nWidth + nHeight, nY, nWidth, nHeight, aui_next_icon(), acfg()->text_next, 5, 6);
           // ACONTROLP menubtn = imgbtn(hWin, nPad + nWidth, nY, nHeight, nHeight, aui_menu_icon(), NULL, 4, 200);

@@ -1818,14 +1818,6 @@ Value * AROMA_VIEWBOX(const char * name, State * state, int argc, Expr * argv[])
   //-- Draw Text
   ag_text(&aui_win_bg, txtW, (agw() / 2) - (txtW / 2), tifY, text, acfg()->titlefg, 0);
   
-  //-- Draw Separator
-  if (!isplain) {
-    color sepcl = ag_calculatealpha(acfg()->winbg, 0x0000, 80);
-    color sepcb = ag_calculatealpha(acfg()->winbg, 0xffff, 127);
-    ag_rect(&aui_win_bg, tifX, tifY + pad + txtH, chkW - ((pad * 2) + imgA), 1, sepcl);
-    ag_rect(&aui_win_bg, tifX, tifY + pad + txtH + 1, chkW - ((pad * 2) + imgA), 1, sepcb);
-  }
-  
   //-- Create Window
   AWINDOWP hWin   = aw(&aui_win_bg);
   ACONTROLP txtcb = NULL;
@@ -1840,8 +1832,9 @@ Value * AROMA_VIEWBOX(const char * name, State * state, int argc, Expr * argv[])
     }
     
     //-- Check Box
+    int txtCW      = (chkW - ((pad * 2) + imgA)) - (((agdp() * 10) + 6) + (agdp() * 4));
     int chkaH = agdp() * 20;
-    txtcb     = accb(hWin, tifX, tifY + (pad * 2) + txtH, chkW - ((pad * 2) + imgA), chkaH + pad, args[3], initial_chk);
+    txtcb     = accb(hWin, (agw() / 2) - (txtCW / 2), tifY + pad + txtH, chkW - ((pad * 2) + imgA), chkaH + pad, args[3], initial_chk);
   }
   
   /*
@@ -2917,19 +2910,20 @@ Value * AROMA_INSTALL(const char * name, State * state, int argc, Expr * argv[])
   //-- Init Strings
   char text[256];                   //-- Text When Installing
   char finish_text[256];            //-- Text After Installing
-  snprintf(text, 256, "%s", args[1]);
+  snprintf(text, 256, "<@center>%s</@>", args[1]);
   
   if (argc == 4) {
-    snprintf(finish_text, 256, "%s", args[3]);
+    snprintf(finish_text, 256, "<@center>%s</@>", args[3]);
   }
   else {
-    snprintf(finish_text, 256, "%s", args[1]);
+    snprintf(finish_text, 256, "<@center>%s</@>", args[1]);
   }
   
-  //-- Drawing Data
+  //-- Init Drawing Data
   int pad         = agdp() * 4;
   int chkW        = agw() - (pad * 2);
-  int bntH        = agdp() * 32;
+  int pW        = agw() - (pad * 6);
+  int bntH        = agdp() * 28;
   int chkH        = agh() - ( aui_minY + bntH + (pad * 4));
   int chkY        = aui_minY + pad;
   int btnY        = chkY + chkH + (pad * 2);
@@ -2939,10 +2933,10 @@ Value * AROMA_INSTALL(const char * name, State * state, int argc, Expr * argv[])
   int  imgA       = 0;
   int  imgW       = 0;
   int  imgH       = 0;
-  int  tifX       = pad * 2;
-  int  imgX       = pad;
-  int  tifY       = chkY;
-  int  imgY       = chkY;
+  int  tifX       = pad + 38;
+  int  imgX       = pad + 38;
+  int  tifY       = agdp() * 72;
+  int  imgY       = agdp() * 34;
   
   if (apng_load(&ap, args[2])) {
     imgE  = 1;
@@ -2952,45 +2946,40 @@ Value * AROMA_INSTALL(const char * name, State * state, int argc, Expr * argv[])
     tifX += imgA;
   }
   
-  int txtH        = ag_txtheight(chkW - ((pad * 2) + imgA), text, 0);
-  int txtFH       = ag_txtheight(chkW - ((pad * 2) + imgA), finish_text, 0);
+  int txtW        = chkW - (pad * 4);
+  int txtH        = ag_txtheight(txtW, text, 1);
+  int txtFH       = ag_txtheight(txtW, finish_text, 1);
   int tifFY       = tifY;
   
   if (imgE) {
     if (txtH < imgH) {
-      tifY += (imgH - txtH) / 2;
-      txtH = imgH;
+      int imgN = imgH - (agdp() * 8);
     }
-    
-    if (txtFH < imgH) {
-      tifFY += (imgH - txtFH) / 2;
-      txtFH = imgH;
-    }
-    
-    apng_draw_ex(&aui_win_bg, &ap, imgX, imgY, 0, 0, imgW, imgH);
+
+    apng_draw_ex(&aui_win_bg, &ap, (agw() / 2) - (imgW / 2), imgY, 0, 0, imgW, imgH);
     apng_close(&ap);
   }
   
   //-- Finished Text Canvas
   CANVAS cvf;
   ag_canvas(&cvf, agw(), ((txtFH > txtH) ? txtFH : txtH));
-  ag_draw_ex(&cvf, &aui_win_bg, 0, 0, 0, imgY, agw(), cvf.h);
+  ag_draw_ex(&cvf, &aui_win_bg, 0, tifY, 0, imgY, agw(), cvf.h);
   //-- Draw Finished Text
-  ag_text (&cvf, chkW - ((pad * 2) + imgA), tifX,   tifFY - imgY,   finish_text,    acfg()->winfg, 0);
+  ag_text(&cvf, txtW, (agw() / 2) - (txtW / 2), tifY, finish_text, acfg()->titlefg, 0);
   //-- Draw Text
-  ag_text(&aui_win_bg, chkW - ((pad * 2) + imgA), tifX, tifY, text,    acfg()->winfg, 0);
+  ag_text(&aui_win_bg, txtW, (agw() / 2) - (txtW / 2), tifY, text, acfg()->titlefg, 0);
   //-- Resize Checkbox Size & Pos
   int chkFY  = chkY + (txtFH + pad);
   int chkFH  = chkH - (txtFH + pad);
-  chkY      += txtH + pad;
-  chkH      -= txtH + pad;
+  chkY      += (pad * 4);
+  chkH      -= (pad * 4);
   //-- Release Arguments
   _FREEARGS();
   //-- Start Installer Proccess
   int ret_status = aroma_start_install(
                      &aui_win_bg,
-                     0, chkY, chkW + (pad * 2), chkH + pad,
-                     pad, btnY, chkW, bntH,
+                     0, chkY, chkW + (pad * 2), chkH,
+                     (pad * 3), btnY, pW, bntH,
                      &cvf, imgY, chkFY, chkFH + pad
                    );
   //-- Release Finished Canvas

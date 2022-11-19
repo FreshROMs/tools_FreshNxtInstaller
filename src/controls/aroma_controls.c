@@ -1268,15 +1268,6 @@ byte aw_confirm(AWINDOWP parent, char * titlev, char * textv, char * img, char *
   int vpadB = -1;
   int vimgX = pad * 2;
   
-  if (winp != NULL) {
-    if (apng9_calc(winp, &winv, 1)) {
-      txtW = winW - (winv.l + winv.r);
-      txtX = cPad + (agdp() * 2)  + (winv.l);
-      vimgX = cPad + (agdp() * 2) + (winv.l);
-      vpadB = winv.b;
-    }
-  }
-  
   //-- Load Icon
   PNGCANVAS ap;
   byte imgE = 0;
