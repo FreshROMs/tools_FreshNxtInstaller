@@ -30,19 +30,6 @@
 # Utility directories
 ORIGIN_DIR=$(pwd)
 CURRENT_BUILD_USER=$(whoami)
-FRSH_DIR=/home/Vince/Android/Fresh/Sources/AROMA-Installer
-#FRSH_DIR=/mnt/c/Users/Vince/Android/Fresh/Repositories/AROMA-Installer
-
-MAJOR=13
-MINOR=0
-PATCH=0
-CODENAME="Korrina Beta"
-
-# Set build user if building locally
-if [[ ${CURRENT_BUILD_USER} == "tenseventy7" ]]; then
-	export KBUILD_BUILD_USER=TenSeventy7
-	export KBUILD_BUILD_HOST=Lumiose-Build
-fi
 
 # Toolchain options
 BUILD_PREF_COMPILER='gcc'
@@ -80,52 +67,6 @@ verify_toolchain() {
 	export CC=${BUILD_PREF_COMPILER}
 }
 
-get_version() {
-	# Get Fresh version and build date
-	BUILD_DATE=$(date +"%a %b %d %H:%M:%S %:::z %Y")
-	BUILD_VERSION_DATE=$(date +"%y%m%d")
-
-	if [ -f "bin/build_date" -a -f "bin/build_version" -a -f "bin/build_version_full" ]; then
-		LAST_DATE=$(cat "bin/build_date")
-		if [ ${LAST_DATE} == ${BUILD_VERSION_DATE} ]; then
-			BUILD_VER=$(cat "bin/build_version")
-
-			if [[ ${#BUILD_VER} < 2 ]] 
-			then
-			    BUILD_VER="00${BUILD_VER}"
-			    BUILD_VER="${BUILD_VER: -2}"
-			fi
-
-			BUILD_VERSION_FULL="${LAST_DATE}${BUILD_VER}"
-			if [ ${BUILD_VERSION_FULL} == $(cat "bin/build_version_full") ]; then
-				BUILD_VER=$(expr ${BUILD_VER} + '1')
-				if [[ ${#BUILD_VER} < 2 ]] 
-				then
-				    BUILD_VER="00${BUILD_VER}"
-				    BUILD_VER="${BUILD_VER: -2}"
-				fi
-
-				BUILD_VERSION_FULL="${LAST_DATE}${BUILD_VER}"
-				echo "${BUILD_VER}" > "bin/build_version"
-				echo "${BUILD_VERSION_FULL}" > "bin/build_version_full"
-			fi
-		else
-			BUILD_VER="01"
-			echo $(date +"%y%m%d") > "bin/build_date"
-			echo "01" > "bin/build_version"
-			BUILD_VERSION_FULL="${BUILD_VERSION_DATE}${BUILD_VER}"
-			echo "${BUILD_VERSION_FULL}" > "bin/build_version_full"
-		fi
-	else
-			BUILD_VER="01"
-			echo $(date +"%y%m%d") > "bin/build_date"
-			echo "01" > "bin/build_version"
-			BUILD_VERSION_FULL="${BUILD_VERSION_DATE}${BUILD_VER}"
-			echo "${BUILD_VERSION_FULL}" > "bin/build_version_full"
-	fi
-}
-
 verify_toolchain
-get_version
 make clean
-make AROMA_BUILD=${BUILD_VERSION_FULL} AROMA_VERSION="${MAJOR}.${MINOR}.${PATCH}.${BUILD_VER}" AROMA_CN="${CODENAME}"
+make
