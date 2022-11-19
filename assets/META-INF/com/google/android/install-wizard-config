@@ -101,16 +101,29 @@ else
     resexec("tools/fresh-tk", "migrate_fresh_three_addons");
   endif;
 
-  menubox(
-      "<~menu.title>",
-      "<~menu.current.summary>",
-      "@install",
-      "menu.prop",
-      
-      "<~menu.reinstall.title>",    "<~menu.reinstall.title>",        "@install_reinstall",
-      "<~menu.express.title>",      "<~menu.express.summary>",        "@install_express",
-      "<~menu.custom.title>",       "<~menu.custom.summary>",         "@install_custom"
-  );
+  if file_getprop("/tmp/toolkit.prop", "system.exist.rom") == "upgrade" then
+    menubox(
+        "<~menu.title>",
+        "<~menu.current.summary>",
+        "@install",
+        "menu.prop",
+        
+        "<~menu.upgrade.title>",      "<~menu.upgrade.summary>",        "@icon_next",
+        "<~menu.express.title>",      "<~menu.express.summary>",        "@install_express",
+        "<~menu.custom.title>",       "<~menu.custom.summary>",         "@install_custom"
+    );
+  else
+    menubox(
+        "<~menu.title>",
+        "<~menu.current.summary>",
+        "@install",
+        "menu.prop",
+        
+        "<~menu.reinstall.title>",    "<~menu.reinstall.summary>",      "@install_reinstall",
+        "<~menu.express.title>",      "<~menu.express.summary>",        "@install_express",
+        "<~menu.custom.title>",       "<~menu.custom.summary>",         "@install_custom"
+    );
+  endif;
 
   # Express installation
   if prop("menu.prop","selected") == "2" then
