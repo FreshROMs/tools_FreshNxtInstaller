@@ -114,7 +114,7 @@ else
         "@install",
         "menu.prop",
         
-        "<~menu.upgrade.title>",      "<~menu.upgrade.summary>",        "@icon_next",
+        "<~menu.upgrade.title>",      "<~menu.upgrade.summary>",        "@next",
         "<~menu.express.title>",      "<~menu.express.summary>",        "@install_express",
         "<~menu.custom.title>",       "<~menu.custom.summary>",         "@install_custom"
     );
