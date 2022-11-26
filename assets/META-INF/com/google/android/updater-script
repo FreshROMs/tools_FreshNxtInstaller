@@ -92,7 +92,6 @@ show_progress(0.200000, 0);
 
 # Flash OS partition
 ui_print("- " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.main"));
-ui_print("- Installing Fresh 4");
 
 ifelse(
   file_getprop("/tmp/toolkit.prop", "block.dynamic.mount") == "true", (
