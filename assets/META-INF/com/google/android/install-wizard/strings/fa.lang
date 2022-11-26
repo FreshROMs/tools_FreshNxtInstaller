@@ -1,0 +1,199 @@
+# =========================================
+# _____              _
+# |  ___| __ ___  ___| |__
+# | |_ | '__/ _ \/ __| '_ \
+# |  _|| | |  __/\__ \ | | |
+# |_|  |_|  \___||___/_| |_|
+# 
+# =========================================
+# 
+# Installer Language Resource File
+# Based on AROMA Installer
+# The Fresh Project
+# Copyright (C) 2022 TenSeventy7
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# 
+# =========================
+# Language Information
+# 
+# Language             : English
+# Lang code (ISO-639)  : EN
+# Localization By      : TenSeventy7
+# Replace with your desired username.
+lang.translator=طراحی‌شده توسط رضا بهرام نژاد
+# Initial language strings
+lang.title=خوش‌آمدید!
+lang.summary=لطفا زبان خود را انتخاب کنید.
+welcome.title=به Fresh خوش‌آمدید!
+welcome.text1=به installation wizard خوش‌آمدید!
+welcome.text2=Install wizard شما را در نصب Fresh در دستگاهتان راهنمایی خواهد کرد و هر طور که دوست دارید ویژگی های اضافی را به نصب شما اضافه می کند.
+welcome.text3=برای ادامه روی <b>'next'</b> ضربه بزنید.
+terms.title=شرایط خدمات
+terms.summary=استفاده از Fresh توسط <b>tenseventyseven</b> شرایط خدمات کنترل می شود.
+terms.check=موافق هستم
+terms.confirm=شما باید با شرایط موافقت کنید تا بتوانید ادامه دهید.
+menu.title=خوش‌آمدید به Wizard!
+menu.current.summary=سلام، کاربر قدیمی! Fresh درحال‌حاضر روی دستگاه شما نصب است.
+menu.new.summary=سلام، کاربر جدید!
+menu.reinstall.title=نصب مجدد fresh 4
+menu.reinstall.summary=Fresh را با گزینه های انتخاب شده از نصب قبلی مجدداً نصب کنید.
+menu.upgrade.title=Fresh را ارتقا دهید
+menu.upgrade.summary=دستگاه خود را به این نسخه از Fresh ارتقا دهید.
+menu.express.title=نصب سریع
+menu.express.summary=با استفاده از گزینه‌های پیش فرض برنامه ها و سرویس ها، Fresh را نصب کنید.
+menu.custom.title=نصب سفارشی
+menu.custom.summary=Fresh را با گزینه های سفارشی خود برای برنامه ها و خدمات نصب کنید.
+confirm.title=این تمام چیزی است که ما نیاز داریم
+confirm.summary=بررسی کنید که آیا همه سفارشی‌سازی‌های شما برای شما مناسب است یا خیر، و برای ادامه نصب، روی <b>"بعدی"</b> ضربه بزنید.
+confirm.next=اکنون نصب‌شود
+install.title=در حال نصب Fresh 4
+install.summary=وقتی Fresh روی دستگاه شما نصب می‌شود، بنشینید و استراحت کنید. این ممکن است چند دقیقه طول بکشد.
+install.finish=Fresh با موفقیت نصب شد. برای پایان نصب روی <b>'next'</b> ضربه بزنید.
+finish.title=نصب کامل شد!
+finish.text1=نصب Fresh روی دستگاهتان موفقیت‌آمیز بود.
+finish.text2=اکنون می‌توانید با علامت زدن کادر زیر، دستگاه خود را پس از این راه‌اندازی مجدداً به‌طور خودکار راه‌اندازی مجدد کنید. <b>به Fresh خوش آمدید!</b>
+finish.text3=برای تکمیل تنظیمات، روی <b>«خروج»</b> ضربه بزنید.
+finish.button.restart=پس‌از مراحل راه‌اندازی شود.
+wait.generic=منتطر بمانید...
+wait.install.scan=دستگاه اسکن برای نصب Fresh موجود.
+# // Fresh Addons {
+# Google
+addon.google=برنامه‌های Google
+addon.google.title=سطح هوشمندی گوگل خود را انتخاب کنید
+addon.google.summary=خدمات مفیدی که در ذهن شما ساخته شده است.
+addon.google.full.title=کامل
+addon.google.full.summary=شامل همه چیز در Micro، به علاوه Google Meet است.
+addon.google.micro.title=Micro
+addon.google.micro.summary=سبُک شامل همه چیز، به‌علاوه پشتیبانی Maps و Android Auto است.
+addon.google.lite.title=سَبُک
+addon.google.lite.summary=شامل برنامه Google و خدمات لازم برای Google Play است.
+# Bixby
+addon.bixby=Bixby
+addon.bixby.title=پتانسیل کامل گوشی خود را باز کنید
+addon.bixby.summary=با Bixby زندگی هوشمندانه‌تری را تجربه کنید.
+addon.bixby.voice.title=Bixby Voice
+addon.bixby.voice.summary=Bixby به شما اجازه می‌دهد تا روی چیزهایی که بیشترین اهمیت را دارد تمرکز کنید.
+addon.bixby.vision.title=Bixby Vision
+addon.bixby.vision.summary=Bixby Vision کسب اطلاعات بیشتر در مورد دنیای اطراف شما را آسان‌تر می کند.
+addon.bixby.reminders.title=یادآوری‌ها
+addon.bixby.reminders.summary=Bixby با اجازه دادن به شما برای تنظیم یادآورها با صدای خود، یادآورها را به سطح دیگری می برد.
+addon.bixby.routines.title=کارهای روزمره
+addon.bixby.routines.summary=با یادگیری ماشینی تقویت شده تا با زندگی شما سازگار شود و زمان تلفن شما را ساده‌تر کند.
+# Seamless
+addon.seamless=اکوسیستم Galaxy
+addon.seamless.title=یکپارچه با دستگاه‌های خود متصل شوید
+addon.seamless.summary=اکوسیستم Galaxy را با این برنامه ها و خدمات تجربه کنید.
+addon.seamless.sharelive.title=اشتراک‌گذاری سریع و اشتراک‌گذاری لینک
+addon.seamless.sharelive.summary=یک سرویس اشتراک گذاری جدید برای ارسال عکس، فیلم و فایل با دوستان و خانواده شما است.
+addon.seamless.ltw.title=Link to Windows
+addon.seamless.ltw.summary=Link to Windows هر کاری را که می توانید روی گوشی هوشمند خود انجام دهید را می گیرد و به رایانه شخصی شما می آورد.
+addon.seamless.cta.title=تماس و پیامک در دستگاه های دیگر
+addon.seamless.cta.summary=با تبلت سامسونگ خود تماس بگیرید و دریافت کنید.
+addon.seamless.wear.title=Galaxy Wearable
+addon.seamless.wear.summary=با Galaxy wearables خود را به سطح بعدی برسانید.
+addon.seamless.friends.title=Galaxy Friends
+addon.seamless.friends.summary=یک سرویس پلت فرم لوازم جانبی که به شما امکان می دهد از محتوای متنوع لذت ببرید.
+addon.seamless.onedrive.title=Microsoft OneDrive
+addon.seamless.onedrive.summary=فایل‌ها و عکس‌های خود را ذخیره کنید و از هر دستگاه و هر مکان به آنها دسترسی داشته باشید.
+# AR Zone
+addon.ar_zone=واقعیت افزوده
+addon.ar_zone.title=با دوربین خود بیشتر لذت ببرید
+addon.ar_zone.summary=با واقعیت افزوده عکس ها و ویدیوهای سرگرم کننده بگیرید.
+addon.ar_zone.zone.title=AR Zone
+addon.ar_zone.zone.summary=هاب یک مرحله ای برای ویژگی های مرتبط با واقعیت افزوده، مانند AR Emoji و AR Doodle.
+addon.ar_zone.emoji.title=AR Emoji
+addon.ar_zone.emoji.summary=با استفاده از حالت‌های مختلف عکس، عکس‌ها و ویدیوهای سرگرم‌کننده با شکلک‌ها ایجاد کنید.
+addon.ar_zone.doodle.title=AR Doodle
+addon.ar_zone.doodle.summary=حالت AR Doodle با دادن قدرت افزودن نقاشی خط یا دست خط به محیط خود، ویدیوها را بهبود می بخشد.
+addon.ar_zone.decopic.title=DECO Pic
+addon.ar_zone.decopic.summary=مجموعه ای از ابزارهای خلاقانه برای ایجاد تصاویر سرگرم کننده و احمقانه خود.
+# Game Services
+addon.game_services=سرویس‌های بازی
+addon.game_services.title=بازی ادامه دارد!
+addon.game_services.summary=با Samsung Galaxy خود، سطح بازی های موبایل را ارتقا دهید.
+addon.game_services.home.title=Game Launcher و ابزارها
+addon.game_services.home.summary=مرکز کنترل نهایی برای بازی های مورد علاقه شما.
+# Security
+addon.security=امنیت
+addon.security.title=امنیت خود را افزایش دهید
+addon.security.summary=دستگاه Samsung Galaxy خود را در هر زمان ایمن نگه دارید.
+addon.security.antimalware.title=حفاظت از دستگاه
+addon.security.antimalware.summary=از گوشی Galaxy خود در برابر بدافزار محافظت کنید.
+addon.security.folder.title=پوشه امن
+addon.security.folder.summary=از پلتفرم امنیتی Samsung Knox درجه دفاعی برای ایجاد یک فضای خصوصی استفاده کنید.
+addon.security.share.title=اشتراک‌گذاری خصوصی
+addon.security.share.summary=یک عملکرد اشتراک گذاری فایل با حفظ حریم خصوصی که به شما امکان می دهد بدون نگرانی داده های خود را به اشتراک بگذارید.
+addon.security.checkout.title=Samsung Checkout
+addon.security.checkout.summary=تسویه‌حساب سریع، ایمن و آسان با گلکسی استور و تم‌های گلکسی.
+# Samsung DeX
+addon.dex=Samsung DeX
+addon.dex.title=چند کاره بین دستگاه ها مانند یک رئیس
+addon.dex.summary=Galaxy خود را به تلویزیون یا رایانه شخصی خود متصل کنید تا دنیای دسکتاپ جدیدی را باز کنید.
+addon.dex.install.title=Samsung DeX
+addon.dex.install.summary=توصیه می شود از Samsung DeX در دستگاهی با رم 6 گیگابایت یا بیشتر استفاده کنید.
+# More apps
+addon.sec=برنامه‌های بیشتر
+addon.sec.title=بیشترین بهره را از دستگاه خود ببرید
+addon.sec.summary=تجربه Galaxy خود را به حداکثر برسانید.
+addon.sec.dict.title=فرهنگ‌لغت سامسونگ
+addon.sec.dict.summary=دایره لغات خود را هر زمان و هر کجا که با یک کلمه ناآشنا مواجه شدید افزایش دهید!
+addon.sec.kids.title=Samsung Kids
+addon.sec.kids.summary=محیطی امن را برای کودک خود شکل دهید تا بتواند با خوشحالی جهان را کشف کند و با آن ارتباط برقرار کند.
+addon.sec.stc.title=تماس هوشمند لمسی
+addon.sec.stc.summary=تماس هوشمند لمسی آینده پشتیبانی سامسونگ را امروز برای شما به ارمغان می آورد.
+addon.installed=نصب شد
+addon.notinstalled=نصب نشد
+# } // Fresh Addons
+# // Installation script strings {
+script.partitions.scanning=اسکن برای پارتیشن های دستگاه
+script.partitions.fail1=اسکن پارتیشن ها انجام نشد.
+script.partitions.fail2=لطفا recovery خود را به روز کنید.
+script.partitions.mount=نصب پارتیشن‌ها.
+script.partitions.remount=نصب مجدد پارتیشن‌ها.
+script.partitions.umount=نصب کردن پارتیشن‌ها.
+script.partitions.found.system=پارتیشن سیستم عامل پیدا شد
+script.partitions.found.vendor=پارتیشن vendor دستگاه پیدا شد
+script.partitions.found.product=پارتیتیشن OEM product پیدا شد
+script.partitions.found.splash=پارتیشن OEM Splash Screen پیدا شد
+script.partitions.found.boot=پارتیشن هسته لینوکس پیدا شد
+script.partitions.found.dtb=پارتیشن همپوشانی درختی دستگاه پیدا شد
+script.partitions.found.recovery=پارتیشن محیط بازیابی پیدا شد
+script.install.main=در حال نصب Fresh 4
+script.install.super=نصب تصویر فوق العاده Fresh.
+script.install.system=نصب پارتیشن سیستم Fresh.
+script.install.vendor=نصب پارتیشن Fresh vendor.
+script.install.product=نصب پارتیشن Fresh product.
+script.install.splash=در حال نصب OEM splash screen.
+script.install.boot.mint=در حال نصب کرنل مینت.
+script.install.boot.generic=درحال نصب کرنل سفارشی.
+script.install.dtb=نصب همپوشانی درختی دستگاه سفارشی.
+script.install.recovery.twrp=نصب محیط بازیابی TWRP.
+script.install.recovery.shrp=نصب محیط بازیابی SHRP.
+script.install.recovery.generic=نصب محیط بازیابی سفارشی.
+script.install.complete=Fresh با موفقیت نصب شد!
+script.housekeeping.addons=نصب افزونه های انتخاب شده از راه‌اندازی.
+# } // Installation script strings
+# // Basic installer strings {
+text_ok=قبول
+text_next=بعدی
+install.next=بعدی
+install.exit=خروج
+text_back=بازگشت
+text_yes=بله
+text_no=خیر
+text_about=درباره
+text_calibrating=ابزارهای کالیبراسیون
+text_quit=از راه‌اندازی Fresh خارج شوید
+text_quit_msg=آیا مطمئن هستید که از تنظیمات خارج می شوید؟ تغییرات شما اعمال نخواهد شد.

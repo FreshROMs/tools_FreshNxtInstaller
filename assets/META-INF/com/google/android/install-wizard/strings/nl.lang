@@ -1,0 +1,199 @@
+# =========================================
+# _____              _
+# |  ___| __ ___  ___| |__
+# | |_ | '__/ _ \/ __| '_ \
+# |  _|| | |  __/\__ \ | | |
+# |_|  |_|  \___||___/_| |_|
+# 
+# =========================================
+# 
+# Installer Language Resource File
+# Based on AROMA Installer
+# The Fresh Project
+# Copyright (C) 2022 TenSeventy7
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# 
+# =========================
+# Language Information
+# 
+# Language             : English
+# Lang code (ISO-639)  : EN
+# Localization By      : TenSeventy7
+# Replace with your desired username.
+lang.translator=Vertaling door Alain Deroy
+# Initial language strings
+lang.title=Welkom!
+lang.summary=Kies je taal.
+welcome.title=Welkom bij Fresh!
+welcome.text1=Welkom bij de installatiewizard!
+welcome.text2=Deze installatiewizard begeleidt je bij het installeren van Fresh op je apparaat en voegt naar wens extra functies toe aan je installatie.
+welcome.text3=Tik <b>'volgende'</b> om verder te gaan
+terms.title=Algemene Voorwaarden
+terms.summary=Op het gebruik van Fresh zijn de Algemene Voorwaarden van <b>tenseventyseven</b> van toepassing.
+terms.check=Akkoord
+terms.confirm=Je moet je akkoord verklaren met de voorwaarden om verder te kunnen gaan.
+menu.title=Welkom bij de wizard!
+menu.current.summary=Hewwo, gebruiker! Fresh is momenteel geïnstalleerd op je apparaat.
+menu.new.summary=Hewwo, nieuwe gebruiker!
+menu.reinstall.title=Herinstalleer Fresh 4
+menu.reinstall.summary=Installeer Fresh opnieuw met de geselecteerde opties van een eerdere installatie.
+menu.upgrade.title=Upgrade Fresh
+menu.upgrade.summary=Upgrade je apparaat naar deze versie van Fresh.
+menu.express.title=Snelle Installatie
+menu.express.summary=Installeer Fresh met standaardinstellingen voor apps en services.
+menu.custom.title=Aangepaste Installatie
+menu.custom.summary=Installeer Fresh met je aangepaste opties voor apps en services.
+confirm.title=Meer hebben we niet nodig
+confirm.summary=Controleer of al je aanpassingen naar wens zijn en tik op <b>'volgende'</b> om door te gaan met de installatie.
+confirm.next=Nu Installeren
+install.title=Fresh 4 aan het installeren
+install.summary=Leun gerust achterover terwijl Fresh op je apparaat wordt geïnstalleerd. Dit kan enkele minuten duren.
+install.finish=De installatie van Fresh is met succes afgerond. Tik op <b>'volgende'</b> om de installatie te voltooien.
+finish.title=Installatie voltooid!
+finish.text1=Fresh is met succes op je apparaat geïnstalleerd.
+finish.text2=Vink het onderstaande vakje aan om het apparaat na deze installatie automatisch opnieuw op te starten. <b>Welkom bij Fresh!</b>
+finish.text3=Tik op <b>'Afsluiten'</b> om de installatie te voltooien.
+finish.button.restart=Opnieuw opstarten na installatie
+wait.generic=Even geduld...
+wait.install.scan=Apparaat controleren op een bestaande Fresh-installatie.
+# // Fresh Addons {
+# Google
+addon.google=Google apps
+addon.google.title=Kies je niveau voor Google smarts
+addon.google.summary=Handige diensten gebouwd met jou in gedachten.
+addon.google.full.title=Volledig
+addon.google.full.summary=Bevat alles op Micro, plus Google Meet.
+addon.google.micro.title=Micro
+addon.google.micro.summary=Bevat alles van Lite, plus Maps en Android Auto-ondersteuning.
+addon.google.lite.title=Lite
+addon.google.lite.summary=Bevat de Google-app en noodzakelijke services voor Google Play.
+# Bixby
+addon.bixby=Bixby
+addon.bixby.title=Ontgrendel het volledige potentieel van je telefoon.
+addon.bixby.summary=Ervaar een slimmer leven met Bixby.
+addon.bixby.voice.title=Bixby Voice
+addon.bixby.voice.summary=Met Bixby kan je je concentreren op wat voor jou belangrijk is.
+addon.bixby.vision.title=Bixby Vision
+addon.bixby.vision.summary=Bixby Vision maakt het makkelijker om meer te weten te komen over de wereld om je heen.
+addon.bixby.reminders.title=Herinneringen
+addon.bixby.reminders.summary=Bixby tilt herinneringen naar een ander niveau door je herinneringen te laten instellen met je stem.
+addon.bixby.routines.title=Routines
+addon.bixby.routines.summary=Ondersteund door machine learning wordt het gebruik van je telefoon afgestemd op JOU.
+# Seamless
+addon.seamless=Galaxy Ecosysteem
+addon.seamless.title=Maak naadloos verbinding met al je apparaten
+addon.seamless.summary=Ervaar het Galaxy-ecosysteem met deze apps en services.
+addon.seamless.sharelive.title=Quick Share en Link Sharing
+addon.seamless.sharelive.summary=Een nieuwe manier van delen voor het verzenden van foto's, video's en bestanden met je vrienden en familie.
+addon.seamless.ltw.title=Koppelen met Windows
+addon.seamless.ltw.summary=Koppelen met Windows neemt alles wat je op je smartphone kunt doen en brengt het naar je pc.
+addon.seamless.cta.title=Bellen en sms'en op andere apparaten
+addon.seamless.cta.summary=Bellen en gebeld worden op je Samsung tablet.
+addon.seamless.wear.title=Galaxy Wearable
+addon.seamless.wear.summary=Til jezelf naar een hoger niveau met Galaxy wearables.
+addon.seamless.friends.title=Galaxy Friends
+addon.seamless.friends.summary=Een accessoire-platform waarmee je kan genieten van een grote verscheidenheid aan inhoud.
+addon.seamless.onedrive.title=Microsoft Onedrive
+addon.seamless.onedrive.summary=Sla je bestanden en foto's op en open ze vanaf elk apparaat, waar je ook bent.
+# AR Zone
+addon.ar_zone=Augmented Reality
+addon.ar_zone.title=Meer plezier met je camera
+addon.ar_zone.summary=Maak leuke foto's en video's met augmented reality.
+addon.ar_zone.zone.title=AR-Zone
+addon.ar_zone.zone.summary=Een alles-in-één hub voor AR-gerelateerde functies, zoals AR Emoji en AR Doodle.
+addon.ar_zone.emoji.title=AR Emoji
+addon.ar_zone.emoji.summary=Maak leuke foto's en video's met emoji's met behulp van verschillende fotomodes.
+addon.ar_zone.doodle.title=AR Doodle
+addon.ar_zone.doodle.summary=AR Doodle-modus verbetert video's door je de mogelijkheid te geven lijntekeningen of handschrift toe te voegen aan je omgeving.
+addon.ar_zone.decopic.title=DECO Pic
+addon.ar_zone.decopic.summary=Een set creatieve tools om leuke en gekke foto's te maken.
+# Game Services
+addon.game_services=Game Services
+addon.game_services.title=Gamen maar!
+addon.game_services.summary=Til mobiel gamen naar een hoger niveau met je Samsung Galaxy.
+addon.game_services.home.title=Game Launcher en Tools
+addon.game_services.home.summary=Het ultieme controlecentrum voor je favoriete games.
+# Security
+addon.security=Beveiliging
+addon.security.title=Verbeter je beveiliging
+addon.security.summary=Hou je Samsung Galaxy-apparaat op elk gewenst moment veilig.
+addon.security.antimalware.title=Apparaatbeveiliging
+addon.security.antimalware.summary=Bescherm je Galaxy-telefoon tegen malware.
+addon.security.folder.title=Veilige Map
+addon.security.folder.summary=Maak gebruik van het Samsung Knox-beveiligingsplatform van defensiekwaliteit om een privéruimte te creëren.
+addon.security.share.title=Private Share
+addon.security.share.summary=Een privacy-beschermende functie voor het veilig delen van bestanden.
+addon.security.checkout.title=Samsung Checkout
+addon.security.checkout.summary=Snel, veilig en eenvoudig afrekenen met Galaxy Store en Galaxy Themes.
+# Samsung DeX
+addon.dex=Samsung DeX
+addon.dex.title=Moeiteloos multitasken tussen apparaten
+addon.dex.summary=Verbind je Galaxy met je TV of PC en ontdek een nieuwe wereld vanop je desktop.
+addon.dex.install.title=Samsung DeX
+addon.dex.install.summary=Het wordt aanbevolen om Samsung DeX te gebruiken op een apparaat met 6 GB RAM of meer.
+# More apps
+addon.sec=Meer Apps
+addon.sec.title=Haal het meeste uit je apparaat
+addon.sec.summary=Maximaliseer je Galaxy-ervaring.
+addon.sec.dict.title=Samsung Woordenboek
+addon.sec.dict.summary=Vergroot je woordenschat waar en wanneer je een onbekend woord tegenkomt!
+addon.sec.kids.title=Samsung Kids
+addon.sec.kids.summary=Creëer een veilige omgeving voor je kind om te verkennen en contact te maken met de wereld.
+addon.sec.stc.title=Smart Touch Call
+addon.sec.stc.summary=Smart Touch Call - ervaar de toekomst van Samsung-ondersteuning, vandaag.
+addon.installed=Geïnstalleerd
+addon.notinstalled=Niet geïnstalleerd
+# } // Fresh Addons
+# // Installation script strings {
+script.partitions.scanning=Scannen naar partities op het apparaat
+script.partitions.fail1=Scannen naar partities is mislukt
+script.partitions.fail2=Gelieve je Recovery bij te werken.
+script.partitions.mount=Partities koppelen.
+script.partitions.remount=Partities opnieuw koppelen.
+script.partitions.umount=Partities ontkoppelen.
+script.partitions.found.system=Besturingssysteem-partitie gevonden
+script.partitions.found.vendor=Apparaat vendor-partitie gevonden
+script.partitions.found.product=OEM-partitie gevonden
+script.partitions.found.splash=OEM welkomstscherm-partitie gevonden
+script.partitions.found.boot=Linux kernel-partitie gevonden
+script.partitions.found.dtb=Apparaatstructuur-partitie gevonden
+script.partitions.found.recovery=Recovery-partitie gevonden
+script.install.main=Fresh 4 wordt geïnstalleerd
+script.install.super=Fresh super image wordt geïnstalleerd.
+script.install.system=Fresh systeem-partitie wordt geïnstalleerd.
+script.install.vendor=Fresh vendor-partitie wordt geïnstalleerd.
+script.install.product=Fresh product-partitie wordt geïnstalleerd.
+script.install.splash=Aangepast OEM-welkomstscherm wordt geïnstalleerd.
+script.install.boot.mint=Mint Kernel wordt geïnstalleerd.
+script.install.boot.generic=Aangepaste kernel wordt geïnstalleerd.
+script.install.dtb=Aangepaste apparaatstructuur wordt geïnstalleerd.
+script.install.recovery.twrp=TWRP Recovery-omgeving wordt geïnstalleerd.
+script.install.recovery.shrp=SHRP Recovery-omgeving wordt geïnstalleerd.
+script.install.recovery.generic=Aangepaste Recovery-omgevinğwordt geïnstalleerd.
+script.install.complete=De installatie van Fresh is met succes afgerond!
+script.housekeeping.addons=Geselecteerde add-ons installeren.
+# } // Installation script strings
+# // Basic installer strings {
+text_ok=OK
+text_next=Volgende
+install.next=Volgende
+install.exit=Afsluiten
+text_back=Vorige
+text_yes=Ja
+text_no=Nee
+text_about=Over
+text_calibrating=Calibratie Tools
+text_quit=Fresh Installatie Afsluiten
+text_quit_msg=Weet je zeker dat je de installatie wil afsluiten? Je wijzigingen worden niet toegepast.

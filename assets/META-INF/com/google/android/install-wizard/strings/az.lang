@@ -1,0 +1,199 @@
+# =========================================
+# _____              _
+# |  ___| __ ___  ___| |__
+# | |_ | '__/ _ \/ __| '_ \
+# |  _|| | |  __/\__ \ | | |
+# |_|  |_|  \___||___/_| |_|
+# 
+# =========================================
+# 
+# Installer Language Resource File
+# Based on AROMA Installer
+# The Fresh Project
+# Copyright (C) 2022 TenSeventy7
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# 
+# =========================
+# Language Information
+# 
+# Language             : English
+# Lang code (ISO-639)  : EN
+# Localization By      : TenSeventy7
+# Replace with your desired username.
+lang.translator=hgunduz295 tarafından yerelleştirildi
+# Initial language strings
+lang.title=Xoş gəlmisiniz!
+lang.summary=Zəhmət olmasa dilinizi seçin.
+welcome.title=Fresh-ə xoş gəlmisiniz!
+welcome.text1=Quraşdırma sehrbazına xoş gəlmisiniz!
+welcome.text2=Bu quraşdırma sehrbazı cihazınızda Təzə və əlavə funksiyaları quraşdırmaqda sizə rəhbərlik edəcək.
+welcome.text3=Davam etmək üçün <b>'növbəti'</b> düyməsinə toxunun.
+terms.title=Xidmət Şərtləri
+terms.summary=Fresh-in istifadəsi <b>tenseventyseven</b> Xidmət Şərtləri ilə tənzimlənir.
+terms.check=Razıyam
+terms.confirm=Davam etmək üçün şərtlərlə razılaşmalısınız.
+menu.title=Sehrbaza xoş gəlmisiniz!
+menu.current.summary=Merhaba, köhnə istifadəçi! Fresh hali hazırda cihazında qurulu.
+menu.new.summary=Merhaba, yeni istifadəçi!
+menu.reinstall.title=Fresh 4-ü yenidən quraşdırın
+menu.reinstall.summary=Əvvəlki quraşdırmadan seçdiyiniz seçimlərlə Fresh-i yenidən quraşdırın.
+menu.upgrade.title=Fresh-i təkmilləşdirin
+menu.upgrade.summary=Cihazınızı bu Fresh versiyasına təkmilləşdirin.
+menu.express.title=Ekspres Quraşdırma
+menu.express.summary=Tətbiqlər və xidmətlər üçün standart seçimlərdən istifadə edərək Fresh seçin.
+menu.custom.title=Xüsusi quraşdırma
+menu.custom.summary=Tətbiqlər və xidmətlər üçün fərdi seçimlərinizlə Fresh quraşdırın.
+confirm.title=Bizə lazım olan hər şey budur
+confirm.summary=Bütün fərdiləşdirmələrinizin sizin üçün uyğun olub olmadığını yoxlayın və quraşdırmaya davam etmək üçün <b>'növbəti'</b> üzərinə klikləyin.
+confirm.next=İndi quraşdırın
+install.title=Fresh 4 Quraşdırılması
+install.summary=Fresh cihazınıza quraşdırıldığı üçün arxanıza oturun və dincəlin. Bu bir neçə dəqiqə çəkə bilər.
+install.finish=Fresh uğurla quraşdırıldı. Quraşdırmanı bitirmək üçün <b>'növbəti'</b> üzərinə klikləyin.
+finish.title=Quraşdırma tamamlandı!
+finish.text1=Cihazınıza "Fresh" müvəffəqiyyətlə quraşdırılıb.
+finish.text2=İndi aşağıdakı qutuyu işarələyərək bu quraşdırmadan sonra cihazınızı avtomatik olaraq yenidən başlatmağı seçə bilərsiniz. <b> Fresh xoş gəlmisiniz!</b>
+finish.text3=Quraşdırmanı bitirmək üçün b 'Çıx' /b üzərinə klikləyin.
+finish.button.restart=Quraşdırıldıqdan sonra yenidən başladın
+wait.generic=Zəhmət olmasa, gözləyin...
+wait.install.scan=Mövcud bir Fresh yükləməsi üçün cihaz taranır.
+# // Fresh Addons {
+# Google
+addon.google=Google proqramları
+addon.google.title=Google smarts səviyyənizi seçin
+addon.google.summary=Sizi nəzərə alaraq qurulmuş faydalı xidmətlər.
+addon.google.full.title=Tam
+addon.google.full.summary=Micro-da hər şey, üstəgəl Google Meet daxildir.
+addon.google.micro.title=mikro
+addon.google.micro.summary=Lite-da hər şey, üstəgəl Xəritələr və Android Auto dəstəyi daxildir.
+addon.google.lite.title=Lite
+addon.google.lite.summary=Google tətbiqi və Google Play üçün lazımi xidmətlər daxildir.
+# Bixby
+addon.bixby=Bixby
+addon.bixby.title=Telefonunuzun bütün potensialını açın
+addon.bixby.summary=Bixby ilə daha ağıllı bir həyat yaşayın.
+addon.bixby.voice.title=Bixby Voice
+addon.bixby.voice.summary=Bixby diqqətinizi ən vacib şeyə yönəltmək üçün sizi azad edir.
+addon.bixby.vision.title=Bixby Vision
+addon.bixby.vision.summary=Bixby Vision ətrafınızdakı dünya haqqında daha çox öyrənməyi asanlaşdırır.
+addon.bixby.reminders.title=Xatırlatmalar
+addon.bixby.reminders.summary=Bixby səsinizlə xatırlatmalar qurmağınıza imkan verməklə xatırlatmaları başqa səviyyəyə qaldırır.
+addon.bixby.routines.title=Rutin
+addon.bixby.routines.summary=Həyatınıza uyğunlaşmaq və telefon vaxtınızı daha asanlaşdırmaq üçün maşın öyrənməsi ilə dəstəklənir.
+# Seamless
+addon.seamless=Galaxy Ekosistemi
+addon.seamless.title=Cihazlarınızla problemsiz əlaqə saxlayın
+addon.seamless.summary=Bu proqramlar və xidmətlərlə Galaxy ekosistemini təcrübədən keçirin.
+addon.seamless.sharelive.title=Sürətli Paylaşım və Link Paylaşımı
+addon.seamless.sharelive.summary=Dostlarınız və ailənizlə foto, video və fayl göndərmək üçün yeni paylaşma xidməti.
+addon.seamless.ltw.title=Windows-a keçid
+addon.seamless.ltw.summary=Windows-a keçid smartfonunuzda edə biləcəyiniz hər şeyi götürür və onu kompüterinizə gətirir.
+addon.seamless.cta.title=Digər cihazlarda zəng edin və yazın
+addon.seamless.cta.summary=Samsung planşetinizdə zənglər edin və qəbul edin.
+addon.seamless.wear.title=Galaxy Wearable
+addon.seamless.wear.summary=Galaxy geyilənlərlə özünüzü növbəti səviyyəyə aparın.
+addon.seamless.friends.title=Galaxy Friends
+addon.seamless.friends.summary=Müxtəlif məzmunlardan həzz almağa imkan verən aksesuar platforması xidməti.
+addon.seamless.onedrive.title=Microsoft OneDrive
+addon.seamless.onedrive.summary=Fayllarınızı və şəkillərinizi yadda saxlayın və onlara istənilən cihazdan, istənilən yerdən daxil olun.
+# AR Zone
+addon.ar_zone=Artırılmış Reallıq
+addon.ar_zone.title=Kameranızla daha çox əylənin
+addon.ar_zone.summary=Artırılmış Reallıq ilə əyləncəli fotoşəkillər və videolar çəkin.
+addon.ar_zone.zone.title=AR Zone\n
+addon.ar_zone.zone.summary=AR Emoji və AR Doodle kimi AR ilə əlaqəli funksiyalar üçün birdəfəlik mərkəz.
+addon.ar_zone.emoji.title=AR Emoji
+addon.ar_zone.emoji.summary=Müxtəlif foto rejimlərindən istifadə edərək emojilərlə əyləncəli foto və videolar yaradın.
+addon.ar_zone.doodle.title=AR Doodle
+addon.ar_zone.doodle.summary=AR Doodle rejimi ətrafınıza xətt təsvirləri və ya əl yazısı əlavə etmək səlahiyyəti verməklə videoları təkmilləşdirir.
+addon.ar_zone.decopic.title=DECO Pic
+addon.ar_zone.decopic.summary=Öz əyləncəli və axmaq şəkillərini yaratmaq üçün yaradıcı alətlər toplusu.
+# Game Services
+addon.game_services=Oyun Xidmətləri
+addon.game_services.title=Oyun Vaxtı
+addon.game_services.summary=Samsung Galaxy ilə mobil oyun səviyyəsini yüksəldin.
+addon.game_services.home.title=Game Launcher and Tools
+addon.game_services.home.summary=Sevimli oyunlarınız üçün son idarəetmə mərkəzi.
+# Security
+addon.security=Təhlükəsizlik
+addon.security.title=Təhlükəsizliyinizi gücləndirin
+addon.security.summary=Samsung Galaxy cihazınızı istənilən vaxt təhlükəsiz saxlayın.
+addon.security.antimalware.title=Cihazın qorunması
+addon.security.antimalware.summary=Galaxy telefonunuzu zərərli proqramlardan qoruyun.
+addon.security.folder.title=Secure Folder
+addon.security.folder.summary=Şəxsi məkan yaratmaq üçün müdafiə səviyyəli Samsung Knox təhlükəsizlik platformasından istifadə edin.
+addon.security.share.title=Private Share
+addon.security.share.summary=Məlumatlarınızı narahat olmadan paylaşmağa imkan verən məxfiliyi qoruyan fayl paylaşma funksiyası.
+addon.security.checkout.title=Samsung Checkout
+addon.security.checkout.summary=Galaxy Store və Galaxy Themes ilə sürətli, təhlükəsiz, asan ödəniş.
+# Samsung DeX
+addon.dex=Samsung DeX
+addon.dex.title=Bir patron kimi cihazlar arasında çoxlu tapşırıq
+addon.dex.summary=Yeni iş masası dünyası açmaq üçün Galaxy cihazınızı televizorunuza və ya kompüterinizə qoşun.
+addon.dex.install.title=Samsung DeX
+addon.dex.install.summary=6 GB və ya daha çox RAM olan bir cihazda Samsung DeX-dən istifadə etmək tövsiyə olunur.
+# More apps
+addon.sec=Daha çox proqram
+addon.sec.title=Cihazınızdan maksimum yararlanın
+addon.sec.summary=Galaxy təcrübənizi maksimum dərəcədə artırın.
+addon.sec.dict.title=Samsung Dictionary
+addon.sec.dict.summary=Tanımadığın sözlə nə vaxt və harada rastlaşsanız, lüğətinizi artırın!
+addon.sec.kids.title=Samsung Kids
+addon.sec.kids.summary=Uşağınızın xoşbəxtliklə kəşf etməsi və dünya ilə əlaqə qurması üçün təhlükəsiz mühit formalaşdırın.
+addon.sec.stc.title=Ağıllı toxunma çağırışı
+addon.sec.stc.summary=Ağıllı toxunma çağırışı sizə bu gün Samsung dəstəyinin gələcəyini gətirir.
+addon.installed=quraşdırılıb
+addon.notinstalled=Quraşdırılmayıb
+# } // Fresh Addons
+# // Installation script strings {
+script.partitions.scanning=Cihaz bölmələri üçün skan edilir
+script.partitions.fail1=Bölmələri skan etmək alınmadı.
+script.partitions.fail2=Zəhmət olmasa bərpanızı yeniləyin.
+script.partitions.mount=Montaj arakəsmələri.
+script.partitions.remount=Disk bölmələri  yenidən quraşdırılmışdır.
+script.partitions.umount=Disk bölmələri ayrılıb.
+script.partitions.found.system=Əməliyyat sistemi bölməsi tapıldı
+script.partitions.found.vendor=Cihaz vendor bölməsi tapıldı
+script.partitions.found.product=OEM product bölməsi tapıldı
+script.partitions.found.splash=OEM splash bölməsi tapıldı
+script.partitions.found.boot=Linux kernel bölməsi tapıldı
+script.partitions.found.dtb=Cihaz ağacı örtüyü bölməsi tapıldı
+script.partitions.found.recovery=Bərpa mühiti bölməsi tapıldı
+script.install.main=Fresh 4 Quraşdırılır
+script.install.super=Fresh super image quraşdırılır.
+script.install.system=Fresh sistem bölməsinin quraşdırılması.
+script.install.vendor=Fresh vendor bölməsinin quraşdırılması.
+script.install.product=Fresh product bölməsinin quraşdırılması.
+script.install.splash=Fərdi OEM splash ekranının quraşdırılması.
+script.install.boot.mint=Mint Kernel quraşdırılır.
+script.install.boot.generic=Fərdi Kernel quraşdırılması.
+script.install.dtb=Fərdi device tree overlay quraşdırılması.
+script.install.recovery.twrp=TWRP bərpa mühitinin quraşdırılması.
+script.install.recovery.shrp=SHRP bərpa mühitinin quraşdırılması.
+script.install.recovery.generic=Fərdi bərpa mühitinin quraşdırılması.
+script.install.complete=Fresh uğurla quraşdırıldı!
+script.housekeeping.addons=Quraşdırma proqramından seçilmiş əlavələrin quraşdırılması.
+# } // Installation script strings
+# // Basic installer strings {
+text_ok=Tamam
+text_next=Növbəti
+install.next=Növbəti
+install.exit=çıxış
+text_back=Geri
+text_yes=Bəli
+text_no=Yox
+text_about=Haqqında
+text_calibrating=Kalibrləmə Alətləri
+text_quit=Freshos Quraşdırmadan çıxın
+text_quit_msg=Quraşdırmadan çıxacağınıza əminsiniz? Dəyişiklikləriniz tətbiq edilməyəcək.

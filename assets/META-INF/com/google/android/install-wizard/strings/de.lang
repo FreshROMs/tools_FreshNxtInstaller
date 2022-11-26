@@ -1,0 +1,200 @@
+# =========================================
+# _____              _
+# |  ___| __ ___  ___| |__
+# | |_ | '__/ _ \/ __| '_ \
+# |  _|| | |  __/\__ \ | | |
+# |_|  |_|  \___||___/_| |_|
+# 
+# =========================================
+# 
+# Installer Language Resource File
+# Based on AROMA Installer
+# The Fresh Project
+# Copyright (C) 2022 TenSeventy7
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# 
+# =========================
+# Language Information
+# 
+# Language             : English
+# Lang code (ISO-639)  : EN
+# Localization By      : TenSeventy7
+# Replace with your desired username.
+lang.translator=Lokalisierung durch Lijukay
+# Initial language strings
+lang.title=Willkommen!
+lang.summary=Bitte wähle deine Sprache.
+welcome.title=Willkommen zu Fresh!
+welcome.text1=Willkommen zum Installationsassistent.
+welcome.text2=Dieser Installationsassistent führt dich durch die Installation von Fresh auf deinem Gerät und fügt deiner Installation nach Belieben zusätzliche Funktionen hinzu.
+welcome.text3=Tippe <b>'Weiter'</b> um fortzufahren.
+terms.title=Nutzungsbedingungen
+terms.summary=Die Nutzung von Fresh unterliegt den Nutzungsbedingungen von <b>tenseventyseven</b>.
+terms.check=Ich stimme zu
+terms.confirm=Du musst den Bedingungen zustimmen, um fortzufahren.
+menu.title=Willkommen zum Assistenten!
+menu.current.summary=Hewwo, alter Nutzer! Fresh ist zurzeit auf deinem Gerät installiert.
+menu.new.summary=Hewwo, neuer Nutzer!
+menu.reinstall.title=Fresh 4 neu installieren.
+menu.reinstall.summary=Fresh mit von in einer früheren Installation gewählten Optionen neu installieren.
+menu.upgrade.title=Fresh aktualisieren.
+menu.upgrade.summary=Aktualisiere dein Gerät auf diese Version von Fresh.
+menu.express.title=Express-Installation
+menu.express.summary=Installiere Fresh mit den voreingestellten Optionen für Apps und Service.
+menu.custom.title=Benutzerdefinierte Installation
+menu.custom.summary=Installiere Fresh mit benutzerdefinierten Optionen für Apps und Service.
+confirm.title=Das ist alles, was wir brauchen
+confirm.summary=Überprüfe, ob alle Anpassungen für dich geeignet sind, und tippe auf <b>'Weiter'</b>, um mit der Installation fortzufahren.
+confirm.next=Jetzt installieren
+install.title=Fresh 4 wird installiert
+install.summary=Lehn' dich zurück und entspanne, Fresh wird jetzt für dein Gerät installiert. Das könnte einige Minuten dauern.
+install.finish=Fresh wurde erfolgreich installiert. Tippe <b>'Weiter'</b> um die Installation zu beenden.
+finish.title=Installation beendet!
+finish.text1=Fresh wurde erfolgreich auf deinem Gerät installiert.
+finish.text2=Du kannst nun entscheiden, ob dein Gerät automatisch nach dem Setup neustarten soll, indem du die Box unten antippst.\n<b>Willkommen zu Fresh!</b>
+finish.text3=Tippe <b>Schließen</b> um das Setup zu beenden.
+finish.button.restart=Nach dem Setup neustarten
+wait.generic=Bitte warte...
+wait.install.scan=Nach einer existierenden Fresh-Installation wird gescannt.
+# // Fresh Addons {
+# Google
+addon.google=Google Apps
+addon.google.title=Entscheide über das Level von Google smarts
+addon.google.summary=Hilfreiche Service, die für dich gebaut wurden.
+# Can I have a context? Full can be many things depending on the context
+addon.google.full.title=Voll
+addon.google.full.summary=Beinhaltet alles aus Micro, plus Google Meet.
+addon.google.micro.title=Micro
+addon.google.micro.summary=Beinhaltet alles aus Lite, plus Maps und Android Auto Support.
+addon.google.lite.title=Lite
+addon.google.lite.summary=Beinhaltet die Google App und wichtige Service für Google Play.
+# Bixby
+addon.bixby=Bixby
+addon.bixby.title=Schalte das volle Potenzial deines Handys frei
+addon.bixby.summary=Erlebe ein intelligenteres Leben mit Bixby.
+addon.bixby.voice.title=Bixby Sprache
+addon.bixby.voice.summary=Bixby führt deinen Fokus auf das Wichtigste.
+addon.bixby.vision.title=Bixby Vision
+addon.bixby.vision.summary=Bixby Vision macht es leichter, mehr über die Welt herum zu lernen.
+addon.bixby.reminders.title=Erinnerungen
+addon.bixby.reminders.summary=Bixby bringt Erinnerungen auf ein anderes Level durch das Setzen von Erinnerungen mit deiner Stimme.
+addon.bixby.routines.title=Routinen
+addon.bixby.routines.summary=Unterstützt durch maschinelles Lernen, um sich an dein Leben anzupassen und deine Handyzeit zu optimieren.
+# Seamless
+addon.seamless=Galaxy Ökosystem
+addon.seamless.title=Nahtlose Verbindung mit deinen Geräten
+addon.seamless.summary=Erfahre das Galaxy Ökosystem mit diesen Apps und Service.
+addon.seamless.sharelive.title=Quick Share und Link Sharing
+addon.seamless.sharelive.summary=Ein neuer Dienst zum Teilen von Fotos, Videos und Dateien mit deinen Freunden und Familie.
+addon.seamless.ltw.title=Link zu Windows
+addon.seamless.ltw.summary=Link zu Windows nimmt alles, was du auf deinem Handy tun kannst und bringt es auf deinen Computer.
+addon.seamless.cta.title=Anrufe und SMS auf anderen Geräten
+addon.seamless.cta.summary=Tätige und empfange Anrufe auf deinem Samsung Tablet.
+addon.seamless.wear.title=Galaxy Wearable
+addon.seamless.wear.summary=Bringe dich mit Galaxy Wearables auf das nächste Level.
+addon.seamless.friends.title=Galaxy Freunde
+addon.seamless.friends.summary=Ein zusätzlicher Plattformdienst, mit dem du eine Vielzahl von Inhalten genießen kannst.
+addon.seamless.onedrive.title=Microsoft OneDrive
+addon.seamless.onedrive.summary=Sichere deine Dateien und Fotos und greife von jedem Gerät, überall darauf zu.
+# AR Zone
+addon.ar_zone=Erweiterte Realität
+addon.ar_zone.title=Habe mehr Spaß mit deiner Kamera
+addon.ar_zone.summary=Nimm lustige Fotos und Videos auf mit erweiterter Realität.
+addon.ar_zone.zone.title=AR Zone
+addon.ar_zone.zone.summary=Ein One-Stop-Hub für AR-bezogene Funktionen wie AR Emoji und AR Doodle.
+addon.ar_zone.emoji.title=AR Emoji
+addon.ar_zone.emoji.summary=Kreiere lustige Fotos und Videos mit Emojis durch das Benutzen verschiedener Foto Modi.
+addon.ar_zone.doodle.title=AR Doodle
+addon.ar_zone.doodle.summary=Der AR Doodle Modus verbessert Videos, indem es dir die Möglichkeit gibt, deiner Umgebung Strichzeichnungen oder Handschriften hinzuzufügt.
+addon.ar_zone.decopic.title=DECO Pic
+addon.ar_zone.decopic.summary=Eine Reihe kreativer Werkzeuge, um deine eigenen lustigen und albernen Bilder zu erstellen.
+# Game Services
+addon.game_services=Game Service
+addon.game_services.title=Game on!
+addon.game_services.summary=Steigern Sie das mobile Gaming mit Ihrem Samsung Galaxy.
+addon.game_services.home.title=Game Launcher und Tools
+addon.game_services.home.summary=Das ultimative Kontrollzentrum für deine Lieblingsspiele.
+# Security
+addon.security=Sicherheit
+addon.security.title=Verbessere deine Sicherheit
+addon.security.summary=Halte dein Samsung Galaxy Gerät jederzeit sicher.
+addon.security.antimalware.title=Geräteschutz
+addon.security.antimalware.summary=Schütze dein Galaxy Handy vor Malware.
+addon.security.folder.title=Sichere Ordner
+addon.security.folder.summary=Nutze die verteidigungstaugliche Samsung Knox-Sicherheitsplattform, um einen privaten Raum zu schaffen.
+addon.security.share.title=Private Share
+addon.security.share.summary=Eine Privatsphäre schützende File-Sharing-Funktion, mit der du deine Daten sorgenfrei teilen kannst.
+addon.security.checkout.title=Samsung Checkout
+addon.security.checkout.summary=Schneller, sicherer und einfacher Checkout mit Galaxy Store und Galaxy Themes.
+# Samsung DeX
+addon.dex=Samsung DeX
+addon.dex.title=Multitasking zwischen Geräten wie ein Boss
+addon.dex.summary=Verbinde dein Galaxy mit einem Fernseher oder PC um eine neue Desktop Welt zu öffnen.
+addon.dex.install.title=Samsung DeX
+addon.dex.install.summary=Es wird empfohlen, Samsung DeX mit einem Gerät zu verwenden, dass 6GB Ram hat, oder mehr.
+# More apps
+addon.sec=Mehr Apps
+addon.sec.title=Hole das Beste aus deinem Gerät heraus
+addon.sec.summary=Maximiere dein Galaxy Erlebnis.
+addon.sec.dict.title=Samsung Wörterbuch
+addon.sec.dict.summary=Verbessere dein Vokabular, wann immer und wo immer dir ein unbekanntes Wort begegnet!
+addon.sec.kids.title=Samsung Kids
+addon.sec.kids.summary=Schaffe eine sicher Umgebung für dein Kind, damit es glücklich die Welt erkunden und sich mit ihr verknüpfen kann.
+addon.sec.stc.title=Smart Touch Anruf
+addon.sec.stc.summary=Smart Touch Anruf bringt dir die Zukunft des Samsung Supports heute.
+addon.installed=Installiert
+addon.notinstalled=Nicht installiert
+# } // Fresh Addons
+# // Installation script strings {
+script.partitions.scanning=Scannen nach Gerätepartitionen
+script.partitions.fail1=Fehler beim Scannen nach Partitionen.
+script.partitions.fail2=Bitte aktualisiere deine Wiederherstellung.
+script.partitions.mount=Partitionen werden eingebunden.
+script.partitions.remount=Partitionen werden wieder eingebunden.
+script.partitions.umount=Partitionen werden entbunden.
+script.partitions.found.system=Betriebssystempartition gefunden
+script.partitions.found.vendor=Geräte-Vendorpartition gefunden
+script.partitions.found.product=OEM Produktpartition gefunden
+script.partitions.found.splash=OEM Splash-Screenpartition gefunden
+script.partitions.found.boot=Linux-Kernelpartition gefunden
+script.partitions.found.dtb=Gerätebaum-Overlay-Partition gefunden
+script.partitions.found.recovery=Wiederherstellungsumgebungspartition gefunden
+script.install.main=Fresh 4 wird installiert
+script.install.super=Fresh Super Image wird installiert
+script.install.system=Fresh Gerätepartitionen werden installiert.
+script.install.vendor=Fresh-Vendorpartition wird installiert.
+script.install.product=Fresh Produktpartition wird installiert.
+script.install.splash=Benutzerdefiniertes OEM Splash-Screen wird installiert.
+script.install.boot.mint=Mint-Kernel wird installiert.
+script.install.boot.generic=Benutzerdefinierter Kernel wird installiert.
+script.install.dtb=Benutzerdefiniertes Gerätebaum-Overlay wird installiert.
+script.install.recovery.twrp=TWRP Wiederherstellungsumgebung wird installiert.
+script.install.recovery.shrp=SHRP Wiederherstellungsumgebung wird installiert.
+script.install.recovery.generic=Benutzerdefinierte Wiederherstellungsumgebung wird installiert.
+script.install.complete=Fresh wurde erfolgreich installiert!
+script.housekeeping.addons=Ausgewählte Add-Ons vom Setup werden installiert.
+# } // Installation script strings
+# // Basic installer strings {
+text_ok=Okay
+text_next=Weiter
+install.next=Weiter
+install.exit=Verlassen
+text_back=Zurück
+text_yes=Ja
+text_no=Nein
+text_about=Über
+text_calibrating=Tools werden kalibriert
+text_quit=Fresh Setup verlassen
+text_quit_msg=Bist du sicher, dass du das Setup schließen möchtest? Deine Änderungen werden nicht angewendet.

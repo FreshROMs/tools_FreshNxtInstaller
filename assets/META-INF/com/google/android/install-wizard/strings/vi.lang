@@ -1,0 +1,199 @@
+# =========================================
+# _____              _
+# |  ___| __ ___  ___| |__
+# | |_ | '__/ _ \/ __| '_ \
+# |  _|| | |  __/\__ \ | | |
+# |_|  |_|  \___||___/_| |_|
+# 
+# =========================================
+# 
+# Installer Language Resource File
+# Based on AROMA Installer
+# The Fresh Project
+# Copyright (C) 2022 TenSeventy7
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# 
+# =========================
+# Language Information
+# 
+# Language             : English
+# Lang code (ISO-639)  : EN
+# Localization By      : TenSeventy7
+# Replace with your desired username.
+lang.translator=Dịch bởi Tiofe
+# Initial language strings
+lang.title=Chào mừng!
+lang.summary=Vui lòng chọn ngôn ngữ của bạn
+welcome.title=Chào mừng đến với Fresh!
+welcome.text1=Chào mừng đến với trình cài đặt!
+welcome.text2=Trình cài đặt này sẽ theo bạn trong việc cài đặt Fresh trên thiết bị của bạn và thêm các tính năng theo sở thích của bạn.
+welcome.text3=Chọn <b>'tiếp tục'</b> để tiếp tục.
+terms.title=Điều khoản dịch vụ
+terms.summary=Việc sử dụng Fresh chịu sự điều chỉnh bởi điều khoản dịch vụ của <b>tenseventyseven</b>.
+terms.check=Tôi đồng ý
+terms.confirm=Bạn phải đồng ý với điều khoản để tiếp tục.
+menu.title=Chào mừng đến với trình cài đặt!
+menu.current.summary=Húuu, người dùng cũ! Fresh đã được cài đặt trên thiết bị của bạn.
+menu.new.summary=Chàoo, người dùng mới!
+menu.reinstall.title=Cài đặt lại Fresh 4
+menu.reinstall.summary=Cài đặt lại Fresh với các tùy chọn bạn đã chọn từ lần cài đặt trước đó.
+menu.upgrade.title=Nâng cấp Fresh
+menu.upgrade.summary=Nâng cấp thiết bị của bạn lên phiên bản Fresh này.
+menu.express.title=Cài đặt nhanh
+menu.express.summary=Cài đặt Fresh sử dụng các tùy chọn mặc định cho ứng dụng và dịch vụ.
+menu.custom.title=Cài đặt tùy chỉnh
+menu.custom.summary=Cài đặt Fresh theo sở thích của bạn.
+confirm.title=Đó là tất cả những gì chúng tôi cần
+confirm.summary=Hãy kiểm tra lại nếu các tùy chọn đã phù hợp với bạn và nhấn vào <b>'next'</b> để tiếp tục cài đặt.
+confirm.next=Cài đặt ngay
+install.title=Đang cài đặt Fresh 4
+install.summary=Hãy ngồi xuống và thư giãn trong lúc Fresh đang được cài đặt trên thiết bị của bạn. Điều này có thể tốn vài phút.
+install.finish=Đã thành công cài đặt Fresh. Chọn <b>'next'</b> để hoàn thành quá trình cài đặt.
+finish.title=Cài đặt thành công!
+finish.text1=Fresh đã được cài đặt trên thiết bị của bạn.
+finish.text2=Bây giờ bạn có thể chọn để thiết bị tự khởi động lại sau khi hoàn thành cài đặt bằng việc chọn ô phía dưới. <b>Chào mừng đến với Fresh!</b>
+finish.text3=Nhấn <b>'Thoát'</b> để hoàn thành quá trình cài đặt.
+finish.button.restart=Khởi động lại sau khi cài đặt
+wait.generic=Vui lòng chờ...
+wait.install.scan=Đang kiểm tra nếu thiết bị của bạn đã cài đặt Fresh.
+# // Fresh Addons {
+# Google
+addon.google=Các ứng dụng Google
+addon.google.title=Chọn mức độ thông minh của Google
+addon.google.summary=Các ứng dụng hữu ích đã in sâu vào tiềm thức bạn.
+addon.google.full.title=Đầy đủ
+addon.google.full.summary=Bao gồm mọi thứ ở mức Vừa, kèm Google Meet.
+addon.google.micro.title=Vừa
+addon.google.micro.summary=Bao gồm mọi thứ ở mức Nhẹ, kèm Bản đồ Google và hỗ trợ Android Auto.
+addon.google.lite.title=Nhẹ
+addon.google.lite.summary=Bao gồm ứng dụng Google và các dịch vụ cần thiết cho Google Play.
+# Bixby
+addon.bixby=Bixby
+addon.bixby.title=Đánh thức tiềm năng của thiết bị của bạn
+addon.bixby.summary=Trải nghiệm một cuộc sống thông minh hơn với Bixby.
+addon.bixby.voice.title=Bixby Voice
+addon.bixby.voice.summary=Bixby giúp bạn tập trung vào những gì quan trọng nhất.
+addon.bixby.vision.title=Bixby Vision
+addon.bixby.vision.summary=Bixby Vision giúp bạn hiểu thêm về thế giới diệu kỳ xung quanh.
+addon.bixby.reminders.title=Nhắc nhở
+addon.bixby.reminders.summary=Bixby đưa lời nhắc lên một đẳng cấp khác bằng cách cho phép bạn đặt lời nhắc bằng giọng nói của chính mình.
+addon.bixby.routines.title=Routines
+addon.bixby.routines.summary=Được hỗ trợ bởi công nghệ máy học để thích ứng với cuộc sống của bạn và làm cho thời gian sử dụng điện thoại của bạn hợp lý hơn.
+# Seamless
+addon.seamless=Hệ sinh thái Galaxy
+addon.seamless.title=Kết nối không giới hạn giữa các thiết bị của bạn
+addon.seamless.summary=Trải nghiệm hệ sinh thái Galaxy với các ứng dụng và dịch vụ này.
+addon.seamless.sharelive.title=Chia sẻ nhanh và Link Sharing
+addon.seamless.sharelive.summary=Một dịch vụ chia sẻ mới để gửi ảnh, video và tệp cho bạn bè và gia đình của bạn.
+addon.seamless.ltw.title=Liên kết Windows
+addon.seamless.ltw.summary=Liên kết Windows mang mọi thứ bạn có thể làm với điện thoại của bạn lên PC.
+addon.seamless.cta.title=Gọi và nhắn tin trên thiết bị khác
+addon.seamless.cta.summary=Gọi và nhận cuộc gọi trên máy tính bảng Samsung của bạn.
+addon.seamless.wear.title=Galaxy Wearable
+addon.seamless.wear.summary=Nâng tầm bản thân lên một tầm cao mới với thiết bị đeo Galaxy.
+addon.seamless.friends.title=Galaxy Friends
+addon.seamless.friends.summary=Một dịch vụ nền tảng phụ kiện cho phép bạn thưởng thức các nội dung khác nhau.
+addon.seamless.onedrive.title=Microsoft OneDrive
+addon.seamless.onedrive.summary=Lưu tệp và ảnh của bạn và truy cập chúng từ mọi thiết bị, mọi nơi.
+# AR Zone
+addon.ar_zone=Thực tế tăng cường
+addon.ar_zone.title=Nhiều thứ để nghịch hơn với camera của bạn
+addon.ar_zone.summary=Chụp ảnh và quay video vui nhộn với thực tế tăng cường.
+addon.ar_zone.zone.title=Khu vực AR
+addon.ar_zone.zone.summary=Trung tâm dành cho các tính năng AR, chẳng hạn như AR Emoji và AR Doodle.
+addon.ar_zone.emoji.title=AR Emoji
+addon.ar_zone.emoji.summary=Tạo ảnh và video vui nhộn với biểu tượng cảm xúc bằng nhiều chế độ ảnh khác nhau.
+addon.ar_zone.doodle.title=AR Doodle
+addon.ar_zone.doodle.summary=AR Doodle nâng cao video bằng cách cho bạn khả năng thêm các nét vẽ hoặc chữ viết tay vào môi trường xung quanh bạn.
+addon.ar_zone.decopic.title=DECO Pic
+addon.ar_zone.decopic.summary=Một bộ công cụ để tạo ra những bức ảnh ngộ nghĩnh của riêng bạn.
+# Game Services
+addon.game_services=Dịch vụ trò chơi
+addon.game_services.title=Cùng chơi nào!
+addon.game_services.summary=Nâng tầm trải nghiệm gaming với Samsung Galaxy của bạn.
+addon.game_services.home.title=Game Launcher và Công cụ
+addon.game_services.home.summary=Trung tâm điều khiển vạn năng cho các trò chơi yêu thích của bạn.
+# Security
+addon.security=Bảo mật
+addon.security.title=Tăng cường an ninh
+addon.security.summary=Giữ cho thiết bị Samsung Galaxy của bạn an toàn bất cứ lúc nào.
+addon.security.antimalware.title=Bảo vệ thiết bị
+addon.security.antimalware.summary=Bảo vệ thiết bị của bạn khỏi các mã độc.
+addon.security.folder.title=Thư mục bảo mật
+addon.security.folder.summary=Tận dụng nền tảng bảo mật Samsung Knox để tạo không gian riêng tư của riêng bạn.
+addon.security.share.title=Chia sẻ riêng tư
+addon.security.share.summary=Cho phép bạn chia sẻ dữ liệu của mình mà không phải lo lắng về bảo mật.
+addon.security.checkout.title=Thanh toán Samsung
+addon.security.checkout.summary=Thanh toán nhanh chóng, an toàn, dễ dàng với Galaxy Store và Galaxy Themes.
+# Samsung DeX
+addon.dex=Samsung DeX
+addon.dex.title=Đa nhiệm giữa các thiết bị như một dân chuyên
+addon.dex.summary=Kết nối thiết bị Galaxy của bạn với TV hoặc PC để mở ra một thế giới máy tính để bàn mới.
+addon.dex.install.title=Samsung DeX
+addon.dex.install.summary=Khuyến nghị sử dụng Samsung DeX trên thiết bị có 6GB RAM hoặc hơn.
+# More apps
+addon.sec=Nhiều ứng dụng hơn
+addon.sec.title=Khai thác tối đa thiết bị của bạn
+addon.sec.summary=Tối đa hóa trải nghiệm Galaxy.
+addon.sec.dict.title=Từ điển Samsung
+addon.sec.dict.summary=Tăng vốn từ vựng của bạn bất cứ khi nào và bất cứ nơi nào bạn gặp phải một từ lạ!
+addon.sec.kids.title=Samsung Kids
+addon.sec.kids.summary=Định hình một môi trường an toàn để con bạn vui vẻ khám phá và kết nối với thế giới.
+addon.sec.stc.title=Cuộc gọi cảm ứng thông minh
+addon.sec.stc.summary=Smart Touch Call mang đến cho bạn tương lai của hỗ trợ Samsung, ngay hôm nay.
+addon.installed=Đã cài đặt
+addon.notinstalled=Chưa cài đặt
+# } // Fresh Addons
+# // Installation script strings {
+script.partitions.scanning=Đang quét phân vùng thiết bị
+script.partitions.fail1=Không thể quét phân vùng.
+script.partitions.fail2=Vui lòng cập nhật Recovery.
+script.partitions.mount=Đang gắn các phân vùng.
+script.partitions.remount=Đang gắn lại các phân vùng.
+script.partitions.umount=Đang gỡ các phân vùng.
+script.partitions.found.system=Đã tìm thấy phân vùng hệ điều hành
+script.partitions.found.vendor=Đã tìm thấy phân vùng Vendor
+script.partitions.found.product=Đã tìm thấy phân vùng OEM product
+script.partitions.found.splash=Đã tìm thấy phân vùng OEM splash screen
+script.partitions.found.boot=Đã tìm thấy phân vùng nhân Linux
+script.partitions.found.dtb=Đã tìm thấy phân vùng Device tree overlay
+script.partitions.found.recovery=Đã tìm thấy phân vùng Recovery
+script.install.main=Đang cài đặt Fresh 4
+script.install.super=Đang cài đặt Fresh super image.
+script.install.system=Đang cài đặt phân vùng hệ thống Fresh.
+script.install.vendor=Đang cài đặt phân vùng vendor.
+script.install.product=Đang cài đặt phân vùng product.
+script.install.splash=Đang cài đặt Splash screen tùy chỉnh.
+script.install.boot.mint=Đang cài đặt Mint Kernel.
+script.install.boot.generic=Đang cài đặt kernel tùy chỉnh.
+script.install.dtb=Đang cài đặt Device tree overlay.
+script.install.recovery.twrp=Đang cài đặt TWRP.
+script.install.recovery.shrp=Đang cài đặt SHRP.
+script.install.recovery.generic=Đang cài đặt Recovery tùy chỉnh.
+script.install.complete=Fresh đã được cài đặt thành công!
+script.housekeeping.addons=Đang cài đặt các addons đã được chọn.
+# } // Installation script strings
+# // Basic installer strings {
+text_ok=OK
+text_next=Tiếp
+install.next=Tiếp
+install.exit=Thoát
+text_back=Trở về
+text_yes=Có
+text_no=Không
+text_about=Thông tin
+text_calibrating=Công cụ hiệu chỉnh
+text_quit=Thoát trình cài đặt
+text_quit_msg=Bạn có chắc chắn muốn thoát không? Những thay đổi của bạn sẽ không được áp dụng.

@@ -1,0 +1,199 @@
+# =========================================
+# _____              _
+# |  ___| __ ___  ___| |__
+# | |_ | '__/ _ \/ __| '_ \
+# |  _|| | |  __/\__ \ | | |
+# |_|  |_|  \___||___/_| |_|
+# 
+# =========================================
+# 
+# Installer Language Resource File
+# Based on AROMA Installer
+# The Fresh Project
+# Copyright (C) 2022 TenSeventy7
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# 
+# =========================
+# Language Information
+# 
+# Language             : English
+# Lang code (ISO-639)  : EN
+# Localization By      : TenSeventy7
+# Replace with your desired username.
+lang.translator=由Bemgbemg翻译
+# Initial language strings
+lang.title=欢迎！
+lang.summary=请选择您的语言
+welcome.title=欢迎来到Fresh!
+welcome.text1=欢迎使用安装向导！
+welcome.text2=此安装向导将指导您将 Fresh 安装到您的设备，并根据需要向您的安装添加其他功能。
+welcome.text3=点击<b>“下一步”</b>继续。
+terms.title=服务条款
+terms.summary=Fresh 的使用受 <b>tenseventyseven</b> 服务条款的约束。
+terms.check=我同意
+terms.confirm=您必须同意条款才能继续。
+menu.title=欢迎来到安装向导！
+menu.current.summary=Hewwo，老用户！ Fresh 当前已安装在您的设备上。
+menu.new.summary=Hewwo，新用户！
+menu.reinstall.title=重新安装 Fresh 4
+menu.reinstall.summary=使用您从早期安装中选择的选项重新安装 Fresh。
+menu.upgrade.title=升级 Fresh
+menu.upgrade.summary=将您的设备升级到此版本的 Fresh。
+menu.express.title=快速安装
+menu.express.summary=使用应用程序和服务的默认选项安装 Fresh。
+menu.custom.title=自定义安装
+menu.custom.summary=使用您的应用程序和服务的自定义选项安装 Fresh。
+confirm.title=这就是我们所需要的
+confirm.summary=检查您的所有自定义设置是否适合您，然后点击<b>“下一步”</b> 继续安装。
+confirm.next=现在安装
+install.title=安装 Fresh 4
+install.summary=坐下来放松一下，因为 Fresh 正在安装到您的设备上。这可能需要几分钟的时间。
+install.finish=Fresh 已成功安装。点击<b>“下一步”</b> 完成安装。
+finish.title=安装完成！
+finish.text1=Fresh 已成功安装到您的设备上。
+finish.text2=您现在可以通过勾选下面的框来选择在此设置后自动重启您的设备。 <b>欢迎来到 Fresh！</b>
+finish.text3=点击<b>“退出”</b> 完成设置。
+finish.button.restart=设置后重启
+wait.generic=请稍等...
+wait.install.scan=现有全新安装的扫描设备。
+# // Fresh Addons {
+# Google
+addon.google=谷歌应用
+addon.google.title=选择您的 Google 智能水平
+addon.google.summary=以您为中心打造的实用服务。
+addon.google.full.title=满的
+addon.google.full.summary=包括 Micro 上的所有内容，以及 Google Meet。
+addon.google.micro.title=Micro
+addon.google.micro.summary=包括 Lite 上的所有内容，以及地图和 Android Auto 支持。
+addon.google.lite.title=精简版
+addon.google.lite.summary=包括 Google 应用程序和 Google Play 的必要服务。
+# Bixby
+addon.bixby=Bixby
+addon.bixby.title=释放手机的全部潜能
+addon.bixby.summary=使用 Bixby 体验更智能的生活。
+addon.bixby.voice.title=Bixby Voice
+addon.bixby.voice.summary=Bixby 让您可以专注于最重要的事情。
+addon.bixby.vision.title=比克斯比视觉
+addon.bixby.vision.summary=Bixby 视觉让您更轻松地了解周围的世界。
+addon.bixby.reminders.title=提醒事项
+addon.bixby.reminders.summary=Bixby 让您可以用语音设置提醒，从而将提醒提升到另一个层次。
+addon.bixby.routines.title=Routines
+addon.bixby.routines.summary=在机器学习的支持下适应您的生活，让您的电话时间更加精简。
+# Seamless
+addon.seamless=银河生态系统
+addon.seamless.title=与您的设备无缝连接
+addon.seamless.summary=通过这些应用程序和服务体验 Galaxy 生态系统。
+addon.seamless.sharelive.title=快速分享和链接分享
+addon.seamless.sharelive.summary=一种新的共享服务，用于与您的朋友和家人发送照片、视频和文件。
+addon.seamless.ltw.title=链接到 Windows
+addon.seamless.ltw.summary=Link to Windows 将您可以在智能手机上执行的所有操作带到您的 PC 上。
+addon.seamless.cta.title=在其他设备上通话和发短信
+addon.seamless.cta.summary=在三星平板电脑上拨打和接听电话。
+addon.seamless.wear.title=银河可穿戴
+addon.seamless.wear.summary=使用 Galaxy 可穿戴设备让自己更上一层楼。
+addon.seamless.friends.title=银河之友
+addon.seamless.friends.summary=可让您享受各种内容的附属平台服务。
+addon.seamless.onedrive.title=微软 OneDrive
+addon.seamless.onedrive.summary=保存您的文件和照片，并从任何设备随时随地访问它们。
+# AR Zone
+addon.ar_zone=增强现实
+addon.ar_zone.title=享受更多相机乐趣
+addon.ar_zone.summary=使用增强现实拍摄有趣的照片和视频。
+addon.ar_zone.zone.title=增强现实区
+addon.ar_zone.zone.summary=AR 相关功能的一站式中心，例如 AR Emoji 和 AR Doodle。
+addon.ar_zone.emoji.title=增强现实表情符号
+addon.ar_zone.emoji.summary=使用各种照片模式使用表情符号创建有趣的照片和视频。
+addon.ar_zone.doodle.title=增强现实涂鸦
+addon.ar_zone.doodle.summary=AR 涂鸦模式让您能够在环境中添加线条图或手写内容，从而增强视频效果。
+addon.ar_zone.decopic.title=装饰图片
+addon.ar_zone.decopic.summary=一组创意工具，用于创建自己的有趣和愚蠢的图片。
+# Game Services
+addon.game_services=游戏服务
+addon.game_services.title=游戏开始！
+addon.game_services.summary=使用您的 Samsung Galaxy 升级手机游戏。
+addon.game_services.home.title=游戏启动器和工具
+addon.game_services.home.summary=您最喜爱的游戏的终极控制中心。
+# Security
+addon.security=安全
+addon.security.title=增强安全性
+addon.security.summary=随时确保您的 Samsung Galaxy 设备安全。
+addon.security.antimalware.title=设备保护
+addon.security.antimalware.summary=保护您的 Galaxy 手机免受恶意软件侵害。
+addon.security.folder.title=安全文件夹
+addon.security.folder.summary=利用国防级 Samsung Knox 安全平台打造私密空间。
+addon.security.share.title=私人分享
+addon.security.share.summary=保护隐私的文件共享功能，让您无后顾之忧地共享您的数据。
+addon.security.checkout.title=三星结帐
+addon.security.checkout.summary=使用 Galaxy Store 和 Galaxy Themes 快速、安全、轻松地结账。
+# Samsung DeX
+addon.dex=三星 DeX
+addon.dex.title=像老板一样在设备之间进行多任务处理
+addon.dex.summary=将您的 Galaxy 连接到您的电视或 PC，打开一个新的桌面世界。
+addon.dex.install.title=三星 DeX
+addon.dex.install.summary=建议在具有 6GB 或更多 RAM 的设备上使用 Samsung DeX。
+# More apps
+addon.sec=更多的应用
+addon.sec.title=充分利用您的设备
+addon.sec.summary=最大化您的 Galaxy 体验。
+addon.sec.dict.title=三星词典
+addon.sec.dict.summary=随时随地增加你的词汇量，遇到不熟悉的单词！
+addon.sec.kids.title=三星童装
+addon.sec.kids.summary=为您的孩子塑造一个安全的环境，让他们快乐地探索世界并与世界联系。
+addon.sec.stc.title=智能触控通话
+addon.sec.stc.summary=今天，Smart Touch Call 为您带来三星支持的未来。
+addon.installed=已安装
+addon.notinstalled=未安装
+# } // Fresh Addons
+# // Installation script strings {
+script.partitions.scanning=扫描设备分区
+script.partitions.fail1=无法扫描分区。
+script.partitions.fail2=请更新您的恢复。
+script.partitions.mount=挂载分区。
+script.partitions.remount=重新挂载分区。
+script.partitions.umount=卸载分区。
+script.partitions.found.system=找到操作系统分区
+script.partitions.found.vendor=找到设备供应商分区
+script.partitions.found.product=找到OEM产品分区
+script.partitions.found.splash=找到 OEM 启动画面分区
+script.partitions.found.boot=找到 Linux 内核分区
+script.partitions.found.dtb=找到设备树覆盖分区
+script.partitions.found.recovery=找到恢复环境分区
+script.install.main=安装 Fresh 4
+script.install.super=安装 Fresh super image。
+script.install.system=安装全新的系统分区。
+script.install.vendor=安装新供应商分区。
+script.install.product=安装新鲜产品分区。
+script.install.splash=安装自定义 OEM 初始屏幕。
+script.install.boot.mint=安装薄荷内核。
+script.install.boot.generic=安装自定义内核。
+script.install.dtb=安装自定义设备树覆盖。
+script.install.recovery.twrp=安装 TWRP 恢复环境。
+script.install.recovery.shrp=安装 SHRP 恢复环境。
+script.install.recovery.generic=安装自定义恢复环境。
+script.install.complete=Fresh 已经安装成功！
+script.housekeeping.addons=从设置中安装选定的插件。
+# } // Installation script strings
+# // Basic installer strings {
+text_ok=好的
+text_next=下一个
+install.next=下一个
+install.exit=出口
+text_back=后退
+text_yes=是的
+text_no=不
+text_about=关于
+text_calibrating=校准工具
+text_quit=退出全新设置
+text_quit_msg=您确定要退出设置吗？您的更改将不会应用。
