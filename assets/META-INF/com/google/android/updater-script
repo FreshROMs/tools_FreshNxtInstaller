@@ -86,7 +86,6 @@ ifelse(is_mounted(file_getprop("/tmp/toolkit.prop", "block.system.mount")), unmo
 ifelse(is_mounted("/product"), unmount("/product"));
 ifelse(is_mounted("/vendor"), unmount("/vendor"));
 
-ui_print(" ");
 sleep(3);
 show_progress(0.200000, 0);
 
