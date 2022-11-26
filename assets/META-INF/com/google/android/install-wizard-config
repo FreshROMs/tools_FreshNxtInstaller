@@ -35,9 +35,9 @@ theme("fresh");
 splash(2000, "splash/setup_splash_fresh_four");
 
 # Set font styles and font sizes
-fontresload( "0", "ttf/SEC-Regular.ttf;ttf/SECNaskhArabicUI-Regular.ttf;ttf/NotoSansTaiViet-Regular.ttf;ttf/DroidSansFallback.ttf;ttf/DroidSansArabic.ttf;", "12" );
-fontresload( "1", "ttf/SEC-Medium.ttf;ttf/SECNaskhArabicUI-Bold.ttf;ttf/NotoSansTaiViet-Regular.ttf;ttf/DroidSansFallback.ttf;ttf/DroidSansArabic.ttf;", "16" );
-fontresload( "2", "ttf/SEC-Light.ttf;ttf/SECNaskhArabicUI-Regular.ttf;ttf/NotoSansTaiViet-Regular.ttf;ttf/DroidSansFallback.ttf;ttf/DroidSansArabic.ttf;", "18" );
+fontresload( "0", "ttf/SEC-Regular.ttf;ttf/NotoSansTaiViet-Regular.ttf;ttf/DroidSansFallback.ttf;ttf/DroidSansArabic.ttf;", "12" );
+fontresload( "1", "ttf/SEC-Medium.ttf;ttf/NotoSansTaiViet-Regular.ttf;ttf/DroidSansFallback.ttf;ttf/DroidSansArabic.ttf;", "16" );
+fontresload( "2", "ttf/SEC-Light.ttf;ttf/NotoSansTaiViet-Regular.ttf;ttf/DroidSansFallback.ttf;ttf/DroidSansArabic.ttf;", "18" );
 
 # Load default language before selection
 loadlang("strings/en.lang");
