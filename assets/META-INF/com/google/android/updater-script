@@ -137,7 +137,7 @@ sleep(3);
 ui_print(" ");
 
 # Post-install services
-ui_print("- " + file_getprop("/tmp/install-wizard/lang.prop", "script.partitions.remount"));
+ui_print("- " + file_getprop("/tmp/install-wizard/lang.prop", "script.housekeeping.addons"));
 ifelse(is_mounted(file_getprop("/tmp/toolkit.prop", "block.system.mount")), sleep(1), mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.system"), file_getprop("/tmp/toolkit.prop", "block.system.mount")));
 ifelse(is_mounted("/product"), sleep(1), mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.product"), "/product"));
 ifelse(is_mounted("/vendor"), sleep(1), mount("ext4", "EMMC", file_getprop("/tmp/toolkit.prop", "block.vendor"), "/vendor"));
