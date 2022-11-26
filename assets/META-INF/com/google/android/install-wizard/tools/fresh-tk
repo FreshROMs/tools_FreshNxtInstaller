@@ -20,6 +20,7 @@ SVZIP="${TOOLS}/7za" # the location of the 7zip arm binary.
 XMLSTARLET="${TOOLS}/xmlstarlet" # the location of the xmlstarlet arm binary.
 PROP="/tmp/toolkit.prop" # prop file used to counter-check values for the script
 FLASH='/tmp/fresh.prop' # ROM prop file used for version checking
+FLASH_WIZARD='/tmp/install-wizard/fresh.prop' # ROM prop file used for version checking
 INSTALL_WIZARD_PATH="/tmp/install-wizard" # Path of the install wizard
 
 export PATH="${TOOLS}:${PATH}"
@@ -221,25 +222,42 @@ migrate_fresh_three_addons() {
 
 install_rom_check() {
 	ROM_EXIST_INSTALL="false"
+	ROM_EXIST_INSTALL_FOUR="false"
 	ROM_EXIST_INSTALL_THREE="false"
 
 	# Check for an existing ROM installation
-	if [ -e "${ROM}" -a -d "${FRESH}/overrides/install-wizard" ]; then
+	if [ -e "${ROM}" ]; then
+		ROM_EXIST_VERSION=$(file_getprop "${ROM}" 'ro.fresh.build.date.utc')
+
+		if [ -f "${FLASH}" ]; then
+			ROM_OTA_VERSION=$(file_getprop "${FLASH}" 'ro.fresh.build.date.utc')
+		else
+			ROM_OTA_VERSION=$(file_getprop "${FLASH_WIZARD}" 'ro.fresh.build.date.utc')
+		fi
+		
 		ROM_EXIST_INSTALL="true"
 
+		# Check if Fresh installation is an upgrade
+		if [ "${ROM_EXIST_VERSION}" -ge "${ROM_OTA_VERSION}" ]; then
+			ROM_EXIST_INSTALL="upgrade"
+		fi
+			
 		# Copy current install overrides
-		cp -rf ${FRESH}/overrides/install-wizard /tmp/
+		if [ -d "${FRESH}/overrides/install-wizard" ]; then
+			cp -rf ${FRESH}/overrides/install-wizard /tmp/
+			ROM_EXIST_INSTALL_FOUR="true"
+		fi
 	fi
 
 	# Migrate Fresh 3 addons to new selections
 	if [ -e "${ROM_THREE}" -o -e "${ROM_THREE_ALT}" ]; then
-		ROM_EXIST_INSTALL="true"
-
+		ROM_EXIST_INSTALL="upgrade"
 		# Migrate addons to new selections
 		ROM_EXIST_INSTALL_THREE="true"
 	fi
 
 	file_setprop "system.exist.rom" "${ROM_EXIST_INSTALL}"
+	file_setprop "system.exist.rom.four" "${ROM_EXIST_INSTALL_FOUR}"
 	file_setprop "system.exist.rom.three" "${ROM_EXIST_INSTALL_THREE}"
 }
 
