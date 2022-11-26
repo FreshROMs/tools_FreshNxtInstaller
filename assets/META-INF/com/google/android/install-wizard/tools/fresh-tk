@@ -140,19 +140,30 @@ install_selections() {
 }
 
 migrate_fresh_three_addons() {
-	FRESH_ADDONS_OLD="${SYSMOUNT_PATH}/system_ext/etc/fresh/addons" # addon metadata folder used in the ROM
+	FRESH_ADDONS_OLD="${SYSMOUNT_PATH}/etc/fresh/addons" # addon metadata folder used in the ROM
+
+	if [[ ! -d "${FRESH_ADDONS_OLD}" ]]; then
+		FRESH_ADDONS_OLD="${SYSMOUNT_PATH}/system_ext/etc/fresh/addons"
+	fi
 
 	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.bixby.voice.prop" ]; then
 		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.1' '1'
+	else
+		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.1' '0'
 	fi
 
 	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.bixby.vision.prop" ]; then
 		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.2' '1'
+	else
+		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.2' '0'
 	fi
 
 	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.bixby.smart.prop" ]; then
 		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.3' '1'
 		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.4' '1'
+	else
+		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.3' '0'
+		file_setprop "${INSTALL_WIZARD_PATH}/bixby.prop" 'item.0.4' '0'
 	fi
 
 	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.gplus.prop" ]; then
@@ -164,22 +175,48 @@ migrate_fresh_three_addons() {
 	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.sm.mygalaxy.prop" ]; then
 		file_setprop "${INSTALL_WIZARD_PATH}/extras.prop" 'item.0.1' '1'
 		file_setprop "${INSTALL_WIZARD_PATH}/extras.prop" 'item.0.2' '1'
-
 		file_setprop "${INSTALL_WIZARD_PATH}/security.prop" 'item.0.4' '1'
+	else
+		file_setprop "${INSTALL_WIZARD_PATH}/extras.prop" 'item.0.1' '0'
+		file_setprop "${INSTALL_WIZARD_PATH}/extras.prop" 'item.0.2' '0'
+		file_setprop "${INSTALL_WIZARD_PATH}/security.prop" 'item.0.4' '0'
 	fi
 
 	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.gamehome.prop" ]; then
 		file_setprop "${INSTALL_WIZARD_PATH}/game-home.prop" 'item.0.1' '1'
+	else
+		file_setprop "${INSTALL_WIZARD_PATH}/game-home.prop" 'item.0.1' '0'
 	fi
 
 	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.samsung.live.prop" ]; then
 		file_setprop "${INSTALL_WIZARD_PATH}/seamless.prop" 'item.0.1' '1'
+	else
+		file_setprop "${INSTALL_WIZARD_PATH}/seamless.prop" 'item.0.1' '0'
 	fi
 
 	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.mdec.prop" ]; then
 		file_setprop "${INSTALL_WIZARD_PATH}/seamless.prop" 'item.0.2' '1'
 		file_setprop "${INSTALL_WIZARD_PATH}/seamless.prop" 'item.0.3' '1'
+	else
+		file_setprop "${INSTALL_WIZARD_PATH}/seamless.prop" 'item.0.2' '0'
+		file_setprop "${INSTALL_WIZARD_PATH}/seamless.prop" 'item.0.3' '0'
 	fi
+
+	# Migrate AR Zone for Fresh 3.4P
+	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.ar.zone.prop" -a -e "${ROM_THREE}" ]; then
+		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.1' '1'
+		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.2' '1'
+		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.3' '1'
+		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.4' '1'
+	else
+		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.1' '0'
+		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.2' '0'
+		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.3' '0'
+		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.4' '0'
+	fi
+
+	# Remove 'Private Share' on migrating installations 
+	file_setprop "${INSTALL_WIZARD_PATH}/security.prop" 'item.0.3' '0'
 }
 
 install_rom_check() {
