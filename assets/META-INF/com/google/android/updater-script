@@ -385,6 +385,7 @@ ifelse(is_mounted("/product"), unmount("/product"));
 show_progress(0.960000, 0);
 run_program("/cache/tools/fresh-tk", "install_cleanup");
 delete_recursive("/cache/tools");
+delete_recursive("/cache/fresh");
 show_progress(0.980000, 0);
 delete("/tmp/build.prop");
 delete("/tmp/fresh.prop");
