@@ -7,6 +7,7 @@ selectbox(
 
   "English",           "Localization by TenSeventy7",                     1,
   "Azərbaycan dili",   "hgunduz295 tarafından yerelleştirildi",           0,
+  "Bahasa Indonesia",  "Lokalisasi oleh santoso21k",                      0,
   "简体中文",            "由Bemgbemg翻译",                                   0,
   "Nederlands",        "Vertaling door Alain Deroy",                      0,
   "Español",           "Localización por Cristian Recalde",               0,
@@ -31,51 +32,56 @@ if prop("language.prop","selected.0") == "2" then
 endif;
 
 if prop("language.prop","selected.0") == "3" then
+  loadlang("strings/id.lang");
+  restotmp("strings/id.lang", "lang.prop");
+endif;
+
+if prop("language.prop","selected.0") == "4" then
   loadlang("strings/zh_CN.lang");
   restotmp("strings/zh_CN.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "4" then
+if prop("language.prop","selected.0") == "5" then
   loadlang("strings/nl.lang");
   restotmp("strings/nl.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "5" then
+if prop("language.prop","selected.0") == "6" then
   loadlang("strings/es.lang");
   restotmp("strings/es.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "6" then
+if prop("language.prop","selected.0") == "7" then
   loadlang("strings/de.lang");
   restotmp("strings/de.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "7" then
+if prop("language.prop","selected.0") == "8" then
   loadlang("strings/fa.lang");
   restotmp("strings/fa.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "8" then
+if prop("language.prop","selected.0") == "9" then
   loadlang("strings/pt_BR.lang");
   restotmp("strings/pt_BR.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "9" then
+if prop("language.prop","selected.0") == "10" then
   loadlang("strings/ru.lang");
   restotmp("strings/ru.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "10" then
+if prop("language.prop","selected.0") == "11" then
   loadlang("strings/tr.lang");
   restotmp("strings/tr.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "11" then
+if prop("language.prop","selected.0") == "12" then
   loadlang("strings/vi.lang");
   restotmp("strings/vi.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "12" then
+if prop("language.prop","selected.0") == "13" then
   loadlang("strings/uk.lang");
   restotmp("strings/uk.lang", "lang.prop");
 endif;

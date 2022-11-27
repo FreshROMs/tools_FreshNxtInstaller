@@ -1,0 +1,206 @@
+# =========================================
+# _____              _
+# |  ___| __ ___  ___| |__
+# | |_ | '__/ _ \/ __| '_ \
+# |  _|| | |  __/\__ \ | | |
+# |_|  |_|  \___||___/_| |_|
+# 
+# =========================================
+# 
+# Installer Language Resource File
+# Based on AROMA Installer
+# The Fresh Project
+# Copyright (C) 2022 TenSeventy7
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# 
+# =========================
+# Language Information
+# 
+# Language             : English
+# Lang code (ISO-639)  : EN
+# Localization By      : TenSeventy7
+# Replace with your desired username.
+lang.translator=Lokalisasi oleh santoso21k
+# Initial language strings
+# Fuzzy
+lang.title=Selamat Datang!
+# Fuzzy
+lang.summary=Pilih bahasamu.
+# Fuzzy
+welcome.title=Selamat datang di Fresh!
+# Fuzzy
+welcome.text1=Selamat datang di panduan pemasangan!
+welcome.text2=Panduan penginstalan ini akan memandu Anda dalam menginstal Fresh ke perangkat Anda dan menambahkan fitur tambahan ke penginstalan sesuka Anda.
+welcome.text3=Tekan <b>'berikut'</b> untuk lanjut.
+# Fuzzy
+terms.title=Ketentuan layanan
+terms.summary=Penggunaan Fresh diatur oleh <b>tenseventyseven</b> Ketentuan Layanan.
+terms.check=Saya setuju
+# Fuzzy
+terms.confirm=anda harus setuju dengan ketentuan layanan.
+menu.title=Selamat datang di wizard!
+menu.current.summary=Hewwo, pengguna lama! Fresh saat ini diinstal pada perangkat Anda.
+menu.new.summary=Hewwo, pengguna baru!
+menu.reinstall.title=Pasang ulang Fresh 4
+# Fuzzy
+menu.reinstall.summary=Pasang ulang Fresh dengan opsi pilihan anda dari pemasangan sebelumnya.
+menu.upgrade.title=perbaharui Fresh
+menu.upgrade.summary=perbaharui perangkatmu ke versi Fresh ini.
+menu.express.title=Pemasangan Cepat
+menu.express.summary=Pasang Fresh dengan opsi bawaan untuk aplikasi dan layanan.
+menu.custom.title=Pemasangan Pilihan
+menu.custom.summary=Pasang Fresh dengan opsi pilihan anda untuk aplikasi dan layanan.
+confirm.title=Itu semua yang kita ingin
+confirm.summary=Periksa apakah semua penyesuaian sudah tepat untuk Anda, dan ketuk <b>'berikutnya'</b> untuk melanjutkan penginstalan.
+confirm.next=Pasang sekarang
+install.title=Memasang Fresh 4
+install.summary=Duduk dan bersantailah saat Fresh diinstal ke perangkat Anda. Ini mungkin memakan waktu beberapa menit.
+install.finish=Fresh telah berhasil diinstal. Ketuk <b>'berikutnya'</b> untuk menyelesaikan penginstalan.
+finish.title=Pemasangan Selesai!
+finish.text1=Fresh telah sukses terpasang di perangkat anda.
+finish.text2=Sekarang Anda dapat memilih untuk memulai ulang perangkat secara otomatis setelah penyiapan ini dengan mencentang kotak di bawah. <b>Selamat datang di Fresh!</b>
+finish.text3=Tekan <b>'Keluar'</b> untuk selesaikan pemasangan.
+finish.button.restart=Mulai ulang setelah pemasangan
+wait.generic=Mohon tunggu...
+wait.install.scan=Memindai perangkat untuk instalasi Fresh yang ada.
+# // Fresh Addons {
+# Google
+addon.google=Aplikasi Google
+addon.google.title=Pilih tingkat kecerdasan Google Anda
+addon.google.summary=Layanan bermanfaat yang dibangun dengan mempertimbangkan Anda.
+addon.google.full.title=Penuh
+addon.google.full.summary=Mencakup semua yang ada di Mikro, plus Google Meet.
+addon.google.micro.title=Mikro
+addon.google.micro.summary=Mencakup semua yang ada di Lite, ditambah dukungan Maps dan Android Auto.
+addon.google.lite.title=Lite
+addon.google.lite.summary=Termasuk aplikasi Google dan layanan yang diperlukan untuk Google Play.
+# Bixby
+addon.bixby=Bixby
+addon.bixby.title=Buka potensi penuh ponsel Anda
+addon.bixby.summary=Pengalaman yang lebih cerdas dengan Bixby.
+addon.bixby.voice.title=Suara Bixby
+addon.bixby.voice.summary=Bixby membebaskan Anda untuk fokus pada hal yang paling penting.
+addon.bixby.vision.title=Pengelihatan Bixby
+addon.bixby.vision.summary=Pengelihatan Bixby memudahkan untuk mempelajari lebih lanjut tentang dunia di sekitar Anda
+addon.bixby.reminders.title=Pengingat
+addon.bixby.reminders.summary=Bixby membawa pengingat ke level lain dengan membiarkan Anda mengatur pengingat dengan suara Anda
+addon.bixby.routines.title=Rutinitas
+addon.bixby.routines.summary=Didukung oleh pembelajaran mesin untuk beradaptasi dengan kehidupan Anda, dan menjadikan waktu ponsel Anda lebih efisien.
+# Seamless
+addon.seamless=Ekosistem Galaksi
+addon.seamless.title=Terhubung mulus dengan perangkat Anda
+addon.seamless.summary=Alami ekosistem Galaxy dengan aplikasi dan layanan ini.
+addon.seamless.sharelive.title=Berbagi Cepat dan Berbagi Tautan
+addon.seamless.sharelive.summary=Layanan berbagi baru untuk mengirim foto, video, dan file dengan teman dan keluarga Anda.
+addon.seamless.ltw.title=Tautkan ke Windows
+addon.seamless.ltw.summary=Tautkan ke Windows mengambil semua yang dapat Anda lakukan di ponsel cerdas Anda dan membawanya ke PC Anda.
+addon.seamless.cta.title=Panggilan dan SMS di perangkat lain
+addon.seamless.cta.summary=Buat dan terima panggilan di tablet Samsung Anda.
+addon.seamless.wear.title=Galaxy Wearable
+addon.seamless.wear.summary=Dorong diri Anda ke level selanjutnya dengan perangkat Galaxy yang dapat dikenakan.
+addon.seamless.friends.title=Sahabat Galaksi
+addon.seamless.friends.summary=Layanan platform aksesori yang memungkinkan Anda menikmati berbagai konten.
+addon.seamless.onedrive.title=Microsoft OneDrive
+addon.seamless.onedrive.summary=Simpan file dan foto Anda dan akses dari perangkat apa saja, di mana saja.
+# AR Zone
+addon.ar_zone=Realitas Tertambah
+addon.ar_zone.title=Bersenang-senanglah dengan kamera Anda
+addon.ar_zone.summary=Abadikan foto dan video seru dengan augmented reality.
+addon.ar_zone.zone.title=Zona AR
+addon.ar_zone.zone.summary=Hub satu atap untuk fitur terkait AR, seperti AR Emoji dan AR Doodle.
+addon.ar_zone.emoji.title=Emoji AR
+addon.ar_zone.emoji.summary=Buat foto dan video seru dengan emoji menggunakan berbagai mode foto.
+addon.ar_zone.doodle.title=Doodle AR
+addon.ar_zone.doodle.summary=Mode AR Doodle menyempurnakan video dengan memberi Anda kemampuan untuk menambahkan gambar garis atau tulisan tangan ke lingkungan Anda.
+addon.ar_zone.decopic.title=Gambar DECO
+addon.ar_zone.decopic.summary=Seperangkat alat kreatif untuk membuat gambar lucu dan konyol mereka sendiri.
+# Game Services
+addon.game_services=Layanan Permainan
+addon.game_services.title=Mainkan!
+addon.game_services.summary=Tingkatkan permainan seluler dengan Samsung Galaxy Anda.
+addon.game_services.home.title=Peluncur Game dan Alat
+addon.game_services.home.summary=Pusat kendali utama untuk game favorit Anda.
+# Security
+addon.security=Keamanan
+addon.security.title=Tingkatkan keamanan Anda
+addon.security.summary=Amankan perangkat Samsung Galaxy Anda kapan saja.
+addon.security.antimalware.title=Perlindungan perangkat
+addon.security.antimalware.summary=Lindungi ponsel Galaxy Anda dari malware.
+addon.security.folder.title=Folder Aman
+addon.security.folder.summary=Manfaatkan platform keamanan Samsung Knox tingkat pertahanan untuk menciptakan ruang pribadi.
+addon.security.share.title=Berbagi Pribadi
+addon.security.share.summary=Fungsi berbagi file yang menjaga privasi yang memungkinkan Anda berbagi data tanpa khawatir.
+addon.security.checkout.title=Pembayaran Samsung
+addon.security.checkout.summary=Pembayaran cepat, aman, mudah dengan Galaxy Store dan Galaxy Themes.
+# Samsung DeX
+addon.dex=Samsung DeX
+addon.dex.title=Multitugas antar perangkat seperti bos
+addon.dex.summary=Hubungkan Galaxy Anda ke TV atau PC untuk membuka dunia desktop baru.
+addon.dex.install.title=Samsung DeX
+addon.dex.install.summary=Disarankan untuk menggunakan Samsung DeX pada perangkat dengan RAM 6GB atau lebih.
+# More apps
+addon.sec=Aplikasi tambahan lainnya
+addon.sec.title=Dapatkan hasil maksimal dari perangkat Anda
+addon.sec.summary=Maksimalkan pengalaman Galaxy Anda.
+addon.sec.dict.title=Kamus Samsung
+addon.sec.dict.summary=Tingkatkan kosakata Anda kapan pun dan di mana pun Anda menemukan kata asing!
+addon.sec.kids.title=Samsung Anak
+addon.sec.kids.summary=Bentuk lingkungan yang aman bagi anak Anda untuk mengeksplorasi dan terhubung dengan dunia dengan senang hati.
+addon.sec.stc.title=Panggilan Sentuh Cerdas
+addon.sec.stc.summary=Smart Touch Call memberi Anda masa depan dukungan Samsung, hari ini.
+addon.installed=Terpasang
+addon.notinstalled=Tidak terpasang
+# } // Fresh Addons
+# // Installation script strings {
+script.partitions.scanning=Memindai partisi perangkat
+script.partitions.fail1=Gagal memindai partisi.
+script.partitions.fail2=Perbarui pemulihan Anda.
+script.partitions.mount=Memasang partisi.
+script.partitions.remount=Memasang kembali partisi.
+script.partitions.umount=Melepas partisi.
+script.partitions.found.system=Ditemukan partisi sistem operasi
+script.partitions.found.vendor=Ditemukan partisi vendor perangkat
+script.partitions.found.product=Ditemukan partisi produk OEM
+script.partitions.found.splash=Ditemukan partisi splash screen OEM
+script.partitions.found.boot=Ditemukan partisi kernel Linux
+script.partitions.found.dtb=Ditemukan partisi overlay pohon perangkat
+script.partitions.found.recovery=Ditemukan partisi lingkungan pemulihan
+script.install.main=Menginstal Baru 4
+script.install.super=Menginstal gambar super segar.
+script.install.system=Menginstal partisi sistem baru.
+script.install.vendor=Menginstal partisi vendor baru.
+script.install.product=Menginstal partisi produk baru.
+script.install.splash=Memasang layar splash OEM khusus.
+script.install.boot.mint=Menginstal Kernel Mint.
+script.install.boot.generic=Menginstal kernel khusus.
+script.install.dtb=Menginstal hamparan pohon perangkat khusus.
+script.install.recovery.twrp=Menginstal lingkungan pemulihan TWRP.
+script.install.recovery.shrp=Menginstal lingkungan pemulihan SHRP.
+script.install.recovery.generic=Menginstal lingkungan pemulihan khusus.
+script.install.complete=Segar telah berhasil diinstal!
+script.housekeeping.addons=Memasang addon yang dipilih dari penyiapan.
+# } // Installation script strings
+# // Basic installer strings {
+text_ok=Oke
+text_next=Lanjut
+install.next=Lanjut
+install.exit=KELUAR
+text_back=Kembali
+text_yes=Ya
+text_no=Tidak
+text_about=Tentang
+text_calibrating=Alat Kalibrasi
+text_quit=Keluar dari Pengaturan Baru
+text_quit_msg=Apakah Anda yakin untuk keluar dari penyiapan? Perubahan Anda tidak akan diterapkan.
