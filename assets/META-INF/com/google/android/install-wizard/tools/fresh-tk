@@ -204,16 +204,18 @@ migrate_fresh_three_addons() {
 	fi
 
 	# Migrate AR Zone for Fresh 3.4P
-	if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.ar.zone.prop" -a -e "${ROM_THREE}" ]; then
-		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.1' '1'
-		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.2' '1'
-		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.3' '1'
-		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.4' '1'
-	else
-		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.1' '0'
-		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.2' '0'
-		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.3' '0'
-		file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.4' '0'
+	if [ -e "${ROM_THREE}" ]; then
+		if [ -e "${FRESH_ADDONS_OLD}/io.tns.fresh.ar.zone.prop" ]; then
+			file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.1' '1'
+			file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.2' '1'
+			file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.3' '1'
+			file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.4' '1'
+		else
+			file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.1' '0'
+			file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.2' '0'
+			file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.3' '0'
+			file_setprop "${INSTALL_WIZARD_PATH}/ar-zone.prop" 'item.0.4' '0'
+		fi
 	fi
 
 	# Remove 'Private Share' on migrating installations 
