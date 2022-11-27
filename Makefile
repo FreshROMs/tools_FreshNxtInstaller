@@ -7,7 +7,7 @@ USE_NEON := 0
 
 # Version info
 AROMA_NAME    := Fresh Install Wizard
-AROMA_VERSION := 13.1.2.2
+AROMA_VERSION := 13.1.2.3
 AROMA_BUILD   := $(shell date +%s)
 AROMA_CN      := Fuecoco
 
