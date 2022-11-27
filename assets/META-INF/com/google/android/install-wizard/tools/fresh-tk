@@ -238,7 +238,7 @@ install_rom_check() {
 		ROM_EXIST_INSTALL="true"
 
 		# Check if Fresh installation is an upgrade
-		if [ "${ROM_EXIST_VERSION}" -le "${ROM_OTA_VERSION}" ]; then
+		if [ "${ROM_EXIST_VERSION}" -lt "${ROM_OTA_VERSION}" ]; then
 			ROM_EXIST_INSTALL="upgrade"
 		fi
 			
