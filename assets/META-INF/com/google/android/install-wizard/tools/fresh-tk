@@ -129,6 +129,16 @@ addon_remove() {
 	rm -rf ${ADDON_FILES}
 }
 
+data_check() {
+	# Check if there is existing data. We need this so we can do smart choices
+	# on whether we can overwrite OMC or not since it causes bootloops on some cases
+	if [ -d "/data/data" -a -d "/data/user" -a -d "/data/system" ]; then
+		file_setprop "system.exist.data" "true"
+	else
+		file_setprop "system.exist.data" "false"
+	fi
+}
+
 install_selections() {
 	mkdir -p "${FRESH}/overrides/install-wizard"
 	cp -f "${INSTALL_WIZARD_PATH}/google.prop" "${FRESH}/overrides/install-wizard/google.prop"
