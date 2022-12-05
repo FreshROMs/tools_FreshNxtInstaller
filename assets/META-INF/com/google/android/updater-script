@@ -69,6 +69,9 @@ show_progress(0.090000, 0);
 ifelse(is_mounted("/data"), sleep(1), run_program("/cache/tools/busybox", "mount", "/data"));
 show_progress(0.100000, 0);
 
+# Check if data exists on device so we can backup OMC and stuff
+run_program("/cache/tools/fresh-tk", "data_check");
+
 ifelse(
   file_getprop("/tmp/toolkit.prop", "system.exist.data") == "true", (
     run_program("/cache/tools/fresh-tk", "optics", "backup");
