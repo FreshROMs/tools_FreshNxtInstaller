@@ -37,6 +37,8 @@ ROM_THREE_ALT="${SYSMOUNT_PATH}/fresh.prop"
 FRESH="${SYSMOUNT_PATH}/system_ext/etc/fresh"
 DEVICE_PROP="${SYSMOUNT_PATH}/build.prop"
 
+SHRP_DIR="${SYSMOUNT_PATH}/etc/shrp"
+
 FLOATING_FEATURE_SYSTEM="${SYSMOUNT_PATH}/etc/floating_feature.xml"
 FLOATING_FEATURE_VENDOR="/vendor/etc/floating_feature.xml"
 
@@ -44,7 +46,9 @@ FLOATING_FEATURE_VENDOR="/vendor/etc/floating_feature.xml"
 INSTALLED_OMC='/product/omc/sales_code.dat'
 INSTALLED_OMC_LIST='/product/omc/sales_code_list.dat'
 INSTALLED_OMC_CONFIG='/product/omc/SW_Configuration.xml'
-BACKUP_OMC_FOLDER='/data/fresh/'
+BACKUP_FOLDER='/data/fresh/'
+BACKUP_OMC_FOLDER="${BACKUP_FOLDER}/omc"
+BACKUP_SHRP_FOLDER="${BACKUP_FOLDER}/shrp"
 HUB_PACKAGE='io.tenseventyseven.fresh'
 
 file_setprop() {
@@ -103,6 +107,15 @@ optics() {
 		else
 			file_setprop "product.omc.support" "false"
 		fi
+	fi
+}
+
+fresh_shrp() {
+	if [ "$(echo "${1}" | tr '[A-Z]' '[a-z]')" == "backup" ]; then
+		mkdir -p ${BACKUP_SHRP_FOLDER}
+		cp -rf ${SHRP_DIR} "${BACKUP_FOLDER}"
+	elif [ "$(echo "${1}" | tr '[A-Z]' '[a-z]')" == "restore" ]; then
+		cp -rn --preserve=mode,ownership,timestamps,context "${BACKUP_FOLDER}" "${SYSMOUNT_PATH}/etc/"
 	fi
 }
 
@@ -296,8 +309,8 @@ install_ota_check() {
 }
 
 install_cleanup() {
-	if [ -d "${BACKUP_OMC_FOLDER}" ]; then
-		rm -rf "${BACKUP_OMC_FOLDER}"
+	if [ -d "${BACKUP_FOLDER}" ]; then
+		rm -rf "${BACKUP_FOLDER}"
 	fi
 
 	rm -f '/tmp/fresh-tk_install'
