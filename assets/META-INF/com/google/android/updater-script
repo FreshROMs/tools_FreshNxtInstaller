@@ -80,6 +80,15 @@ ifelse(
    )
 );
 
+# Backup SHRP express changes if reinstalling Fresh
+ifelse(
+  file_getprop("/tmp/toolkit.prop", "system.exist.rom") == "false", (
+    sleep(1);
+   ), (
+    run_program("/cache/tools/fresh-tk", "fresh_shrp", "backup");
+   )
+);
+
 ui_print(" ");
 show_progress(0.150000, 0);
 
@@ -376,6 +385,16 @@ show_progress(0.870000, 0);
 
 # Copy installer selections to the system
 run_program("/cache/tools/fresh-tk", "install_selections");
+
+# Restore SHRP express changes if reinstalling Fresh
+ifelse(
+  file_getprop("/tmp/toolkit.prop", "system.exist.rom") == "false", (
+    sleep(1);
+   ), (
+    run_program("/cache/tools/fresh-tk", "fresh_shrp", "restore");
+   )
+);
+
 show_progress(0.900000, 0);
 
 ui_print(" ");
