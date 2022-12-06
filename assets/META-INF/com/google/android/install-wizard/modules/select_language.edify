@@ -12,7 +12,6 @@ selectbox(
   "Nederlands",        "Vertaling door Alain Deroy",                      0,
   "Español",           "Localización por Cristian Recalde",               0,
   "Deutsch",           "Lokalisierung durch Lijukay",                     0,
-  "فارسی",             "طراحی‌شده توسط رضا بهرام نژاد",            0,
   "Português (BR)",    "Localização por Valeyard_DW",                     0,
   "русский",           "Перевод trigger337 и redoverflow",                0,
   "Türkçe",            "hgunduz295 ve Alper tarafından yerelleştirildi",  0,
@@ -57,31 +56,26 @@ if prop("language.prop","selected.0") == "7" then
 endif;
 
 if prop("language.prop","selected.0") == "8" then
-  loadlang("strings/fa.lang");
-  restotmp("strings/fa.lang", "lang.prop");
-endif;
-
-if prop("language.prop","selected.0") == "9" then
   loadlang("strings/pt_BR.lang");
   restotmp("strings/pt_BR.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "10" then
+if prop("language.prop","selected.0") == "9" then
   loadlang("strings/ru.lang");
   restotmp("strings/ru.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "11" then
+if prop("language.prop","selected.0") == "10" then
   loadlang("strings/tr.lang");
   restotmp("strings/tr.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "12" then
+if prop("language.prop","selected.0") == "11" then
   loadlang("strings/vi.lang");
   restotmp("strings/vi.lang", "lang.prop");
 endif;
 
-if prop("language.prop","selected.0") == "13" then
+if prop("language.prop","selected.0") == "12" then
   loadlang("strings/uk.lang");
   restotmp("strings/uk.lang", "lang.prop");
 endif;
