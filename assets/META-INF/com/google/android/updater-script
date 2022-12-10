@@ -127,7 +127,7 @@ ifelse(
 
 # Flash up_param partition
 ui_print("   - " + file_getprop("/tmp/install-wizard/lang.prop", "script.install.splash"));
-package_extract_file("up_param.bin", file_getprop("/tmp/toolkit.prop", "block.splash"));
+package_extract_file("up_param.bin", file_getprop("/tmp/toolkit.prop", "block.up_param"));
 show_progress(0.720000, 0);
 
 # Flash boot/recovery/DTB
