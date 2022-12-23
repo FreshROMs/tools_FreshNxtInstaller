@@ -76,7 +76,7 @@ ifelse(
   file_getprop("/tmp/toolkit.prop", "system.exist.data") == "true", (
     run_program("/cache/tools/fresh-tk", "optics", "backup");
     show_progress(0.125000, 0);
-    run_program("/cache/tools/fresh-tk", "disable_modules");
+    run_program("/cache/tools/fresh-tk", "propscan");
    )
 );
 
