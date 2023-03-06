@@ -115,7 +115,7 @@ fresh_shrp() {
 		mkdir -p ${BACKUP_SHRP_FOLDER}
 		cp -rf ${SHRP_DIR} "${BACKUP_FOLDER}"
 	elif [ "$(echo "${1}" | tr '[A-Z]' '[a-z]')" == "restore" ]; then
-		cp -rn --preserve=mode,ownership,timestamps,context "${BACKUP_FOLDER}" "${SYSMOUNT_PATH}/etc/"
+		cp -rn --preserve=mode,ownership,timestamps,context "${BACKUP_SHRP_FOLDER}" "${SYSMOUNT_PATH}/etc/"
 	fi
 }
 
