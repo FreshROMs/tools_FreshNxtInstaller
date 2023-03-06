@@ -7,9 +7,9 @@ USE_NEON := 0
 
 # Version info
 AROMA_NAME    := Fresh Install Wizard
-AROMA_VERSION := 13.1.3.3
+AROMA_VERSION := 13.2.0.3
 AROMA_BUILD   := $(shell date +%s)
-AROMA_CN      := Fuecoco
+AROMA_CN      := Silfer the Sky Dragon
 
 
 CC := $(CROSS_COMPILE)gcc
