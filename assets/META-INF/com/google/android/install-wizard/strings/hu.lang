@@ -1,0 +1,199 @@
+# =========================================
+# _____              _
+# |  ___| __ ___  ___| |__
+# | |_ | '__/ _ \/ __| '_ \
+# |  _|| | |  __/\__ \ | | |
+# |_|  |_|  \___||___/_| |_|
+# 
+# =========================================
+# 
+# Installer Language Resource File
+# Based on AROMA Installer
+# The Fresh Project
+# Copyright (C) 2022 TenSeventy7
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# 
+# =========================
+# Language Information
+# 
+# Language             : English
+# Lang code (ISO-639)  : EN
+# Localization By      : TenSeventy7
+# Replace with your desired username.
+lang.translator=Localization by konczepcio
+# Initial language strings
+lang.title=Üdvözöljük!
+lang.summary=Kérjük válasszon nyelvet.
+welcome.title=Üdvözli Önt a Fresh!
+welcome.text1=Üdvözli Önt a telepítési varázsló!
+welcome.text2=Ez a telepítővarázsló végigvezeti Önt a Fresh készülékre történő telepítésében, és tetszés szerint ad hozzá további funkciókat a telepítéshez.
+welcome.text3=A folytatáshoz koppintson a <b> következő </b> gombra.
+terms.title=Szolgáltatási feltételek
+terms.summary=A Fresh használatát a <b>tenseventyseven</b> szolgáltatási feltételek szabályozzák.
+terms.check=Elfogadom
+terms.confirm=A folytatáshoz el kell fogadnia a feltételeket.
+menu.title=Üdvözöljük a varázslóban!
+menu.current.summary=Hú, régi felhasználó! A Fresh jelenleg telepítve van az eszközén.
+menu.new.summary=Hú, új felhasználó!
+menu.reinstall.title=Telepítse újra a Fresh 4-et
+menu.reinstall.summary=Telepítse újra a Fresh-t egy korábbi telepítésből kiválasztott opciókkal.
+menu.upgrade.title=Fresh frissítése
+menu.upgrade.summary=Frissítse eszközét a Fresh ezen verziójára.
+menu.express.title=Expressz telepítés
+menu.express.summary=Telepítse a Fresh-t alapbeállításokkal alkalmazásokhoz és szolgáltatásokhoz.
+menu.custom.title=Egyéni telepítés
+menu.custom.summary=Telepítse a Fresh-t egyéni alkalmazásokkal és szolgáltatásokkal.
+confirm.title=Ez minden, amire szükségünk van
+confirm.summary=Ellenőrizze, hogy az összes testreszabás megfelelő-e az Ön számára, majd a telepítés folytatásához koppintson a <b>"tovább"</b> gombra.
+confirm.next=Telepítés most
+install.title=A Fresh 4 telepítése
+install.summary=Dőljön hátra, és lazítson, miközben a Fresh telepítése folyamatban van az eszközére. Ez eltarthat néhány percig.
+install.finish=A Fresh telepítése sikeresen megtörtént. A telepítés befejezéséhez koppintson a <b>'következő'</b> gombra.
+finish.title=Telepítés befejezve!
+finish.text1=A Fresh sikeresen telepítve lett az eszközére.
+finish.text2=Mostantól kiválaszthatja, hogy a beállítás után automatikusan újraindítsa az eszközt az alábbi négyzet bejelölésével. <b>Üdvözli a Fresh!</b>
+finish.text3=A beállítás befejezéséhez érintse meg a <b>'Kilépés'</b> elemet.
+finish.button.restart=A beállítás után indítsa újra
+wait.generic=Kérlek várj...
+wait.install.scan=Az eszköz szkennelése egy meglévő Fresh telepítéshez.
+# // Fresh Addons {
+# Google
+addon.google=Google alkalmazások
+addon.google.title=Válassza ki a Google okosságának szintjét
+addon.google.summary=Hasznos szolgáltatások, amelyek az Ön számára készültek.
+addon.google.full.title=Teljes
+addon.google.full.summary=A Micro és a Google Meet mindent tartalmaz.
+addon.google.micro.title=Micro
+addon.google.micro.summary=Tartalmazza az összes Lite szolgáltatást, valamint a Térkép és az Android Auto támogatását.
+addon.google.lite.title=Lite
+addon.google.lite.summary=Tartalmazza a Google alkalmazást és a Google Playhez szükséges szolgáltatásokat.
+# Bixby
+addon.bixby=Bixby
+addon.bixby.title=Használja ki telefonja teljes potenciálját
+addon.bixby.summary=Tapasztalja meg az okosabb életet a Bixbyvel.
+addon.bixby.voice.title=Bixby Voice
+addon.bixby.voice.summary=A Bixby segít, hogy a legfontosabbra összpontosíthasson.
+addon.bixby.vision.title=Bixby Vision
+addon.bixby.vision.summary=A Bixby Vision megkönnyíti, hogy többet tudjon meg az Önt körülvevő világról.
+addon.bixby.reminders.title=Emlékeztető
+addon.bixby.reminders.summary=A Bixby új szintre emeli az emlékeztetőket azáltal, hogy lehetővé teszi az emlékeztetők beállítását a hangjával.
+addon.bixby.routines.title=Routines
+addon.bixby.routines.summary=Gépi tanulással támogatja, hogy alkalmazkodjon az életéhez, és leegyszerűsítse a telefonon töltött időt.
+# Seamless
+addon.seamless=Galaxy Ecosystem
+addon.seamless.title=Zökkenőmentesen csatlakozhat eszközeihez
+addon.seamless.summary=Tapasztalja meg a Galaxy ökoszisztémáját ezekkel az alkalmazásokkal és szolgáltatásokkal.
+addon.seamless.sharelive.title=Quick Share és Link Sharing
+addon.seamless.sharelive.summary=Egy új megosztási szolgáltatás, amellyel fényképeket, videókat és fájlokat küldhet barátaival és családjával.
+addon.seamless.ltw.title=Link to Windows
+addon.seamless.ltw.summary=A Link to Windows hivatkozás mindent megtesz, amit okostelefonján tehet, és elviszi a számítógépére.
+addon.seamless.cta.title=Hívás és üzenetküldés más eszközökön.
+addon.seamless.cta.summary=Hívásokat kezdeményezhet és fogadhat Samsung táblagépén.
+addon.seamless.wear.title=Galaxy Wearable
+addon.seamless.wear.summary=Jusson egy következő szintre a Galaxy Wearablel alkalmazással.
+addon.seamless.friends.title=Galaxy Friends
+addon.seamless.friends.summary=Kiegészítő platformszolgáltatás, amely lehetővé teszi, hogy különféle tartalmakat élvezhessen.
+addon.seamless.onedrive.title=Microsoft OneDrive
+addon.seamless.onedrive.summary=Mentse el fájljait és fényképeit, és érje el azokat bármilyen eszközről, bárhonnan.
+# AR Zone
+addon.ar_zone=Augmented Reality\n
+addon.ar_zone.title=Élvezd az életet a kameráddal
+addon.ar_zone.summary=Rögzítsen szórakoztató fényképeket és videókat a kiterjesztett valósággal.
+addon.ar_zone.zone.title=AR Zone
+addon.ar_zone.zone.summary=Egyablakos központ az AR-hez kapcsolódó funkciókhoz, mint például az AR Emoji és az AR Doodle.
+addon.ar_zone.emoji.title=AR Emoji
+addon.ar_zone.emoji.summary=Készítsen szórakoztató fényképeket és videókat hangulatjelekkel a különböző fényképezési módok használatával.
+addon.ar_zone.doodle.title=AR Doodle
+addon.ar_zone.doodle.summary=Az AR Doodle mód javítja a videókat azáltal, hogy lehetővé teszi, hogy vonalas rajzokat vagy kézírást adjon a környezetéhez.
+addon.ar_zone.decopic.title=DECO Pic
+addon.ar_zone.decopic.summary=Kreatív eszközök készlete saját szórakoztató és ostoba képeik elkészítéséhez.
+# Game Services
+addon.game_services=Game Services\n
+addon.game_services.title=Rajta!
+addon.game_services.summary=Lépjen magasabb szintre mobiljátékok terén Samsung Galaxy készülékével.
+addon.game_services.home.title=Game Launcher és Tools
+addon.game_services.home.summary=A tökéletes vezérlőközpont kedvenc játékaihoz.
+# Security
+addon.security=Biztonság
+addon.security.title=Növelje biztonságát
+addon.security.summary=Tartsa bármikor biztonságban Samsung Galaxy készülékét.
+addon.security.antimalware.title=Eszközvédelem
+addon.security.antimalware.summary=Védje Galaxy telefonját a rosszindulatú programoktól.
+addon.security.folder.title=Biztonságos mappa
+addon.security.folder.summary=Használja ki a védelmi szintű Samsung Knox biztonsági platformot egy privát tér kialakításához.
+addon.security.share.title=Private Share
+addon.security.share.summary=A magánélet védelmét megőrző fájlmegosztó funkció, amellyel gond nélkül megoszthatja adatait.
+addon.security.checkout.title=Samsung Checkout
+addon.security.checkout.summary=Gyors, biztonságos és egyszerű fizetés a Galaxy Store és a Galaxy Themes segítségével.
+# Samsung DeX
+addon.dex=Samsung DeX
+addon.dex.title=Többfeladatos munkavégzés az eszközök között, mint egy főnök
+addon.dex.summary=Csatlakoztassa Galaxy készülékét TV-jéhez vagy számítógépéhez, hogy új asztali világot nyisson meg.
+addon.dex.install.title=Samsung DeX
+addon.dex.install.summary=Javasoljuk, hogy a Samsung DeX-et legalább 6 GB RAM-mal rendelkező eszközökön használja.
+# More apps
+addon.sec=További alkalmazások
+addon.sec.title=Hozza ki a legtöbbet eszközéből
+addon.sec.summary=Maximalizálja Galaxy élményét.
+addon.sec.dict.title=Samsung szótár
+addon.sec.dict.summary=Bővítse szókincsét, amikor és bárhol találkozik egy ismeretlen szóval!
+addon.sec.kids.title=Samsung Kids
+addon.sec.kids.summary=Alakítson biztonságos környezetet gyermeke számára, hogy boldogan felfedezhesse a világot és kapcsolatba lépjen vele.
+addon.sec.stc.title=Smart Touch Call
+addon.sec.stc.summary=A Smart Touch Call már ma elhozza a Samsung-támogatás jövőjét.
+addon.installed=Telepítve
+addon.notinstalled=Nincs telepítve
+# } // Fresh Addons
+# // Installation script strings {
+script.partitions.scanning=Eszközpartíciók keresése
+script.partitions.fail1=Nem sikerült a partíciók keresése.
+script.partitions.fail2=Kérjük, frissítse helyreállítási adatait.
+script.partitions.mount=Mounting partitions.
+script.partitions.remount=Re-mounting partitions.
+script.partitions.umount=Un-mounting partitions.
+script.partitions.found.system=Found operatingsystem partition\n
+script.partitions.found.vendor=Found device vendor partition
+script.partitions.found.product=Found OEM product partition
+script.partitions.found.splash=Found OEM splash screen partition
+script.partitions.found.boot=Found Linux kernel partition
+script.partitions.found.dtb=Found device tree overlay partition
+script.partitions.found.recovery=Found recovery environment partition
+script.install.main=A Fresh telepítése 4
+script.install.super=Fresh szuper kép telepítése
+script.install.system=Fresh rendszerpartíció telepítése.
+script.install.vendor=Fresh vendor partíció telepítése.
+script.install.product=Fresh product partíció telepítése.
+script.install.splash=Egyedi OEM indítóképernyő telepítése.
+script.install.boot.mint=Mint Kernel telepítése.
+script.install.boot.generic=Egyéni kernel telepítése.
+script.install.dtb=Custom device tree overlay telepítése.
+script.install.recovery.twrp=TWRP helyreállítási környezet telepítése.
+script.install.recovery.shrp=SHRP helyreállítási környezet telepítése.
+script.install.recovery.generic=Egyéni helyreállítási környezet telepítése.
+script.install.complete=A Fresh telepítése sikeresen megtörtént!
+script.housekeeping.addons=A kiválasztott kiegészítők telepítése a beállításból.
+# } // Installation script strings
+# // Basic installer strings {
+text_ok=OK
+text_next=Következő
+install.next=Következő
+install.exit=Kilépés
+text_back=Vissza
+text_yes=Igen
+text_no=Nem
+text_about=Róla
+text_calibrating=Kalibráló eszközök
+text_quit=Kilépés a Fresh Setup-ból
+text_quit_msg=Biztosan kilép a beállításból? A módosításokat nem alkalmazzuk.

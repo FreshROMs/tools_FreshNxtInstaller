@@ -1,0 +1,199 @@
+# =========================================
+# _____              _
+# |  ___| __ ___  ___| |__
+# | |_ | '__/ _ \/ __| '_ \
+# |  _|| | |  __/\__ \ | | |
+# |_|  |_|  \___||___/_| |_|
+# 
+# =========================================
+# 
+# Installer Language Resource File
+# Based on AROMA Installer
+# The Fresh Project
+# Copyright (C) 2022 TenSeventy7
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# 
+# =========================
+# Language Information
+# 
+# Language             : English
+# Lang code (ISO-639)  : EN
+# Localization By      : TenSeventy7
+# Replace with your desired username.
+lang.translator=Tarjomeye Farsi az Navid JA
+# Initial language strings
+lang.title=Khosh amadid!
+lang.summary=Lotfan zaban ra entekhab konid.
+welcome.title=Be Fresh khosh amadid!
+welcome.text1=Be dastyare nasb khosh amadid!
+welcome.text2=In dastyare nasb shoma ra dar nasbe Fresh va afzoodane ghabeliyat haye delkhahetan rahnemayi mikonad.
+welcome.text3=Baraye edame <b>'baadi'</b> ra bezanid.
+terms.title=Sharayete estefade
+terms.summary=Estefade az Fresh tahte sharayete <b>tenseventyseven</b> mojaz ast.
+terms.check=Movafegham
+terms.confirm=Shoma bayad ba sharayet movafegh bashid.
+menu.title=Be dastyare nasb khosh amadid!
+menu.current.summary=Bah, karbare ghadimi! Shoma Fresh ra az ghabl nasb dashtid.
+menu.new.summary=Bah, karbare jadid!
+menu.reinstall.title=Nasbe dobareye Fresh 4
+menu.reinstall.summary=Nasbe dobareye Fresh ba gozinehaye entekhabi az yek nasbe ghabli.
+menu.upgrade.title=Erteghaye Fresh
+menu.upgrade.summary=Dastgahetan ra be in noskheye Fresh ertegha dahid.
+menu.express.title=Nasbe fori
+menu.express.summary=Nasbe Fresh ba gozinehaye pishfarze barnameha va service ha.
+menu.custom.title=Nasbe sefareshi
+menu.custom.summary=Nasbe Fresh ba gozinehaye delkhahe barnameha va service ha.
+confirm.title=Hamin chiz ha kafist
+confirm.summary=Check konid hameye shakhsisaziha baraye shoma monaseb ast, sepas baraye edameye nasb <b>'baadi'</b> ra bezanid.
+confirm.next=Nasbe Fresh
+install.title=Darhale nasbe Fresh 4
+install.summary=Tekye dahid va relax konid ta Fresh dar dastgahetan nasb shavad. In momken ast kami tool bekeshad.
+install.finish=Fresh ba movaffaghiat nasb shod. Baraye takmile nasb <b>'baadi'</b> ra bezanid.
+finish.title=Nasb tamam shod!
+finish.text1=Fresh ba movaffaghiat dar dastgahetan nasb shod.
+finish.text2=Shoma mitavanid ba entekhabe gozineye zir taayin konid ta dastgah pas az nasb restart shavad. <b>Be Fresh khosh amadid!</b>
+finish.text3=Baraye takmile nasb <b>'Khorouj'</b> ra bezanid.
+finish.button.restart=Restart pas az nasb
+wait.generic=Lotfan sabr konid...
+wait.install.scan=Darhale barresiye dastgah baraye nasb boodane Fresh.
+# // Fresh Addons {
+# Google
+addon.google=Barnamehaye Google
+addon.google.title=Anche az Google doost darid entekhab konid
+addon.google.summary=Khadamate mofidi ke dar zehnetan sakhte shode ast.
+addon.google.full.title=Kamel
+addon.google.full.summary=Shamele hamechiz az Koochak, be alaveye Google Meet.
+addon.google.micro.title=Koochak
+addon.google.micro.summary=Shamele hamechiz az Sabok, be alaveye Maps va poshtibani az Android Auto.
+addon.google.lite.title=Sabok
+addon.google.lite.summary=Shamele barnameye Google va service haye morede niaze Google Play.
+# Bixby
+addon.bixby=Bixby
+addon.bixby.title=Potansiele kamele goshietan ra faal konid
+addon.bixby.summary=Ba Bixby zendegi ra hooshmandtar konid
+addon.bixby.voice.title=Bixby Voice
+addon.bixby.voice.summary=Bixby komak mikonad bar karhaye mohemtar tamarkoz konid.
+addon.bixby.vision.title=Bixby Vision
+addon.bixby.vision.summary=Bixby Vision komak mikonad darbareye mohite atraf bishtar befahmid.
+addon.bixby.reminders.title=Reminders
+addon.bixby.reminders.summary=Bixby yadavari ra ba emkane tanzime yadavar ba seda be sathe balatari mibarad.
+addon.bixby.routines.title=Routines
+addon.bixby.routines.summary=Ba yadgirie mashini zendegi ra rahattar va estefade az goshi ra hooshmandtar konid.
+# Seamless
+addon.seamless=Ecosysteme Galaxy
+addon.seamless.title=Ettesale yekparche ba dastgahhayetan
+addon.seamless.summary=Ecosysteme Galaxy ra ba in barnameha va service ha tajrobe konid.
+addon.seamless.sharelive.title=Quick Share va Link Sharing
+addon.seamless.sharelive.summary=Yek service ersale jadid baraye ersale aks, video, va file ba doostan va khanevade.
+addon.seamless.ltw.title=Link to Windows
+addon.seamless.ltw.summary=Link to Windows harchiz ke mitavanid ba goshie khod anjam dahid ra dar PC faraham mikonad.
+addon.seamless.cta.title=Call and text on other devices
+addon.seamless.cta.summary=Tamas ha ra dar tablete Samsunge khod daryaft va bargharar konid.
+addon.seamless.wear.title=Galaxy Wearable
+addon.seamless.wear.summary=Ba pooshidanihaye Galaxye khod ra be marhaleye baadi beresanid.
+addon.seamless.friends.title=Galaxy Friends
+addon.seamless.friends.summary=Yek service platforme lavazeme janebi ke be shoma emkane lezzat az mohtavaye mokhtalef midahad.
+addon.seamless.onedrive.title=Microsoft OneDrive
+addon.seamless.onedrive.summary=Aks va file haye khod ra zakhire konid va hamvare be anha dastresi dashte bashid.
+# AR Zone
+addon.ar_zone=Vagheeyat afzoode
+addon.ar_zone.title=Ba doorbin sargarm shavid
+addon.ar_zone.summary=Ba vagheeyat afzoode aks va video haye bamazze begirid.
+addon.ar_zone.zone.title=AR Zone
+addon.ar_zone.zone.summary=Makane jam shodane vizhegihaye marboot be AR, mesle AR Emoji va AR Doodle.
+addon.ar_zone.emoji.title=AR Emoji
+addon.ar_zone.emoji.summary=Ba halat haye mokhtalef aks va videohaye bamazze ba emoji besazid.
+addon.ar_zone.doodle.title=AR Doodle
+addon.ar_zone.doodle.summary=AR Doodle be shoma emkan midahad ba doorbin dar fazaye atrafe khod 3D tarsim konid va be onvane video ya aks zakhire konid.
+addon.ar_zone.decopic.title=DECO Pic
+addon.ar_zone.decopic.summary=Majmoeeyi az abzarha baraye ijade tasavire bamazze va ahmaghane.
+# Game Services
+addon.game_services=Khadamate bazi
+addon.game_services.title=Bazi edame darad!
+addon.game_services.summary=Ba Galaxye khod sathe mobile gaming ra balatar bebarid.
+addon.game_services.home.title=Game Launcher va abzarha
+addon.game_services.home.summary=Markaze controle vizhe baraye bazihaye delkhahe shoma.
+# Security
+addon.security=Amniyat
+addon.security.title=Amniyate khod ra bala bebarid
+addon.security.summary=Samsung Galaxye khod ra hamvare amn negahdarid.
+addon.security.antimalware.title=Moraghebate dastgah
+addon.security.antimalware.summary=Gooshie Galaxye khod ra az malware mohafezat konid.
+addon.security.folder.title=Poosheye amn
+addon.security.folder.summary=Az ghodrate defaeeye platforme Samsung Knox baraye ijade yek fazaye khosousi bahre begirid.
+addon.security.share.title=Private Share
+addon.security.share.summary=Yek optione amniyati ke be shoma emkane ersale file bedoone negaraniye amniyati ra midahad.
+addon.security.checkout.title=Samsung Checkout
+addon.security.checkout.summary=Tasvie hesabe imen va asan dar Galaxy Store va Galaxy Themes.
+# Samsung DeX
+addon.dex=Samsung DeX
+addon.dex.title=Multitaske herfei beyne dastgah ha
+addon.dex.summary=Galaxye khod ra be yek TV ya PC vasl konid ta az namaye desktop lezzat bebarid.
+addon.dex.install.title=Samsung DeX
+addon.dex.install.summary=Pishnahad mishavad DeX ra dar dastgahi ba RAMe 6GB ya bishtar estefade konid.
+# More apps
+addon.sec=Bishtar
+addon.sec.title=Hadaksar tavane dastgahetan
+addon.sec.summary=Tajrobeye Galaxye khod ra be hadaksar beresanid.
+addon.sec.dict.title=Samsung Dictionary
+addon.sec.dict.summary=Daiereye loghatetan ra hengame didane loghate na ashna afzayesh dahid.
+addon.sec.kids.title=Samsung Kids
+addon.sec.kids.summary=Baraye koodaketan fazaye amni besazid ta ba khosh hali be donya vasl shavad va kashf konad.
+addon.sec.stc.title=Smart Touch Call
+addon.sec.stc.summary=Smart Touch Call be shoma ayandeye poshtibaniye Samsung ra, emrooz eraee midahad.
+addon.installed=Nasb shode
+addon.notinstalled=Nasb nashode
+# } // Fresh Addons
+# // Installation script strings {
+script.partitions.scanning=Jostojoo baraye partitionhaye dastgah
+script.partitions.fail1=Jostojooye partitionha shekast khord.
+script.partitions.fail2=Lotfan recovery ra update konid.
+script.partitions.mount=Baargozariye partitionha.
+script.partitions.remount=Baargozariye dobareye partitionha.
+script.partitions.umount=Jodasaziye partitionha.
+script.partitions.found.system=Partitione system amel peyda shod
+script.partitions.found.vendor=Partitione vendor peyda shod
+script.partitions.found.product=Partitione OEM product peyda shod
+script.partitions.found.splash=Partitione safheye boot peyda shod
+script.partitions.found.boot=Partitione kernele Linux peyda shod
+script.partitions.found.dtb=Partitione device tree overlay peyda shod
+script.partitions.found.recovery=Partitione mohite recovery peyda shod
+script.install.main=Darhale nasbe Fresh 4
+script.install.super=Darhale nasbe super image Fresh.
+script.install.system=Darhale nasbe partitione systeme Fresh.
+script.install.vendor=Darhale nasbe partitione vendore Fresh.
+script.install.product=Darhale nasbe partitione producte Fresh.
+script.install.splash=Darhale nasbe safheye boote sefareshi.
+script.install.boot.mint=Darhale nasbe kernele Mint.
+script.install.boot.generic=Darhale nasbe kernele custom.
+script.install.dtb=Darhale nasbe device tree overlaye custom.
+script.install.recovery.twrp=Darhale nasbe mohite recoverye TWRP.
+script.install.recovery.shrp=Darhale nasbe mohite recoverye SHRP.
+script.install.recovery.generic=Darhale nasbe mohite recoverye custom.
+script.install.complete=Fresh ba movaffaghiyat nasb shod!
+script.housekeeping.addons=Darhale nasbe afzoonehaye entekhabiye shoma.
+# } // Installation script strings
+# // Basic installer strings {
+text_ok=OK
+text_next=Baadi
+install.next=Baadi
+install.exit=Khorouj
+text_back=Ghabli
+text_yes=Bale
+text_no=Na
+text_about=Darbare
+text_calibrating=Abzarhaye Calibration
+text_quit=Khorouj az nasbe Fresh
+text_quit_msg=Az khorouj etminan darid? Taghyirate shoma eemal nakhahand shod.
