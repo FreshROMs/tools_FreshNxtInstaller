@@ -7,10 +7,9 @@ USE_NEON := 0
 
 # Version info
 AROMA_NAME    := Fresh Install Wizard
-AROMA_VERSION := 13.2.0.3
+AROMA_VERSION := 13.2.1.1
 AROMA_BUILD   := $(shell date +%s)
-AROMA_CN      := Silfer the Sky Dragon
-
+AROMA_CN      := Red-Eyes Black Dragon
 
 CC := $(CROSS_COMPILE)gcc
 CXX := $(CROSS_COMPILE)g++
